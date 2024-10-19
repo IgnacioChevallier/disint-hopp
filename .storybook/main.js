@@ -8,7 +8,11 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling-webpack"
   ],
+  docs: {
+    autodocs: 'tag',
+  },
   framework: {
     name: "@storybook/react-webpack5",
     options: {},

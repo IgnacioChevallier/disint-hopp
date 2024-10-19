@@ -1,5 +1,6 @@
 import {Button} from "./Button";
 import {Meta, StoryObj} from "@storybook/react";
+import {userEvent, within, expect, spyOn} from "@storybook/test";
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -29,7 +30,17 @@ const meta: Meta<typeof Button> = {
     },
     args: {
         onClick: () => alert("button clicked!")
-    }
+    },
+    play: async ({ args, canvasElement }) => {
+        const alertMock = spyOn(window, 'alert').mockImplementation(() => {});
+
+        const canvas = within(canvasElement);
+        const button = canvas.getByRole('button', { name: args.text });
+        await userEvent.click(button);
+        await expect(alertMock).toHaveBeenCalledWith("button clicked!");
+
+        alertMock.mockRestore();
+    },
 };
 export default meta;
 type Story = StoryObj<typeof Button>;

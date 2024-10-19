@@ -1,7 +1,7 @@
 import {ButtonHTMLAttributes, ReactNode} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 
-const buttonVariant = cva("flex flex-row gap-2", {
+const buttonVariant = cva("flex flex-row gap-2 outline-none", {
     variants: {
         color: {
             primary: "",
@@ -31,6 +31,7 @@ const buttonVariant = cva("flex flex-row gap-2", {
             ],
             outlined: [
                 "border",
+                "border-2",
                 "bg-transparent",
             ],
             text: [

@@ -1,7 +1,7 @@
 import {cva, VariantProps} from "class-variance-authority";
 import {InputHTMLAttributes} from "react";
 
-const CheckBoxVariant = cva("flex flex-row gap-2 p-2 bg-gray-100", {
+const CheckBoxVariant = cva("w-6 h-6", {
     variants: {
         selected: {
             true: "bg-primary",

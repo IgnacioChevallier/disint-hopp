@@ -14,13 +14,18 @@ const CheckBoxVariant = cva("flex flex-row gap-2 p-2 bg-gray-100", {
 });
 
 export interface CheckBoxProps
-    extends Omit<InputHTMLAttributes<HTMLInputElement>, "selected">,
-        VariantProps<typeof CheckBoxVariant> {}
+    extends Omit<InputHTMLAttributes<HTMLInputElement>, "checked">,
+        VariantProps<typeof CheckBoxVariant> {
+    selected?: boolean,
+}
 
 export const CheckBox = ({selected}: CheckBoxProps) => {
     return (
         <label>
-            <input type="checkbox"/>
+            <input
+                type="checkbox"
+                checked={selected}
+            />
         </label>
     );
 }

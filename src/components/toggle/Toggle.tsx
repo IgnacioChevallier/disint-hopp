@@ -26,7 +26,7 @@ const toggleSlider = cva(
 
 export const Toggle = ({ selected, onClick }: { selected: boolean; onClick: () => void }) => {
     return (
-        <label className="switch">
+        <label>
             <input
                 type="checkbox"
                 className="hidden"

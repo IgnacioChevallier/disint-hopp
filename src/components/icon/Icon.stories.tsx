@@ -11,8 +11,8 @@ const meta: Meta<typeof Icon> = {
     },
     argTypes: {
         size: {
-            control: "number",
-            min: 0
+            control: "select",
+            options: ["small", "medium", "large"],
         },
         name: {
             control: "select",
@@ -27,6 +27,6 @@ type Story = StoryObj<typeof Icon>
 export const IconStory: Story = {
     args: {
         name: 'placeholder',
-        size: 24
+        size: 'small'
     }
 };

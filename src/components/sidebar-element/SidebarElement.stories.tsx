@@ -26,7 +26,7 @@ export const Selected: Story = {
     args: {
         selected: true,
         text: 'Dashboard',
-        icon: <Icon name={"placeholder"} size={16}/>
+        icon: <Icon name={"placeholder"} size={"small"}/>
     }
 }
 
@@ -34,6 +34,6 @@ export const NotSelected: Story = {
     args: {
         selected: false,
         text: 'Dashboard',
-        icon: <Icon name={"placeholder"} size={16}/>
+        icon: <Icon name={"placeholder"} size={"small"}/>
     }
 }

@@ -21,9 +21,9 @@ module.exports = {
         'h3-bold': ['20px', { lineHeight: '24px', fontWeight: '700' }],        // Inter Bold 20/24
         'h3-regular': ['20px', { lineHeight: '24px', fontWeight: '400' }],     // Inter Regular 20/24
 
-        // Body
-        'body-bold': ['16px', { lineHeight: '18px', fontWeight: '700' }],      // Inter Bold 16/18
-        'body-regular': ['16px', { lineHeight: '18px', fontWeight: '400' }],   // Inter Regular 16/18
+        // p
+        'p-bold': ['16px', { lineHeight: '18px', fontWeight: '700' }],      // Inter Bold 16/18
+        'p-regular': ['16px', { lineHeight: '18px', fontWeight: '400' }],   // Inter Regular 16/18
       },
       colors: {
         primary: {

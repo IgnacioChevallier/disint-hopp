@@ -10,7 +10,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "tailwindcss": "^3.4.14",
+    "webpack": "^5.95.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,8 +56,9 @@
     "@storybook/test": "^8.3.6",
     "eslint-plugin-storybook": "^0.9.0",
     "prop-types": "^15.8.1",
-    "storybook": "^8.3.6",
-    "tailwindcss": "^3.4.14",
-    "webpack": "^5.95.0"
+    "storybook": "^8.3.6"
+  },
+  "overrides": {
+    "react-refresh": "0.11.0"
   }
 }

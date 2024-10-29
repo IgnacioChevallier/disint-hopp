@@ -7,7 +7,7 @@ const notificationStyles = cva(
         variants: {
             type: {
                 default: 'bg-gray-100',
-                notification: 'bg-gray-100',
+                detailed: 'bg-gray-100',
             },
         },
         defaultVariants: {
@@ -23,7 +23,7 @@ export interface BaseProps extends VariantProps<typeof notificationStyles> {
 
 export type NotificationProps =
     | (BaseProps & { type: 'default'; subtitle: string; description?: never })
-    | (BaseProps & { type: 'notification'; description: string; subtitle?: never });
+    | (BaseProps & { type: 'detailed'; description: string; subtitle?: never });
 
 export const Notification = ({ type, title, subtitle, description, icon }: NotificationProps) => {
     return (
@@ -35,7 +35,7 @@ export const Notification = ({ type, title, subtitle, description, icon }: Notif
                     <p className="text-lg font-bold">{title}</p>
                 </div>
             </div>
-            {type === 'notification' && description && (
+            {type === 'detailed' && description && (
                 <p className="text-sm text-gray-800 mt-2">{description}</p>
             )}
         </div>

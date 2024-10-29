@@ -18,7 +18,7 @@ export const RouteDirection = ({
             <div className="flex justify-center items-center w-12 h-12 min-w-12 min-h-12 bg-gray-200 rounded-full flex-shrink-0">
                 <Icon name={iconName} size="medium" />
             </div>
-            <span className="text-base flex-grow overflow-hidden line-clamp-3">
+            <span className="text-p-regular flex-grow overflow-hidden line-clamp-3">
                 {label}
             </span>
         </div>

@@ -1,4 +1,5 @@
 // tailwind.config.js
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -58,5 +59,14 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        'h1': { fontSize: theme('fontSize.h1-bold')[0], lineHeight: theme('fontSize.h1-bold')[1].lineHeight, fontWeight: theme('fontSize.h1-bold')[1].fontWeight },
+        'h2': { fontSize: theme('fontSize.h2-regular')[0], lineHeight: theme('fontSize.h2-regular')[1].lineHeight, fontWeight: theme('fontSize.h2-regular')[1].fontWeight },
+        'h3': { fontSize: theme('fontSize.h3-extra-bold')[0], lineHeight: theme('fontSize.h3-extra-bold')[1].lineHeight, fontWeight: theme('fontSize.h3-extra-bold')[1].fontWeight },
+        'p': { fontSize: theme('fontSize.p-regular')[0], lineHeight: theme('fontSize.p-regular')[1].lineHeight, fontWeight: theme('fontSize.p-regular')[1].fontWeight },
+      });
+    })
+  ],
 }

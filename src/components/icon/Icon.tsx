@@ -16,6 +16,7 @@ const iconVariant = cva("", {
 
 export interface IconProps extends VariantProps<typeof iconVariant> {
     name: keyof typeof iconMap | string;
+    color?: string;
 }
 
 const sizeMap = {
@@ -24,11 +25,11 @@ const sizeMap = {
     large: 32,
 };
 
-const Icon = ({ name, size }: IconProps) => {
+const Icon = ({ name, size, color = "#1A1A1A" }: IconProps) => {
     const icon = iconMap.get(name.toString());
     if (!icon) return null;
     const numericSize = sizeMap[size!];
-    return <div className={iconVariant({ size })}>{icon(numericSize)}</div>;
+    return <div className={iconVariant({ size })}>{icon(numericSize, color)}</div>;
 };
 
 export default Icon;

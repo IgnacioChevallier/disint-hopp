@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { iconMap } from "../icon/IconMap";
 import {ModalRow} from "./ModalRow";
+import Icon from "../icon/Icon";
+import {CheckBox} from "../checkbox/CheckBox";
 
 const meta: Meta<typeof ModalRow> = {
     title: 'Components/ModalRow',
@@ -9,16 +10,8 @@ const meta: Meta<typeof ModalRow> = {
         layout: 'centered',
     },
     argTypes: {
-        leftIconName: {
-            control: "select",
-            options: Array.from(iconMap.keys())
-        },
         label: {
             control: "text"
-        },
-        rightIconName: {
-            control: "select",
-            options: Array.from(iconMap.keys())
         }
     },
 }
@@ -29,8 +22,24 @@ type Story = StoryObj<typeof ModalRow>;
 
 export const Default: Story = {
     args: {
-        leftIconName: "placeholder",
+        left: <Icon name={"placeholder"} size={"medium"} />,
         label: "Option",
-        rightIconName: "placeholder"
+        right: <Icon name={"placeholder"} size={"medium"} />,
+    }
+}
+
+export const CheckLeft: Story = {
+    args: {
+        left: <CheckBox selected={true} />,
+        label: "Option",
+        right: ""
+    }
+}
+
+export const UncheckLeft: Story = {
+    args: {
+        left: <CheckBox selected={false} />,
+        label: "Option",
+        right: ""
     }
 }

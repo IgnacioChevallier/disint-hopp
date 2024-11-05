@@ -34,12 +34,12 @@ export const Notification = ({ type, title, subtitle, description, iconName }: N
                 <div className="flex items-center gap-2 max-w-full truncate overflow-hidden">
                     <Icon name={iconName} size={'large'} />
                     <div>
-                        {subtitle && <p className="p-regular line-clamp-1">{subtitle}</p>}
-                        <p className="h3-bold line-clamp-1">{title}</p>
+                        {subtitle && <p className="text-p-regular line-clamp-1">{subtitle}</p>}
+                        <p className="text-h3-bold line-clamp-1">{title}</p>
                     </div>
                 </div>
                 {type === 'detailed' && description && (
-                    <p className="p-regular line-clamp-1">{description}</p>
+                    <p className="text-p-regular line-clamp-1">{description}</p>
                 )}
             </div>
         </div>

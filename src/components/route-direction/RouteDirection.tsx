@@ -2,7 +2,7 @@ import Icon from "../icon/Icon";
 import { HTMLAttributes } from "react";
 
 const routeDirectionVariant =
-    "flex items-center text-gray-800 min-w-[350px] h-[90px] p-2 gap-2 max-w-full";
+    "flex items-center text-gray-800 h-[90px] p-2 gap-2 w-full";
 
 export interface RouteDirectionProps extends HTMLAttributes<HTMLDivElement> {
     iconName: string;

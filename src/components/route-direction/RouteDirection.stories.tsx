@@ -6,7 +6,7 @@ const meta: Meta<typeof RouteDirection> = {
     title: 'Components/RouteDirection',
     component: RouteDirection,
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
     argTypes: {
         iconName: {
@@ -17,6 +17,13 @@ const meta: Meta<typeof RouteDirection> = {
             control: "text"
         }
     },
+    decorators: [
+        (Story) => (
+            <div className={"w-screen"}>
+                <Story />
+            </div>
+        )
+    ]
 }
 
 export default meta;

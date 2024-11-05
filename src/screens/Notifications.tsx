@@ -1,12 +1,18 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Button } from "../components/button/Button";
+import { iconMap } from "../components/icon/IconMap"; // Importa iconMap
 
 const Notifications = () => {
+    // Obtener el icono de flecha hacia atrás
+    const BackIcon = iconMap.get('arrow back');
+
     return (
         <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
             <header style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>⬅️</button>
+                <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
+                    {BackIcon && BackIcon(24)} {/* Renderiza el icono si existe */}
+                </button>
                 <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
             </header>
 
@@ -41,7 +47,7 @@ const Notifications = () => {
                     href=""
                     text="Lines 123, 434, 843, 947 currently affected by service issues."
                     time="6:24 am"
-                    icon="bus-alert"
+                    icon="bus alert"
                 />
                 <Alert
                     active={true}
@@ -49,7 +55,7 @@ const Notifications = () => {
                     href=""
                     text="High passenger volume on Line 843 due to local events."
                     time="6:24 am"
-                    icon="bus-alert"
+                    icon="bus alert"
                 />
                 <Alert
                     active={false}
@@ -57,7 +63,7 @@ const Notifications = () => {
                     href=""
                     text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
                     time="6:24 am"
-                    icon="calendar-clock"
+                    icon="calendar clock"
                 />
                 <Alert
                     active={false}
@@ -65,7 +71,7 @@ const Notifications = () => {
                     href=""
                     text="Unexpected incident on Line 123. Delays expected."
                     time="6:24 am"
-                    icon="calendar-clock"
+                    icon="calendar clock"
                 />
             </div>
         </div>

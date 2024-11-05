@@ -9,7 +9,7 @@ const meta: Meta<typeof RouteDirection> = {
         layout: 'top',
     },
     argTypes: {
-        iconName: {
+        icon: {
             control: "select",
             options: Array.from(iconMap.keys())
         },
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof RouteDirection>;
 
 export const Default: Story = {
     args: {
-        iconName: "alt routes",
+        icon: "alt routes",
         label: "Route Direction"
     }
 }

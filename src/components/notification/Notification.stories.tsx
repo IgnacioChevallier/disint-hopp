@@ -7,7 +7,7 @@ const meta: Meta<typeof Notification> = {
     title: 'Components/Notification',
     component: Notification,
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
     argTypes: {
         type: {
@@ -21,6 +21,12 @@ const meta: Meta<typeof Notification> = {
             options: Array.from(iconMap.keys())
         },
     },
+    decorators: [
+        (Story) => (
+            <div className={"w-screen"}>
+                <Story />
+            </div>
+        )]
 }
 export default meta;
 
@@ -31,7 +37,7 @@ export const Default: Story = {
         type: 'default',
         title: 'Hopp',
         subtitle: 'Kilometers',
-        iconName: 'placeholder',
+        iconName: 'arrow back' as keyof typeof iconMap,
     },
 };
 
@@ -40,6 +46,6 @@ export const Detailed: Story = {
         type: 'detailed',
         title: 'Hopp',
         description: 'Description of the notification will be written here.',
-        iconName: 'placeholder',
+        iconName: 'hopp' as keyof typeof iconMap,
     },
 };

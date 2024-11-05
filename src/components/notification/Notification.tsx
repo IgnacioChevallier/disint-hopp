@@ -29,17 +29,19 @@ export type NotificationProps =
 
 export const Notification = ({ type, title, subtitle, description, iconName }: NotificationProps) => {
     return (
-        <div className={notificationStyles({ type })}>
-            <div className="flex items-center gap-2">
-                <Icon name={iconName} size={'large'} />
-                <div>
-                    {subtitle && <p className="text-xs text-gray-600">{subtitle}</p>}
-                    <p className="text-lg font-bold">{title}</p>
+        <div className="px-2.5 py-2.5">
+            <div className={notificationStyles({ type })}>
+                <div className="flex items-center gap-2 max-w-full truncate overflow-hidden">
+                    <Icon name={iconName} size={'large'} />
+                    <div>
+                        {subtitle && <p className="p-regular line-clamp-1">{subtitle}</p>}
+                        <p className="h3-bold line-clamp-1">{title}</p>
+                    </div>
                 </div>
+                {type === 'detailed' && description && (
+                    <p className="p-regular line-clamp-1">{description}</p>
+                )}
             </div>
-            {type === 'detailed' && description && (
-                <p className="text-sm text-gray-800 mt-2">{description}</p>
-            )}
         </div>
     );
 };

@@ -9,10 +9,13 @@ const meta: Meta<typeof ListItem> = {
         layout: 'centered',
     },
     argTypes: {
-        color: {
+        controlType: {
             control: "select",
-            options: ["primary", "danger", "gray"]
+            options: ["checkbox", "radio", "toggle"]
         },
+        additionalText: {
+            control: "text"
+        }
     },
 };
 
@@ -22,7 +25,7 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Default: Story = {
     args: {
-        text: '5th Avenue',
+        text: 'List Item Example',
         color: 'primary',
     },
 };

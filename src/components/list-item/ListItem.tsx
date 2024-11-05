@@ -6,25 +6,16 @@ import {Toggle} from "../toggle/Toggle";
 
 const listItemVariant = cva("flex items-center gap-2 p-2 bg-gray-100 rounded-lg", {
     variants: {
-        color: {
-            primary: "focus:outline-primary",
-            danger: "focus:outline-danger",
-            gray: "focus:outline-gray-200",
-        },
         controlType: {
             checkbox: "",
             radio: "",
             toggle: "",
         },
     },
-    defaultVariants: {
-        color: "gray",
-    },
 });
 
-export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, "color">, VariantProps<typeof listItemVariant> {
+export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, "text">, VariantProps<typeof listItemVariant> {
     text?: ReactNode;
-    color?: "primary" | "danger" | "gray";
     leadingIcon?: ReactNode;
     trailingIcon?: ReactNode;
     controlType?: "checkbox" | "radio" | "toggle";
@@ -33,19 +24,19 @@ export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement
 
 export const ListItem = ({
                              text,
-                             color,
                              leadingIcon,
                              trailingIcon,
                              controlType,
                              additionalText,
                              ...props
                          }: ListItemProps) => {
+
     const [toggle, setToggle] = React.useState(false);
     const [checkBox, setCheckBox] = React.useState(false);
     const [radio, setRadio] = React.useState(false);
 
     return (
-        <li className={listItemVariant({color, controlType})} {...props}
+        <li className={listItemVariant({controlType})} {...props}
             style={{
                 display: "flex",
                 alignItems: "center",

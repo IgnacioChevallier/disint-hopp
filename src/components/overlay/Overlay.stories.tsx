@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {Modal} from "./Modal";
+import {Overlay} from "./Overlay";
 import Icon from "../icon/Icon";
 import {CheckBox} from "../checkbox/CheckBox";
 
-const meta: Meta<typeof Modal> = {
-    title: 'Components/Modal',
-    component: Modal,
+const meta: Meta<typeof Overlay> = {
+    title: 'Components/Overlay',
+    component: Overlay,
     parameters: {
         layout: 'centered',
     },
@@ -13,7 +13,7 @@ const meta: Meta<typeof Modal> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof Overlay>;
 
 export const Default: Story = {
     args: {
@@ -37,7 +37,7 @@ export const Default: Story = {
     }
 };
 
-export const CheckModal: Story = {
+export const CheckOverlay: Story = {
     args: {
         rows: [
             {
@@ -59,7 +59,7 @@ export const CheckModal: Story = {
     }
 }
 
-export const UncheckModal: Story = {
+export const UncheckOverlay: Story = {
     args: {
         rows: [
             {

@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {ModalRow} from "./ModalRow";
+import {OverlayRow} from "./OverlayRow";
 import Icon from "../icon/Icon";
 import {CheckBox} from "../checkbox/CheckBox";
 
-const meta: Meta<typeof ModalRow> = {
-    title: 'Components/ModalRow',
-    component: ModalRow,
+const meta: Meta<typeof OverlayRow> = {
+    title: 'Components/OverlayRow',
+    component: OverlayRow,
     parameters: {
         layout: 'centered',
     },
@@ -18,7 +18,7 @@ const meta: Meta<typeof ModalRow> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ModalRow>;
+type Story = StoryObj<typeof OverlayRow>;
 
 export const Default: Story = {
     args: {

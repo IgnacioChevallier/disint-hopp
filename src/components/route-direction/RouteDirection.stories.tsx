@@ -6,10 +6,10 @@ const meta: Meta<typeof RouteDirection> = {
     title: 'Components/RouteDirection',
     component: RouteDirection,
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
     argTypes: {
-        iconName: {
+        icon: {
             control: "select",
             options: Array.from(iconMap.keys())
         },
@@ -17,6 +17,13 @@ const meta: Meta<typeof RouteDirection> = {
             control: "text"
         }
     },
+    decorators: [
+        (Story) => (
+            <div className={"w-screen"}>
+                <Story />
+            </div>
+        )
+    ]
 }
 
 export default meta;
@@ -25,7 +32,7 @@ type Story = StoryObj<typeof RouteDirection>;
 
 export const Default: Story = {
     args: {
-        iconName: "alt routes",
+        icon: "alt routes",
         label: "Route Direction"
     }
 }

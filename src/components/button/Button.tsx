@@ -1,5 +1,6 @@
-import {ButtonHTMLAttributes, ReactNode} from "react";
+import {ButtonHTMLAttributes} from "react";
 import {cva, VariantProps} from "class-variance-authority";
+import Icon, {IconProps} from "../icon/Icon";
 
 const buttonVariant = cva("flex flex-row gap-2 outline-none", {
     variants: {
@@ -101,8 +102,8 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
 
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">, Omit<VariantProps<typeof buttonVariant>, "disabled"> {
-    leadingIcon?: ReactNode;
-    trailingIcon?: ReactNode;
+    leadingIcon?: IconProps["name"];
+    trailingIcon?: IconProps["name"];
     text?: string
 }
 
@@ -118,9 +119,9 @@ export const Button = ({
                        }: ButtonProps) => {
     return (
         <button className={buttonVariant({size, rounded, variant, color, disabled: props.disabled})} {...props}>
-            {leadingIcon}
+            {leadingIcon && <Icon name={leadingIcon} size={"medium"} />}
             {text}
-            {trailingIcon}
+            {trailingIcon && <Icon name={trailingIcon} size={"medium"} />}
         </button>
     );
 }

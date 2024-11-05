@@ -24,18 +24,18 @@ const toggleSlider = cva(
     }
 );
 
-export const Toggle = ({ selected, onClick }: { selected: boolean; onClick: () => void }) => {
+export const Toggle = ({selected, onClick}: { selected: boolean; onClick: () => void }) => {
     return (
-        <label>
+        <label className="inline-flex items-center">
             <input
                 type="checkbox"
                 className="hidden"
                 checked={selected}
                 onChange={onClick}
             />
-            <span className={toggleBackground({ selected })}>
-                <span className={toggleSlider({ selected })}></span>
-            </span>
+            <span className={toggleBackground({selected})}>
+                    <span className={toggleSlider({selected})}></span>
+                </span>
         </label>
     );
 };

@@ -1,6 +1,7 @@
 import {Button} from "./Button";
 import {Meta, StoryObj} from "@storybook/react";
 import {userEvent, within, expect, spyOn} from "@storybook/test";
+import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -9,6 +10,14 @@ const meta: Meta<typeof Button> = {
         layout: 'centered',
     },
     argTypes: {
+        leadingIcon: {
+            control: "select",
+            options: [...Array.from(iconMap.keys()), undefined],
+        },
+        trailingIcon: {
+            control: "select",
+            options: [...Array.from(iconMap.keys()), undefined],
+        },
         size: {
             control: "select",
             options: ["small", "medium"],
@@ -76,8 +85,8 @@ export const Text: Story = {
 
 export const WithLeadingIcon: Story = {
     args: {
-        text: 'Launch',
-        leadingIcon: <span>🚀</span>,
+        text: 'Back',
+        leadingIcon: "arrow back",
         variant: 'contained',
         color: 'primary',
         size: 'medium',
@@ -86,8 +95,8 @@ export const WithLeadingIcon: Story = {
 
 export const WithTrailingIcon: Story = {
     args: {
-        text: 'Next',
-        trailingIcon: <span>➡️</span>,
+        text: 'Add',
+        trailingIcon: "add",
         variant: 'outlined',
         color: 'primary',
         size: 'medium',

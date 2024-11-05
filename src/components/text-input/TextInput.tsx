@@ -18,6 +18,7 @@ const textInputVariant = cva("flex flex-row gap-2 p-2 bg-gray-100", {
         },
     },
     defaultVariants: {
+        color: "primary",
         disabled: false,
         rounded: true
     },

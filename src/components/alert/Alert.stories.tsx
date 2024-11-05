@@ -29,7 +29,7 @@ export const Active: Story = {
         href: 'https://www.google.com',
         text: 'Lines 123, 434, 843, 945 currently affected by strike',
         time: '6:24 am',
-        icon: <Icon size={"large"} name={"placeholder"}/>
+        icon: 'placeholder'
     }
 }
 export const Inactive: Story = {
@@ -39,6 +39,6 @@ export const Inactive: Story = {
         href: 'https://www.google.com',
         text: 'Lines 123, 434, 843, 945 currently affected by strike',
         time: '6:24 am',
-        icon: <Icon size={"large"} name={"placeholder"}/>
+        icon: 'placeholder'
     }
 }

@@ -1,10 +1,10 @@
 import {cva} from "class-variance-authority";
-import {ReactNode} from "react";
+import Icon from "../icon/Icon";
 
-const alertVariant = cva("bg-white rounded px-3 py-4 gap-3 flex", {
+const alertVariant = cva("rounded px-3 py-4 gap-3 flex", {
     variants: {
         active: {
-            true: "",
+            true: "bg-white",
             false: "bg-gray-200",
         }
     }
@@ -16,7 +16,7 @@ export interface AlertProps {
     href: string,
     text: string,
     time: string,
-    icon: ReactNode
+    icon: string
 }
 
 export const Alert = ({ active, link, href, text, time, icon }:AlertProps) => {
@@ -24,7 +24,7 @@ export const Alert = ({ active, link, href, text, time, icon }:AlertProps) => {
         <div className={alertVariant({active})} style={{width: 370, height:99}}>
             <div className={"flex flex-row gap-3"} style={{width: 259}}>
                 <div className={"flex items-center"}>
-                    {icon}
+                    <Icon name={icon} size={"medium"} />
                 </div>
                 <div className={"flex flex-col align-center text-ellipsis"}>
                     <p>{text}</p>

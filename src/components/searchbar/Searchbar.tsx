@@ -31,16 +31,20 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                 style={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '8px',
-                    border: '1px solid #ccc',
-                    borderRadius: '16px',
+                    justifyContent: 'center',
+                    height: '48px',
+                    padding: '0px 16px',
+                    border: '1px solid #000',
+                    borderRadius: '24px',
+                    backgroundColor: '#FFF',
+                    gap: '8px',
                     cursor: 'pointer',
-                    backgroundColor: '#f5f5f5'
+                    boxSizing: 'border-box'
                 }}
                 onClick={handleInputClick}
             >
                 {/* Renderizar el ícono de la izquierda */}
-                <div style={{ marginRight: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
                     {LeftIcon && LeftIcon(20)}
                 </div>
 
@@ -54,12 +58,13 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                         flex: 1,
                         border: 'none',
                         outline: 'none',
-                        backgroundColor: 'transparent'
+                        backgroundColor: 'transparent',
+                        textAlign: 'left'
                     }}
                 />
 
                 {/* Renderizar el ícono de la derecha */}
-                <div style={{ marginLeft: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
                     {RightIcon && RightIcon(20)}
                 </div>
             </div>

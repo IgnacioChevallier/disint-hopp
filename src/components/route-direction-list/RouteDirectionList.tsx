@@ -1,4 +1,4 @@
-import React, {FC, HTMLAttributes, ReactNode} from "react";
+import React, { HTMLAttributes } from "react";
 import {RouteDirection, RouteDirectionProps} from "../route-direction/RouteDirection";
 
 export interface RouteDirectionListProps extends HTMLAttributes<HTMLDivElement> {

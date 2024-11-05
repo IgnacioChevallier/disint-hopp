@@ -11,7 +11,7 @@ const Notifications = () => {
         <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
             <header style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
                 <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
-                    {BackIcon && BackIcon(24)} {/* Renderiza el icono si existe */}
+                    {BackIcon && BackIcon(24, "black")} {/* Renderiza el icono si existe */}
                 </button>
                 <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
             </header>

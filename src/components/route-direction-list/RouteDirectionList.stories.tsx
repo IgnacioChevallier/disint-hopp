@@ -17,15 +17,15 @@ export const Default: Story = {
     args: {
         routeDirections: [
             {
-                iconName: "alt routes",
+                icon: "alt routes",
                 label: "Route Direction 1"
             },
             {
-                iconName: "alt routes",
+                icon: "alt routes",
                 label: "Route Direction 2"
             },
             {
-                iconName: "alt routes",
+                icon: "alt routes",
                 label: "Route Direction 3"
             }
         ]

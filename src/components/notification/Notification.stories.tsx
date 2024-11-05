@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import {Notification, NotificationProps} from "./Notification";
+import { Notification } from "./Notification";
+import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Notification> = {
     title: 'Components/Notification',
@@ -12,8 +13,12 @@ const meta: Meta<typeof Notification> = {
         type: {
             control: {
                 type: 'select',
-                options: ['default', 'notification'],
+                options: ['default', 'detailed'],
             },
+        },
+        iconName: {
+            control: "select",
+            options: Array.from(iconMap.keys())
         },
     },
 }
@@ -26,7 +31,7 @@ export const Default: Story = {
         type: 'default',
         title: 'Hopp',
         subtitle: 'Kilometers',
-        icon: <a/>,
+        iconName: 'placeholder',
     },
 };
 
@@ -35,6 +40,6 @@ export const Detailed: Story = {
         type: 'detailed',
         title: 'Hopp',
         description: 'Description of the notification will be written here.',
-        icon: <a/>,
+        iconName: 'placeholder',
     },
 };

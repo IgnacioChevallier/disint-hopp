@@ -1,13 +1,15 @@
 import './App.css';
-import {Button} from "./components/button/Button";
-import {ListItem} from "./components/list-item/ListItem";
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Notifications from "./screens/Notifications";
 
 function App() {
     return (
-        <div className="App">
-            <Button text={"Click me"}/>
-            <ListItem text={"Boca"}/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Navigate to="/notifications" replace />} />
+                <Route path="/notifications" element={<Notifications />} />
+            </Routes>
+        </Router>
     );
 }
 

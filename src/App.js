@@ -4,10 +4,10 @@ import {ListItem} from "./components/list-item/ListItem";
 
 function App() {
     return (
-        <>
+        <div className="App">
             <Button text={"Click me"}/>
             <ListItem text={"Boca"}/>
-        </>
+        </div>
     );
 }
 

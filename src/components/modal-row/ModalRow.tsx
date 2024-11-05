@@ -13,13 +13,13 @@ export interface ModalRowProps extends HTMLAttributes<HTMLDivElement> {
 export const ModalRow = ({left, label, right, ...props}: ModalRowProps) => {
     return (
         <div className={modalVariant} {...props}>
-            <div className="flex justify-center items-center w-12 h-12 min-w-12 min-h-12">
+            <div className="flex justify-center items-center w-10 h-10 min-w-10 min-h-10">
                 {left}
             </div>
             <span className="text-p-regular flex-grow overflow-hidden line-clamp-3">
                 {label}
             </span>
-            <div className="flex justify-center items-center w-12 h-12 min-w-12 min-h-12">
+            <div className="flex justify-center items-center w-10 h-10 min-w-10 min-h-10">
                 {right}
             </div>
         </div>

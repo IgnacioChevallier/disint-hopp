@@ -17,7 +17,7 @@ export const Default: Story = {
     args: {
         placeholder: 'Search...',
         left_icon: 'bus alert',
-        right_icon: 'account circle',
+        right_icon: 'search',
         options: [
             'Chicago University of Chicago',
             'Chicago Lincoln Park Zoo',
@@ -30,7 +30,8 @@ export const Default: Story = {
 export const WithDifferentIcon: Story = {
     args: {
         placeholder: 'Search...',
-        left_icon: 'account circle',
+        left_icon: 'add stop',
+        right_icon: 'search',
         options: [
             'New York Times Square',
             'New York Central Park',
@@ -43,7 +44,8 @@ export const WithDifferentIcon: Story = {
 export const WithManyOptions: Story = {
     args: {
         placeholder: 'Search...',
-        left_icon: 'add stop',
+        left_icon: 'account circle',
+        right_icon: 'search',
         options: [
             'Option 1',
             'Option 2',

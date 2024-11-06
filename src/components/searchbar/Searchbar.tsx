@@ -44,9 +44,8 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                 }}
                 onClick={handleInputClick}
             >
-                {/* Renderizar el ícono de la izquierda */}
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {LeftIcon && LeftIcon(20)}
+                    {LeftIcon && LeftIcon(20, 'black')}
                 </div>
 
                 {/* Campo de texto de búsqueda */}
@@ -64,9 +63,8 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                     }}
                 />
 
-                {/* Renderizar el ícono de la derecha */}
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {RightIcon && RightIcon(20)}
+                    {RightIcon && RightIcon(20, 'black')}
                 </div>
             </div>
 

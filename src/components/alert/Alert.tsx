@@ -21,8 +21,8 @@ export interface AlertProps {
 
 export const Alert = ({ active, link, href, text, time, icon }:AlertProps) => {
     return (
-        <div className={alertVariant({active})} style={{width: 370, height:99}}>
-            <div className={"flex flex-row gap-3"} style={{width: 259}}>
+        <div className={alertVariant({active})} style={{height:99}}>
+            <div className={"flex flex-row justify-between"}>
                 <div className={"flex items-center"}>
                     <Icon name={icon} size={"medium"} />
                 </div>

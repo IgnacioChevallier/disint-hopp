@@ -25,14 +25,14 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', position: 'relative' }}>
             <div
                 style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '48px',
-                    width: '346px',
+                    width: '100%',
                     padding: '0px 16px',
                     border: '1px solid #000',
                     borderRadius: '24px',
@@ -71,8 +71,8 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
             {isDropdownOpen && (
                 <div
                     style={{
-                        marginTop: '24px',
-                        width: '346px',
+                        marginTop: '-24px',
+                        width: '100%', // Ajusta el ancho para que sea igual al contenedor padre
                         padding: '8px 16px',
                         border: '1px solid #000',
                         borderBottomLeftRadius: '24px',
@@ -81,9 +81,10 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                         boxSizing: 'border-box',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
                         zIndex: 100,
-                        maxHeight: '150px',
+                        maxHeight: '250px',
                         overflowY: 'auto',
                         position: 'absolute',
+                        top: '100%',
                         paddingTop: '24px',
                         scrollbarWidth: 'none',
                         msOverflowStyle: 'none'

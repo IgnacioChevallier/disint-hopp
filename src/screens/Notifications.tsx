@@ -1,11 +1,20 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Button } from "../components/button/Button";
-import { iconMap } from "../components/icon/IconMap"; // Importa iconMap
+import Searchbar from '../components/searchbar/Searchbar';
+import { iconMap } from "../components/icon/IconMap";
 
 const Notifications = () => {
     // Obtener el icono de flecha hacia atrás
     const BackIcon = iconMap.get('arrow back');
+
+    // Opciones de búsqueda para la Searchbar
+    const alerts = [
+        "Lines 123, 434, 843, 947 currently affected by service issues.",
+        "High passenger volume on Line 843 due to local events.",
+        "Line 123 will be temporarily unavailable from 10 pm to 5 am.",
+        "Unexpected incident on Line 123. Delays expected."
+    ];
 
     return (
         <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
@@ -16,22 +25,14 @@ const Notifications = () => {
                 <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
             </header>
 
-            {/* Search bar hardcoded */}
-            <div style={{ display: 'flex', alignItems: 'center', marginTop: '8px', marginBottom: '16px' }}>
-                <input
-                    type="text"
+            {/* Searchbar */}
+            <div style={{ marginBottom: '16px', width: '100%' }}>
+                <Searchbar
                     placeholder="Search..."
-                    style={{
-                        flex: 1,
-                        padding: '8px',
-                        borderRadius: '16px',
-                        border: '1px solid #ccc',
-                        outline: 'none',
-                        backgroundColor: '#f5f5f5' // color de fondo para el input
-                    }}
-                    disabled
+                    left_icon=""
+                    right_icon="search"
+                    options={alerts} // Lista de alertas como opciones del dropdown
                 />
-                <button style={{ marginLeft: '8px', background: 'none', border: 'none', cursor: 'default' }}>🔍</button>
             </div>
 
             {/* Button dropdown */}
@@ -40,7 +41,7 @@ const Notifications = () => {
             </div>
 
             {/* List of Alerts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '-webkit-fill-available' }}>
                 <Alert
                     active={true}
                     link={false}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { iconMap } from '../icon/IconMap';
 
 interface SearchbarProps {
@@ -11,6 +11,7 @@ interface SearchbarProps {
 export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_icon, options }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
+    const searchbarRef = useRef<HTMLDivElement>(null);
 
     const LeftIcon = iconMap.get(left_icon);
     const RightIcon = iconMap.get(right_icon);
@@ -24,8 +25,21 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
         setDropdownOpen(false);
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (searchbarRef.current && !searchbarRef.current.contains(event.target as Node)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', position: 'relative' }}>
+        <div ref={searchbarRef} style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', position: 'relative' }}>
             <div
                 style={{
                     display: 'flex',

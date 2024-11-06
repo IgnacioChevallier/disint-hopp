@@ -8,20 +8,24 @@ export interface DropdownProps {
     buttonProps?: ButtonProps;
     overlayProps: OverlayProps;
     overlayAlignment?: "left" | "right";
+    openIcon?: string;
+    closeIcon?: string;
 }
 
 export const Dropdown = ({
                              buttonProps,
                              overlayProps,
-                             overlayAlignment = "left"
+                             overlayAlignment = "left",
+                             openIcon = "arrow down",
+                             closeIcon = "arrow up",
                          }: DropdownProps) => {
-    const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const overlayRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (overlayRef.current && !overlayRef.current.contains(event.target as Node)) {
-                setOpen(false);
+                setIsOpen(false);
             }
         }
 
@@ -32,13 +36,20 @@ export const Dropdown = ({
         };
     }, []);
 
+    const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+        setIsOpen(!isOpen);
+        buttonProps?.onClick && buttonProps.onClick(e);
+    }
+
     return (
         <div className="relative" ref={overlayRef}>
-            <Button {...buttonProps} onClick={(e) => {
-                setOpen(!open);
-                buttonProps?.onClick && buttonProps.onClick(e)
-            }} />
-            {open &&
+            <Button
+                {...buttonProps}
+                onClick={handleToggle}
+                trailingIcon={isOpen ? closeIcon : openIcon}
+                trailingIconColor={"blue"} //FIXME: COMO LE PASO EL COLOR PRIMARY DE TAILWIND???
+            />
+            {isOpen &&
                 <div className={`p-1 absolute ${overlayAlignment === "right" ? "right-0" : "left-0"}`}>
                     <Overlay {...overlayProps} />
                 </div>

@@ -157,4 +157,16 @@ export const iconMap = new Map<string, (size: number, color: string) => JSX.Elem
             </g>
         </svg>
     ],
+    [ 'arrow up', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_672_4282" maskUnits="userSpaceOnUse" x="0" y="0" width={size}
+                  height={size}>
+                <rect width={size} height={size} fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_672_4282)">
+                <path d="M12 10.8L7.4 15.4L6 14L12 8L18 14L16.6 15.4L12 10.8Z" fill={color}/>
+            </g>
+        </svg>
+
+    ]
 ]);

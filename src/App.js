@@ -5,17 +5,17 @@ import {ListItem} from "./components/list-item/ListItem";
 
 function App() {
     return (
-        // <Router>
-        //     <Routes>
-        //         <Route path="/" element={<Navigate to="/notifications" replace/>}/>
-        //         <Route path="/notifications" element={<Notifications/>}/>
-        //     </Routes>
-        // </Router>
-        <div className="flex justify-center items-center flex-col w-1/5 gap-1">
-            <ListItem text={"Boca"} controlType={"radio"}/>
-            <ListItem text={"Juniors"} controlType={"toggle"}/>
-            <ListItem text={"Juega"} controlType={"checkbox"}/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Navigate to="/notifications" replace/>}/>
+                <Route path="/notifications" element={<Notifications/>}/>
+            </Routes>
+        </Router>
+        // <div className="flex justify-center items-center flex-col w-1/5 gap-1">
+        //     <ListItem text={"Boca"} controlType={"radio"}/>
+        //     <ListItem text={"Juniors"} controlType={"toggle"}/>
+        //     <ListItem text={"Juega"} controlType={"checkbox"}/>
+        // </div>
     );
 }
 

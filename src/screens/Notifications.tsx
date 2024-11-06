@@ -1,46 +1,45 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Button } from "../components/button/Button";
-import { iconMap } from "../components/icon/IconMap"; // Importa iconMap
+import { Searchbar } from '../components/searchbar/Searchbar';
+import { iconMap } from "../components/icon/IconMap";
 
 const Notifications = () => {
-    // Obtener el icono de flecha hacia atrás
     const BackIcon = iconMap.get('arrow back');
 
+    const alerts = [
+        "Lines 123, 434, 843, 947 currently affected by service issues.",
+        "High passenger volume on Line 843 due to local events.",
+        "Line 123 will be temporarily unavailable from 10 pm to 5 am.",
+        "Unexpected incident on Line 123. Delays expected."
+    ];
+
     return (
-        <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
-            <header style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
-                    {BackIcon && BackIcon(24)} {/* Renderiza el icono si existe */}
+        <div className="p-4 bg-background-main text-black min-h-screen">
+            <header className="flex items-center mb-4">
+                <button className="bg-none border-none cursor-pointer text-black">
+                    {BackIcon && BackIcon(24, "black")}
                 </button>
-                <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
+                <h1 className="flex-1 text-center text-h1-bold m-0">Alerts</h1>
             </header>
 
-            {/* Search bar hardcoded */}
-            <div style={{ display: 'flex', alignItems: 'center', marginTop: '8px', marginBottom: '16px' }}>
-                <input
-                    type="text"
+            {/* Searchbar */}
+            <div className="mb-4 w-full">
+                <Searchbar
                     placeholder="Search..."
-                    style={{
-                        flex: 1,
-                        padding: '8px',
-                        borderRadius: '16px',
-                        border: '1px solid #ccc',
-                        outline: 'none',
-                        backgroundColor: '#f5f5f5' // color de fondo para el input
-                    }}
-                    disabled
+                    left_icon=""
+                    right_icon="search"
+                    options={alerts}
                 />
-                <button style={{ marginLeft: '8px', background: 'none', border: 'none', cursor: 'default' }}>🔍</button>
             </div>
 
             {/* Button dropdown */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
+            <div className="flex justify-end mb-4">
                 <Button>Button</Button>
             </div>
 
             {/* List of Alerts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="flex flex-col gap-2 w-full">
                 <Alert
                     active={true}
                     link={false}

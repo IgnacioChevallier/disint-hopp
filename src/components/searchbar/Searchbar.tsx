@@ -32,7 +32,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '48px',
-                    width: '100%',
+                    width: '95%',
                     padding: '0px 16px',
                     border: '1px solid #000',
                     borderRadius: '24px',
@@ -72,7 +72,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                 <div
                     style={{
                         marginTop: '-24px',
-                        width: '100%', // Ajusta el ancho para que sea igual al contenedor padre
+                        width: '95%',
                         padding: '8px 16px',
                         border: '1px solid #000',
                         borderBottomLeftRadius: '24px',
@@ -81,7 +81,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                         boxSizing: 'border-box',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
                         zIndex: 100,
-                        maxHeight: '250px',
+                        maxHeight: '200px',
                         overflowY: 'auto',
                         position: 'absolute',
                         top: '100%',

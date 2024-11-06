@@ -5,10 +5,8 @@ import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
 
 const Notifications = () => {
-    // Obtener el icono de flecha hacia atrás
     const BackIcon = iconMap.get('arrow back');
 
-    // Opciones de búsqueda para la Searchbar
     const alerts = [
         "Lines 123, 434, 843, 947 currently affected by service issues.",
         "High passenger volume on Line 843 due to local events.",
@@ -17,31 +15,31 @@ const Notifications = () => {
     ];
 
     return (
-        <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
-            <header style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
-                    {BackIcon && BackIcon(24, "black")} {/* Renderiza el icono si existe */}
+        <div className="p-4 bg-background-main text-black min-h-screen">
+            <header className="flex items-center mb-4">
+                <button className="bg-none border-none cursor-pointer text-black">
+                    {BackIcon && BackIcon(24, "black")}
                 </button>
-                <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
+                <h1 className="flex-1 text-center text-h1-bold m-0">Alerts</h1>
             </header>
 
             {/* Searchbar */}
-            <div style={{ marginBottom: '16px', width: '100%' }}>
+            <div className="mb-4 w-full">
                 <Searchbar
                     placeholder="Search..."
                     left_icon=""
                     right_icon="search"
-                    options={alerts} // Lista de alertas como opciones del dropdown
+                    options={alerts}
                 />
             </div>
 
             {/* Button dropdown */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
+            <div className="flex justify-end mb-4">
                 <Button>Button</Button>
             </div>
 
             {/* List of Alerts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '-webkit-fill-available' }}>
+            <div className="flex flex-col gap-2 w-full">
                 <Alert
                     active={true}
                     link={false}

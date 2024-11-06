@@ -92,7 +92,6 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                 >
                     <style>
                         {`
-                            /* Ocultar scrollbar en Chrome, Safari y Edge */
                             div::-webkit-scrollbar {
                                 display: none;
                             }

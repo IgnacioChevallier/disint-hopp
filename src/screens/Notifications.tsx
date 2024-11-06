@@ -1,11 +1,9 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
-import { Button } from "../components/button/Button";
 import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
 import {Dropdown} from "../components/dropdown/Dropdown";
 import {Toggle} from "../components/toggle/Toggle";
-import Icon from "../components/icon/Icon";
 import {CheckBox} from "../components/checkbox/CheckBox";
 
 const Notifications = () => {
@@ -30,6 +28,7 @@ const Notifications = () => {
 
     return (
         <div className="p-4 bg-background-main text-black min-h-screen">
+            {/* Header */}
             <header className="flex items-center mb-4">
                 <button className="bg-none border-none cursor-pointer text-black">
                     {BackIcon && BackIcon(24, "black")}
@@ -47,7 +46,7 @@ const Notifications = () => {
                 />
             </div>
 
-            {/* Button dropdown */}
+            {/* Filter dropdown */}
             <div className='flex justify-end mb-4'>
                 <Dropdown
                     overlayProps={{
@@ -68,7 +67,11 @@ const Notifications = () => {
                     }}
                     buttonProps={{
                         text: "Filter",
-                        color: 'danger',
+                        color: "primary",
+                        variant: "outlined",
+                        trailingIcon: "arrow down",
+                        rounded: "full",
+                        size: "medium",
                     }}
                     overlayAlignment={"right"}
                 />

@@ -25,7 +25,7 @@ export const Alert = ({ active, link, href, text, time, icon }: AlertProps) => {
             <div className="flex items-center">
                 <Icon name={icon} size="medium" />
             </div>
-            <div className="flex flex-col text-ellipsis overflow-hidden w-auto">
+            <div className="flex flex-col flex-grow text-ellipsis overflow-hidden">
                 <span className={`text-p-regular text-ellipsis ${link ? "line-clamp-2" : "line-clamp-3"}`}>
                     {text}
                 </span>
@@ -38,7 +38,7 @@ export const Alert = ({ active, link, href, text, time, icon }: AlertProps) => {
                     </a>
                 )}
             </div>
-            <div className="flex min-w-[68px]">
+            <div className="flex min-w-[68px] flex-row-reverse flex-end">
                 <span className="text-p-bold">{time}</span>
             </div>
         </div>

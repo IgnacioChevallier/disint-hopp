@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Icon from "./Icon";
 import {iconMap} from "./IconMap";

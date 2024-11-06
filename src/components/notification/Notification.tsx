@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import {iconMap} from "../icon/IconMap";
 import Icon from "../icon/Icon";

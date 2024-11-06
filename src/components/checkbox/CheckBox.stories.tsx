@@ -4,6 +4,9 @@ import {CheckBox} from "./CheckBox";
 const meta: Meta<typeof CheckBox> = {
     title: 'Components/CheckBox',
     component: CheckBox,
+    parameters: {
+        layout: 'centered',
+    },
     argTypes: {
         selected: {
             control: "boolean",

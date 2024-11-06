@@ -71,7 +71,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
             {isDropdownOpen && (
                 <div
                     style={{
-                        marginTop: '4px',
+                        marginTop: '24px',
                         width: '346px',
                         padding: '8px 16px',
                         border: '1px solid #000',
@@ -84,7 +84,6 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                         maxHeight: '150px',
                         overflowY: 'auto',
                         position: 'absolute',
-                        top: '24px',
                         paddingTop: '24px',
                         scrollbarWidth: 'none',
                         msOverflowStyle: 'none'

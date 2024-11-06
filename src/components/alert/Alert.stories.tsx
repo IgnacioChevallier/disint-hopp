@@ -1,12 +1,11 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {Alert} from "./Alert";
-import Icon from "../icon/Icon";
 
 const meta: Meta<typeof Alert> = {
     title: 'Components/Alert',
     component: Alert,
     parameters: {
-        layout: 'centered'
+        layout: 'top'
     },
     argTypes: {
         active: {

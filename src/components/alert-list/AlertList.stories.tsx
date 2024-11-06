@@ -5,7 +5,7 @@ const meta: Meta<typeof AlertList> = {
     title: 'Components/AlertList',
     component: AlertList,
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
 };
 

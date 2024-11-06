@@ -1,4 +1,3 @@
-import Icon from "../icon/Icon";
 import React, {HTMLAttributes, ReactNode} from "react";
 
 const overlayVariant =

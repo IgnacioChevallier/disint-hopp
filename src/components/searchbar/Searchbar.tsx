@@ -8,7 +8,7 @@ interface SearchbarProps {
     options: string[];
 }
 
-const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_icon, options }) => {
+export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_icon, options }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
 
@@ -117,5 +117,3 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
         </div>
     );
 };
-
-export default Searchbar;

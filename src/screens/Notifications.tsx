@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Button } from "../components/button/Button";
-import Searchbar from '../components/searchbar/Searchbar';
+import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
 
 const Notifications = () => {

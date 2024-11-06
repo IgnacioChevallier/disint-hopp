@@ -47,6 +47,7 @@ export const Dropdown = ({
                 {...buttonProps}
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
+                trailingIconSize={"small"}
                 trailingIconColor={"blue"} //FIXME: COMO LE PASO EL COLOR PRIMARY DE TAILWIND???
             />
             {isOpen &&

@@ -3,6 +3,10 @@ import { Alert } from "../components/alert/Alert";
 import { Button } from "../components/button/Button";
 import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
+import {Dropdown} from "../components/dropdown/Dropdown";
+import {Toggle} from "../components/toggle/Toggle";
+import Icon from "../components/icon/Icon";
+import {CheckBox} from "../components/checkbox/CheckBox";
 
 const Notifications = () => {
     const BackIcon = iconMap.get('arrow back');
@@ -13,6 +17,16 @@ const Notifications = () => {
         "Line 123 will be temporarily unavailable from 10 pm to 5 am.",
         "Unexpected incident on Line 123. Delays expected."
     ];
+
+    const ToggleExample: React.FC = () => {
+        const [selected, setSelected] = React.useState(false);
+
+        const handleToggleClick = () => {
+            setSelected(!selected);
+        };
+
+        return <Toggle selected={selected} onClick={handleToggleClick} />;
+    };
 
     return (
         <div className="p-4 bg-background-main text-black min-h-screen">
@@ -34,9 +48,32 @@ const Notifications = () => {
             </div>
 
             {/* Button dropdown */}
-            <div className="flex justify-end mb-4">
-                <Button>Button</Button>
+            <div className='flex justify-end mb-4'>
+                <Dropdown
+                    overlayProps={{
+                    rows: [
+                        {
+                            label: "All",
+                            right: <ToggleExample /> // Toggle added here
+                        },
+                        {
+                            label: "Favorites",
+                            right: <CheckBox/>
+                        },
+                        {
+                            label: "Favorites",
+                            right: <CheckBox/>
+                        }
+                    ]
+                    }}
+                    buttonProps={{
+                        text: "Filter",
+                        color: 'danger',
+                    }}
+                    overlayAlignment={"right"}
+                />
             </div>
+
 
             {/* List of Alerts */}
             <div className="flex flex-col gap-2 w-full">

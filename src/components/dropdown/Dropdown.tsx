@@ -7,11 +7,13 @@ export interface DropdownProps {
     open?: boolean;
     buttonProps?: ButtonProps;
     overlayProps: OverlayProps;
+    overlayAlignment?: "left" | "right";
 }
 
 export const Dropdown = ({
                              buttonProps,
-                             overlayProps
+                             overlayProps,
+                             overlayAlignment = "left"
                          }: DropdownProps) => {
     const [open, setOpen] = useState(false);
     const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -37,7 +39,7 @@ export const Dropdown = ({
                 buttonProps?.onClick && buttonProps.onClick(e)
             }} />
             {open &&
-                <div className="p-1 absolute">
+                <div className={`p-1 absolute ${overlayAlignment === "right" ? "right-0" : "left-0"}`}>
                     <Overlay {...overlayProps} />
                 </div>
             }

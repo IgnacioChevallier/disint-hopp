@@ -2,9 +2,9 @@ import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
-import { Dropdown } from "../components/dropdown/Dropdown";
-import { Toggle } from "../components/toggle/Toggle";
-import { CheckBox } from "../components/checkbox/CheckBox";
+import {Dropdown} from "../components/dropdown/Dropdown";
+import {Toggle} from "../components/toggle/Toggle";
+import {CheckBox} from "../components/checkbox/CheckBox";
 
 const Notifications = () => {
     const BackIcon = iconMap.get('arrow back');
@@ -17,19 +17,21 @@ const Notifications = () => {
     ];
 
     const [isAllSelected, setIsAllSelected] = React.useState(false);
-    const [favoritesSelected, setFavoritesSelected] = React.useState([false, false]); // Array para múltiples "Favorites"
+    const [isFavoritesSelected, setIsFavoritesSelected] = React.useState(false);
+    const [isOngoingSelected, setIsOngoingSelected] = React.useState(false);
 
-    const handleToggleClick = () => {
+    const handleAllToggleClick = () =>{
         setIsAllSelected(!isAllSelected);
-    };
+    }
 
-    const handleFavoriteClick = (index: number) => {
-        setFavoritesSelected((prev) => {
-            const newSelection = [...prev];
-            newSelection[index] = !newSelection[index];
-            return newSelection;
-        });
-    };
+    const handleFavoritesToggleClick = () =>{
+        setIsFavoritesSelected(!isFavoritesSelected);
+    }
+
+    const handleOngoingToggleClick = () => {
+        setIsOngoingSelected(!isOngoingSelected);
+    }
+
 
     return (
         <div className="p-4 bg-background-main text-black min-h-screen">
@@ -58,30 +60,16 @@ const Notifications = () => {
                         rows: [
                             {
                                 label: "All",
-                                right: (
-                                    <Toggle
-                                        selected={isAllSelected}
-                                        onClick={handleToggleClick}
-                                    />
-                                )
+                                right: (<Toggle selected={isAllSelected} onClick={handleAllToggleClick}/>)
                             },
                             {
                                 label: "Favorites",
-                                right: (
-                                    <CheckBox
-                                        selected={favoritesSelected[0]}
-                                        onClick={() => handleFavoriteClick(0)}
-                                    />
-                                )
+                                right: <CheckBox selected={isFavoritesSelected}
+                                                 onClick={handleFavoritesToggleClick}/>
                             },
                             {
-                                label: "Favorites",
-                                right: (
-                                    <CheckBox
-                                        selected={favoritesSelected[1]}
-                                        onClick={() => handleFavoriteClick(1)}
-                                    />
-                                )
+                                label: "Ongoing",
+                                right: <CheckBox selected={isOngoingSelected} onClick={handleOngoingToggleClick}/>
                             }
                         ]
                     }}
@@ -96,6 +84,7 @@ const Notifications = () => {
                     overlayAlignment={"right"}
                 />
             </div>
+
 
             {/* List of Alerts */}
             <div className="flex flex-col gap-2 w-full">

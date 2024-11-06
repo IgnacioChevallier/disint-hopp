@@ -150,14 +150,18 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">, Omit<VariantProps<typeof buttonVariant>, "disabled"> {
     leadingIcon?: IconProps["name"];
+    leadingIconColor?: IconProps["color"];
     trailingIcon?: IconProps["name"];
+    trailingIconColor?: IconProps["color"];
     text?: string;
     disableHover?: boolean;
 }
 
 export const Button = ({
                            leadingIcon,
+                           leadingIconColor,
                            trailingIcon,
+                           trailingIconColor,
                            text,
                            size,
                            rounded,
@@ -168,9 +172,9 @@ export const Button = ({
                        }: ButtonProps) => {
     return (
         <button className={buttonVariant({ size, rounded, variant, color, disabled: props.disabled, disableHover })} {...props}>
-            {leadingIcon && <Icon name={leadingIcon} size={"medium"} />}
+            {leadingIcon && <Icon name={leadingIcon} size={"medium"} color={leadingIconColor} />}
             {text}
-            {trailingIcon && <Icon name={trailingIcon} size={"medium"} />}
+            {trailingIcon && <Icon name={trailingIcon} size={"medium"} color={trailingIconColor}/>}
         </button>
     );
 };

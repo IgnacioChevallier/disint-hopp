@@ -3,16 +3,15 @@ import { iconMap } from '../icon/IconMap';
 
 interface SearchbarProps {
     placeholder: string;
-    left_icon: string; // Nombre del ícono en IconMap para el lado izquierdo
-    right_icon: string; // Nombre del ícono en IconMap para el lado derecho
-    options: string[]; // Opciones para mostrar en el dropdown
+    left_icon: string;
+    right_icon: string;
+    options: string[];
 }
 
 const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_icon, options }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
 
-    // Obtener los íconos desde iconMap usando los nombres pasados como props
     const LeftIcon = iconMap.get(left_icon);
     const RightIcon = iconMap.get(right_icon);
 
@@ -87,9 +86,21 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                         maxHeight: '150px',
                         overflowY: 'auto',
                         position: 'absolute',
-                        top:'24px'
+                        top: '24px',
+                        paddingTop: '24px',
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none'
                     }}
                 >
+                    <style>
+                        {`
+                            /* Ocultar scrollbar en Chrome, Safari y Edge */
+                            div::-webkit-scrollbar {
+                                display: none;
+                            }
+                        `}
+                    </style>
+
                     {options.map((option, index) => (
                         <div
                             key={index}

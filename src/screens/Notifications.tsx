@@ -2,9 +2,9 @@ import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Searchbar } from '../components/searchbar/Searchbar';
 import { iconMap } from "../components/icon/IconMap";
-import {Dropdown} from "../components/dropdown/Dropdown";
-import {Toggle} from "../components/toggle/Toggle";
-import {CheckBox} from "../components/checkbox/CheckBox";
+import { Dropdown } from "../components/dropdown/Dropdown";
+import { Toggle } from "../components/toggle/Toggle";
+import { CheckBox } from "../components/checkbox/CheckBox";
 
 const Notifications = () => {
     const BackIcon = iconMap.get('arrow back');
@@ -16,14 +16,19 @@ const Notifications = () => {
         "Unexpected incident on Line 123. Delays expected."
     ];
 
-    const ToggleExample: React.FC = () => {
-        const [selected, setSelected] = React.useState(false);
+    const [isAllSelected, setIsAllSelected] = React.useState(false);
+    const [favoritesSelected, setFavoritesSelected] = React.useState([false, false]); // Array para múltiples "Favorites"
 
-        const handleToggleClick = () => {
-            setSelected(!selected);
-        };
+    const handleToggleClick = () => {
+        setIsAllSelected(!isAllSelected);
+    };
 
-        return <Toggle selected={selected} onClick={handleToggleClick} />;
+    const handleFavoriteClick = (index: number) => {
+        setFavoritesSelected((prev) => {
+            const newSelection = [...prev];
+            newSelection[index] = !newSelection[index];
+            return newSelection;
+        });
     };
 
     return (
@@ -50,20 +55,35 @@ const Notifications = () => {
             <div className='flex justify-end mb-4'>
                 <Dropdown
                     overlayProps={{
-                    rows: [
-                        {
-                            label: "All",
-                            right: <ToggleExample /> // Toggle added here
-                        },
-                        {
-                            label: "Favorites",
-                            right: <CheckBox/>
-                        },
-                        {
-                            label: "Favorites",
-                            right: <CheckBox/>
-                        }
-                    ]
+                        rows: [
+                            {
+                                label: "All",
+                                right: (
+                                    <Toggle
+                                        selected={isAllSelected}
+                                        onClick={handleToggleClick}
+                                    />
+                                )
+                            },
+                            {
+                                label: "Favorites",
+                                right: (
+                                    <CheckBox
+                                        selected={favoritesSelected[0]}
+                                        onClick={() => handleFavoriteClick(0)}
+                                    />
+                                )
+                            },
+                            {
+                                label: "Favorites",
+                                right: (
+                                    <CheckBox
+                                        selected={favoritesSelected[1]}
+                                        onClick={() => handleFavoriteClick(1)}
+                                    />
+                                )
+                            }
+                        ]
                     }}
                     buttonProps={{
                         text: "Filter",
@@ -76,7 +96,6 @@ const Notifications = () => {
                     overlayAlignment={"right"}
                 />
             </div>
-
 
             {/* List of Alerts */}
             <div className="flex flex-col gap-2 w-full">

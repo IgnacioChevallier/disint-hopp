@@ -26,20 +26,22 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center' }}>
             <div
                 style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '48px',
+                    width: '346px',
                     padding: '0px 16px',
                     border: '1px solid #000',
                     borderRadius: '24px',
                     backgroundColor: '#FFF',
                     gap: '8px',
                     cursor: 'pointer',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    zIndex: '150'
                 }}
                 onClick={handleInputClick}
             >
@@ -73,14 +75,19 @@ const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_ico
                 <div
                     style={{
                         marginTop: '4px',
-                        padding: '8px',
-                        border: '1px solid #ccc',
-                        borderRadius: '8px',
-                        backgroundColor: '#ffffff',
+                        width: '346px',
+                        padding: '8px 16px',
+                        border: '1px solid #000',
+                        borderBottomLeftRadius: '24px',
+                        borderBottomRightRadius: '24px',
+                        backgroundColor: '#f5f5f5',
+                        boxSizing: 'border-box',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
                         zIndex: 100,
                         maxHeight: '150px',
-                        overflowY: 'auto'
+                        overflowY: 'auto',
+                        position: 'absolute',
+                        top:'24px'
                     }}
                 >
                     {options.map((option, index) => (

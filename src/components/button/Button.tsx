@@ -1,6 +1,6 @@
-import {ButtonHTMLAttributes} from "react";
-import {cva, VariantProps} from "class-variance-authority";
-import Icon, {IconProps} from "../icon/Icon";
+import { ButtonHTMLAttributes } from "react";
+import { cva, VariantProps } from "class-variance-authority";
+import Icon, { IconProps } from "../icon/Icon";
 
 const buttonVariant = cva("flex flex-row gap-2 outline-none", {
     variants: {
@@ -44,6 +44,10 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
             false: "rounded-false",
             full: "rounded-full"
         },
+        disableHover: {
+            true: "",
+            false: ""
+        },
     },
     compoundVariants: [
         {
@@ -54,12 +58,26 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
         {
             variant: "outlined",
             color: "primary",
+            disableHover: false,
             className: "border-primary text-primary hover:bg-primary-light",
+        },
+        {
+            variant: "outlined",
+            color: "primary",
+            disableHover: true,
+            className: "border-primary text-primary",
         },
         {
             variant: "text",
             color: "primary",
+            disableHover: false,
             className: "text-primary hover:bg-primary-light",
+        },
+        {
+            variant: "text",
+            color: "primary",
+            disableHover: true,
+            className: "text-primary",
         },
         {
             variant: "contained",
@@ -69,12 +87,26 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
         {
             variant: "outlined",
             color: "danger",
+            disableHover: false,
             className: "border-danger text-danger hover:bg-danger-light",
+        },
+        {
+            variant: "outlined",
+            color: "danger",
+            disableHover: true,
+            className: "border-danger text-danger",
         },
         {
             variant: "text",
             color: "danger",
+            disableHover: false,
             className: "text-danger hover:bg-danger-light",
+        },
+        {
+            variant: "text",
+            color: "danger",
+            disableHover: true,
+            className: "text-danger",
         },
         {
             variant: "contained",
@@ -84,12 +116,26 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
         {
             variant: "outlined",
             color: "gray",
+            disableHover: false,
             className: "border-gray-500 text-gray-500 hover:bg-gray-400",
+        },
+        {
+            variant: "outlined",
+            color: "gray",
+            disableHover: true,
+            className: "border-gray-500 text-gray-500",
         },
         {
             variant: "text",
             color: "gray",
+            disableHover: false,
             className: "text-gray-500 hover:bg-gray-400",
+        },
+        {
+            variant: "text",
+            color: "gray",
+            disableHover: true,
+            className: "text-gray-500",
         },
     ],
     defaultVariants: {
@@ -98,14 +144,15 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
         size: "medium",
         variant: "contained",
         rounded: true,
+        disableHover: false,
     },
 });
-
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">, Omit<VariantProps<typeof buttonVariant>, "disabled"> {
     leadingIcon?: IconProps["name"];
     trailingIcon?: IconProps["name"];
-    text?: string
+    text?: string;
+    disableHover?: boolean;
 }
 
 export const Button = ({
@@ -116,13 +163,14 @@ export const Button = ({
                            rounded,
                            variant,
                            color,
+                           disableHover = false,
                            ...props
                        }: ButtonProps) => {
     return (
-        <button className={buttonVariant({size, rounded, variant, color, disabled: props.disabled})} {...props}>
+        <button className={buttonVariant({ size, rounded, variant, color, disabled: props.disabled, disableHover })} {...props}>
             {leadingIcon && <Icon name={leadingIcon} size={"medium"} />}
             {text}
             {trailingIcon && <Icon name={trailingIcon} size={"medium"} />}
         </button>
     );
-}
+};

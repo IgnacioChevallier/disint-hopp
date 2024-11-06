@@ -32,7 +32,6 @@ const Notifications = () => {
         setIsOngoingSelected(!isOngoingSelected);
     }
 
-
     return (
         <div className="p-4 bg-background-main text-black min-h-screen">
             {/* Header */}
@@ -80,6 +79,7 @@ const Notifications = () => {
                         trailingIcon: "arrow down",
                         rounded: "full",
                         size: "medium",
+                        disableHover: true,
                     }}
                     overlayAlignment={"right"}
                 />

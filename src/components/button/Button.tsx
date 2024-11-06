@@ -41,7 +41,8 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
         },
         rounded: {
             true: "rounded",
-            false: "rounded-false"
+            false: "rounded-false",
+            full: "rounded-full"
         },
     },
     compoundVariants: [
@@ -89,7 +90,7 @@ const buttonVariant = cva("flex flex-row gap-2 outline-none", {
             variant: "text",
             color: "gray",
             className: "text-gray-500 hover:bg-gray-400",
-        }
+        },
     ],
     defaultVariants: {
         disabled: false,

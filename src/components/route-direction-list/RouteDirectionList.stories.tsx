@@ -5,7 +5,7 @@ const meta: Meta<typeof RouteDirectionList> = {
     title: 'Components/RouteDirectionList',
     component: RouteDirectionList,
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
 };
 

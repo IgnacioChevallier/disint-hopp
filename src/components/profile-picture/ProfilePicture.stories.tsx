@@ -13,7 +13,7 @@ const meta: Meta<typeof ProfilePicture> = {
         size: {
             control: {
                 type: 'select',
-                options: ['large', 'medium', 'small', 'extra-small', 'extra-large'],
+                options: ['large', 'medium', 'small'],
             },
         },
         iconName: {

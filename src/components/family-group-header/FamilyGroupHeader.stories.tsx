@@ -17,6 +17,10 @@ const metaFamilyGroupHeader: Meta<typeof FamilyGroupHeader> = {
         title: {
             control: 'text',
         },
+        iconName2: {
+            control: 'select',
+            options: Array.from(iconMap.keys()),
+        },
     },
 };
 

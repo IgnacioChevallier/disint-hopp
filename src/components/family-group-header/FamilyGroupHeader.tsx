@@ -4,7 +4,7 @@ import ProfilePicture from '../profile-picture/ProfilePicture';
 import Icon from '../icon/Icon';
 import {iconMap} from "../icon/IconMap";
 
-const familyGroupHeaderStyles = cva('flex items-center gap-2 text-black', {
+const familyGroupHeaderStyles = cva('flex items-center text-black justify-between p-2 w-full', {
     variants: {
         type: {},
     },

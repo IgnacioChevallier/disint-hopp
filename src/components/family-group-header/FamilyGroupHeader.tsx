@@ -3,6 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 import Icon from '../icon/Icon';
 import {iconMap} from "../icon/IconMap";
+import {IconButton} from "../icon-button/IconButton";
 
 const familyGroupHeaderStyles = cva('flex items-center text-black justify-between p-2 w-full', {
     variants: {
@@ -20,7 +21,7 @@ const FamilyGroupHeader = ({ type, title, iconName, iconName2 }: FamilyGroupHead
         <div className={familyGroupHeaderStyles({ type })}>
             <ProfilePicture iconName={iconName} size="medium" />
             <h2 className="text-h2-bold">{title}</h2>
-            <Icon name={iconName2} size="medium"/>
+            <IconButton iconName={iconName2} color='primary' size='medium' />
         </div>
     );
 };

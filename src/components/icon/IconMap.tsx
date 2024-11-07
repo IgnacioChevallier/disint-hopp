@@ -182,6 +182,13 @@ export const iconMap = new Map<string, (size: number, color: string) => JSX.Elem
                 fill={color}/>
         </svg>
     ],
+    ['favourite filled', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 15.27L3.82 19L5.45 11.97L0 7.24L7.19 6.63L10 0L12.81 6.63L20 7.24L14.55 11.97L16.18 19L10 15.27Z"
+                fill={color}/>
+        </svg>
+    ],
     ['directions bus', (size: number, color: string) =>
         <svg width={size} height={size} viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

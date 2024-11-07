@@ -1,7 +1,8 @@
 import {TransportationMethodComponent} from "../transportation-method/TransportationMethod";
-import React from "react";
+import React, {useState} from "react";
 import Icon from "../icon/Icon";
-import "../../styles/customScrollbar.css"; // Import the custom scrollbar styles
+import "../../styles/customScrollbar.css";
+import {IconButton} from "../icon-button/IconButton"; // Import the custom scrollbar styles
 
 export interface TripSummaryProps {
     children: TransportationMethodComponent | TransportationMethodComponent[]
@@ -9,6 +10,7 @@ export interface TripSummaryProps {
 }
 
 export const TripSummary = ({children, time}: TripSummaryProps) => {
+    const [isFavourite, setIsFavourite] = useState<boolean>(false);
     const childrenArray = React.Children.toArray(children);
 
     return(
@@ -29,9 +31,7 @@ export const TripSummary = ({children, time}: TripSummaryProps) => {
                         </React.Fragment>
                     ))}
                 </div>
-                <div className={""}>
-                    <Icon name={"favourite"} size={"small"}/>
-                </div>
+                <IconButton iconName={isFavourite ? "favourite" : "favourite filled"} size={"small"} onClick={() => setIsFavourite(!isFavourite)}/>
             </div>
         </div>
     )

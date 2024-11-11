@@ -1,5 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {CheckBox} from "./CheckBox";
+import {useState} from "react";
 
 const meta: Meta<typeof CheckBox> = {
     title: 'Components/CheckBox',
@@ -17,13 +18,15 @@ export default meta;
 
 type Story = StoryObj<typeof CheckBox>;
 export const Default: Story = {
-    args: {
-        selected: false,
-    }
+    render: () => {
+        const [clicked, setClicked] = useState(false);
+        return (<CheckBox onClick={() => setClicked(!clicked)} selected={clicked} />)
+    },
 };
 
 export const Selected: Story = {
-    args: {
-        selected: true,
-    }
+    render: () => {
+        const [clicked, setClicked] = useState(true);
+        return (<CheckBox onClick={() => setClicked(!clicked)} selected={clicked} />)
+    },
 };

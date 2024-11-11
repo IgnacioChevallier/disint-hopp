@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
+import {ButtonHTMLAttributes, forwardRef} from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import Icon, { IconProps } from "../icon/Icon";
 
@@ -159,7 +159,7 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
     disableHover?: boolean;
 }
 
-export const Button = ({
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
                            leadingIcon,
                            leadingIconColor,
                            leadingIconSize = "medium",
@@ -173,12 +173,12 @@ export const Button = ({
                            color,
                            disableHover = false,
                            ...props
-                       }: ButtonProps) => {
+                       }: ButtonProps, ref) => {
     return (
-        <button className={buttonVariant({ size, rounded, variant, color, disabled: props.disabled, disableHover })} {...props}>
+        <button className={buttonVariant({ size, rounded, variant, color, disabled: props.disabled, disableHover })} ref={ref} {...props}>
             {leadingIcon && <Icon name={leadingIcon} size={leadingIconSize} color={leadingIconColor} />}
             {text}
             {trailingIcon && <Icon name={trailingIcon} size={trailingIconSize} color={trailingIconColor}/>}
         </button>
     );
-};
+});

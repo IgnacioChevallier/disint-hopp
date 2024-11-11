@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
-import {Button, ButtonProps} from "../button/Button";
-import {Overlay, OverlayProps} from "../overlay/Overlay";
-
+import React, { useEffect, useRef, useState } from "react";
+import { Button, ButtonProps } from "../button/Button";
+import { Overlay, OverlayProps } from "../overlay/Overlay";
 
 export interface DropdownProps {
     open?: boolean;
@@ -20,14 +19,18 @@ export const Dropdown = ({
                              closeIcon = "arrow up",
                          }: DropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const overlayRef = useRef<HTMLDivElement | null>(null);
+    const [overlayPosition, setOverlayPosition] = useState<{top: number, left?: number, right?: number}>({ top: 0, left: 0 });
+    const buttonRef = useRef<HTMLButtonElement | null>(null);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (overlayRef.current && !overlayRef.current.contains(event.target as Node)) {
+            if (
+                buttonRef.current &&
+                !buttonRef.current.contains(event.target as Node)
+            ) {
                 setIsOpen(false);
             }
-        }
+        };
 
         document.addEventListener("mousedown", handleClickOutside);
 
@@ -37,24 +40,43 @@ export const Dropdown = ({
     }, []);
 
     const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-        setIsOpen(!isOpen);
+        setIsOpen((prev) => !prev);
+
+        if (buttonRef.current) {
+            const rect = buttonRef.current.getBoundingClientRect();
+            const calculatedPosition = {
+                top: rect.bottom + window.scrollY,
+            };
+            const alignment = overlayAlignment === "right" ? {
+                right: rect.left - window.scrollX,
+                }: {
+                left: rect.left + window.scrollX,
+            }
+            setOverlayPosition({...calculatedPosition, ...alignment});
+        }
+
         buttonProps?.onClick && buttonProps.onClick(e);
-    }
+    };
 
     return (
-        <div className="relative" ref={overlayRef}>
+        <>
             <Button
+                ref={buttonRef}
                 {...buttonProps}
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
-                trailingIconSize={"small"}
-                trailingIconColor={"blue"} //FIXME: COMO LE PASO EL COLOR PRIMARY DE TAILWIND???
+                trailingIconSize="small"
+                trailingIconColor="blue" // FIXME: COMO LE PASO EL COLOR PRIMARY DE TAILWIND???
             />
-            {isOpen &&
-                <div className={`p-1 absolute ${overlayAlignment === "right" ? "right-0" : "left-0"}`}>
-                    <Overlay {...overlayProps} />
-                </div>
-            }
-        </div>
+            {isOpen && (
+                <Overlay
+                    {...overlayProps}
+                    style={{
+                        position: "absolute",
+                        ...overlayPosition
+                    }}
+                />
+            )}
+        </>
     );
-}
+};

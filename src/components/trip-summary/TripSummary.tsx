@@ -21,7 +21,15 @@ export const TripSummary = ({children, time, onClick, ...props}: TripSummaryProp
                 <p className={"text-p-bold"}>{time}</p>
             </div>
             <div className={"flex flex-row items-center justify-between gap-2"}>
-                <div className={"flex flex-row items-center gap-4 overflow-x-auto custom-scrollbar"} onClick={onClick}>
+                <div className={"flex flex-row items-center gap-4 overflow-x-auto custom-scrollbar"} onClick={onClick}
+                     style={{scrollbarWidth: 'none'}}>
+                    <style>
+                        {`
+                            div::-webkit-scrollbar {
+                                display: none;
+                            }
+                        `}
+                    </style>
                     {childrenArray.map((child, index) => (
                         <React.Fragment key={index}>
                             <div className={"flex-shrink-0"}>
@@ -33,7 +41,8 @@ export const TripSummary = ({children, time, onClick, ...props}: TripSummaryProp
                         </React.Fragment>
                     ))}
                 </div>
-                <IconButton iconName={isFavourite ? "favourite filled" : "favourite"} size={"small"} iconColor={isFavourite ? "#ffb800" : "#000"} onClick={() => setIsFavourite(!isFavourite)}/>
+                <IconButton iconName={isFavourite ? "favourite filled" : "favourite"} size={"small"}
+                            iconColor={isFavourite ? "#ffb800" : "#000"} onClick={() => setIsFavourite(!isFavourite)}/>
             </div>
         </div>
     )

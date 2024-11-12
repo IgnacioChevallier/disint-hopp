@@ -1,8 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { SlideModalBox } from "./SlideModalBox";
-import {TripSummary} from "../trip-summary/TripSummary";
-import {TransportationMethod} from "../transportation-method/TransportationMethod";
-import Icon from "../icon/Icon";
 
 const meta: Meta<typeof SlideModalBox> = {
     title: "Components/SlideModalBox",

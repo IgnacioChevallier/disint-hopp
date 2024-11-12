@@ -2,7 +2,7 @@ import {ButtonHTMLAttributes, forwardRef} from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import Icon, { IconProps } from "../icon/Icon";
 
-const buttonVariant = cva("flex flex-row gap-2 outline-none", {
+const buttonVariant = cva("flex flex-row gap-2 outline-none justify-center", {
     variants: {
         color: {
             primary: "",

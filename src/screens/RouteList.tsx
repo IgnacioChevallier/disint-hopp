@@ -90,19 +90,19 @@ const RouteList = () => {
                     overlayProps={{
                         rows: [
                             {
-                                left: <Icon name={"subway"} size={"small"} />,
+                                    left: <Icon name={"subway"} size={"small"} />,
                                 label: "Subway",
-                                right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick}/>
+                                right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick} size={"md"}/>
                             },
                             {
                                 left: <Icon name={"bus"} size={"small"} />,
                                 label: "Bus",
-                                right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick}/>
+                                right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick} size={"md"}/>
                             },
                             {
                                 left: <Icon name={"train"} size={"small"} />,
                                 label: "Train",
-                                right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick}/>
+                                right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick} size={"md"}/>
                             }
                         ]
                     }}

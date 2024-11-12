@@ -41,3 +41,25 @@ export const Default: Story = {
         additionalText: 'Additional Text'
     },
 };
+
+export const WithLeadingIcon: Story = {
+    args: {
+        text: 'Share routes',
+        leadingIcon: 'share',
+        trailingIcon: 'undefined',
+    },
+}
+
+export const WithTrailingIcon: Story = {
+    args: {
+        text: 'Inspect options',
+        trailingIcon: 'three dots',
+    },
+}
+
+export const WithControlType: Story = {
+    args: {
+        text: 'Toggle me',
+        controlType: 'toggle',
+    },
+}

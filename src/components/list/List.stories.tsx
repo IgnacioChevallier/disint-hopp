@@ -28,3 +28,22 @@ export const Default: Story = {
         ]
     }
 };
+
+export const PastTrips: Story = {
+    args: {
+        items: [
+            {
+                text: 'Home',
+                additionalText: '23\' $1500',
+            },
+            {
+                text: 'Work',
+                additionalText: '28\' $1700',
+            },
+            {
+                text: 'Home',
+                additionalText: '15\' $1300',
+            },
+        ]
+    }
+};

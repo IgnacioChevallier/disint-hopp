@@ -55,10 +55,10 @@ export const ListItem = ({
                     <Icon name={leadingIcon} size={leadingIconSize}/>
                 </div>
             }
-            <span className="flex-1">
+            <span className="flex-1 px-2">
                 {text}
             </span>
-            {additionalText && <span className="text-gray-500">{additionalText}</span>}
+            {additionalText && <span className="text-gray-500 px-2">{additionalText}</span>}
             {controlType === "checkbox" &&
                 <CheckBox size={"sm"} onClick={() => setCheckBox(!checkBox)} selected={checkBox}/>}
             {controlType === "radio" && <Radio onClick={() => setRadio(!radio)} checked={radio}/>}

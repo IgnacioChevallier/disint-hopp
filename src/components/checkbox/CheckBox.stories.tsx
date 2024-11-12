@@ -1,6 +1,6 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {CheckBox} from "./CheckBox";
-import {useState} from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { CheckBox } from "./CheckBox";
+import React, { useState, useEffect } from "react";
 
 const meta: Meta<typeof CheckBox> = {
     title: 'Components/CheckBox',
@@ -9,24 +9,48 @@ const meta: Meta<typeof CheckBox> = {
         layout: 'centered',
     },
     argTypes: {
+        size: {
+            control: {
+                type: 'select',
+                options: ['sm', 'md', 'lg'],
+            },
+        },
         selected: {
-            control: "boolean",
+            control: {
+                type: 'boolean',
+            },
         }
-    },
+    }
 }
 export default meta;
 
 type Story = StoryObj<typeof CheckBox>;
-export const Default: Story = {
-    render: () => {
-        const [clicked, setClicked] = useState(false);
-        return (<CheckBox onClick={() => setClicked(!clicked)} selected={clicked} />)
-    },
-};
 
-export const Selected: Story = {
-    render: () => {
-        const [clicked, setClicked] = useState(true);
-        return (<CheckBox onClick={() => setClicked(!clicked)} selected={clicked} />)
+const createCheckBoxStory = (initialSelected: boolean): Story => ({
+    args: {
+        size: 'md',
+        selected: initialSelected,
     },
-};
+    render: (args) => {
+        const [isSelected, setIsSelected] = useState(args.selected);
+
+        useEffect(() => {
+            setIsSelected(args.selected);
+        }, [args.selected]);
+
+        return (
+            <CheckBox
+                onClick={() => {
+                    const newSelected = !isSelected;
+                    setIsSelected(newSelected);
+                    args.selected = newSelected;
+                }}
+                selected={isSelected}
+                size={args.size}
+            />
+        );
+    },
+});
+
+export const Default = createCheckBoxStory(false);
+export const Selected = createCheckBoxStory(true);

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import {Meta, StoryObj} from "@storybook/react";
 import {List} from "./List";
 
 const meta: Meta<typeof List> = {
@@ -25,6 +25,25 @@ export const Default: Story = {
             {
                 text: 'List Item 3',
             }
+        ]
+    }
+};
+
+export const PastTrips: Story = {
+    args: {
+        items: [
+            {
+                text: 'Home',
+                additionalText: '23\' $1500',
+            },
+            {
+                text: 'Work',
+                additionalText: '28\' $1700',
+            },
+            {
+                text: 'Home',
+                additionalText: '15\' $1300',
+            },
         ]
     }
 };

@@ -21,7 +21,7 @@ const meta: Meta<typeof FamilyMemberInfo> = {
     },
     decorators: [
         (Story) => (
-            <div className={'w-screen flex justify-center'}>
+            <div className={'w-screen flex justify-center p-4'}>
                 <Story />
             </div>
         ),
@@ -43,7 +43,7 @@ export const Default: Story = {
 export const Detailed: Story = {
     args: {
         link: 'https://cdn-icons-png.flaticon.com/128/2335/2335114.png',
-        userName: 'John Doe',
+        userName: 'Juliet Doe',
         role: 'Child',
     },
 };

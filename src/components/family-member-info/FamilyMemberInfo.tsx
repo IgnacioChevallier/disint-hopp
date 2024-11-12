@@ -25,7 +25,7 @@ const FamilyMemberInfo = ({ type, link, userName, role }: FamilyMemberInfoProps)
                     <span className="text-p-regular text-primary truncate">{role}</span>
                 </div>
             </div>
-            <IconButton iconName="more_horiz" size="medium" color="gray" />
+            <IconButton iconName="three dots" size="medium" color="gray" />
         </div>
     );
 };

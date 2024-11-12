@@ -16,9 +16,13 @@ const meta: Meta<typeof ProfilePicture> = {
                 options: ['large', 'medium', 'small'],
             },
         },
-        iconName: {
-            control: 'select',
-            options: Array.from(iconMap.keys()),
+        link: {
+            control: {
+                type: 'text',
+            }
+        },
+        altLink: {
+            control: 'text',
         },
     },
     decorators: [
@@ -37,21 +41,21 @@ type Story = StoryObj<typeof ProfilePicture>;
 export const Large: Story = {
     args: {
         size: 'large',
-        iconName: 'account circle' as keyof typeof iconMap,
+        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
     },
 };
 
 export const Medium: Story = {
     args: {
         size: 'medium',
-        iconName: 'account circle' as keyof typeof iconMap,
+        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
     },
 };
 
 export const Small: Story = {
     args: {
         size: 'small',
-        iconName: 'account circle' as keyof typeof iconMap,
+        link: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
     },
 };
 

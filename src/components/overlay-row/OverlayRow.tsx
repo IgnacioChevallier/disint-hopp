@@ -1,7 +1,6 @@
-import React, {HTMLAttributes, ReactNode} from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 
-const overlayVariant =
-    "flex items-center min-w-[125px] h-[40px] p-2 gap-2";
+const overlayVariant = "flex items-center min-w-[125px] h-[40px] p-2 gap-2 justify-between";
 
 export interface OverlayRowProps extends HTMLAttributes<HTMLDivElement> {
     left?: ReactNode;
@@ -9,12 +8,12 @@ export interface OverlayRowProps extends HTMLAttributes<HTMLDivElement> {
     right?: ReactNode;
 }
 
-export const OverlayRow = ({left, label, right, ...props}: OverlayRowProps) => {
+export const OverlayRow = ({ left, label, right, ...props }: OverlayRowProps) => {
     return (
         <div className={overlayVariant} {...props}>
             {left && (
                 <div className="flex justify-center items-center w-10 h-10 min-w-10 min-h-10">
-                {left}
+                    {left}
                 </div>
             )}
             <span className="text-p-regular flex-grow overflow-hidden line-clamp-3">
@@ -22,7 +21,7 @@ export const OverlayRow = ({left, label, right, ...props}: OverlayRowProps) => {
             </span>
             {right && (
                 <div className="flex justify-center items-center w-10 h-10 min-w-10 min-h-10">
-                {right}
+                    {right}
                 </div>
             )}
         </div>

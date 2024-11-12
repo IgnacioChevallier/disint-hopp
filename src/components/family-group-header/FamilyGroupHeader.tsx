@@ -11,15 +11,14 @@ const familyGroupHeaderStyles = cva('flex items-center text-black justify-betwee
 interface FamilyGroupHeaderProps extends VariantProps<typeof familyGroupHeaderStyles> {
     iconName: keyof typeof iconMap;
     title: string;
-    iconName2: keyof typeof iconMap;
 }
 
-const FamilyGroupHeader = ({ type, title, iconName, iconName2 }: FamilyGroupHeaderProps) => {
+const FamilyGroupHeader = ({ type, title, iconName }: FamilyGroupHeaderProps) => {
     return (
         <div className={familyGroupHeaderStyles({ type })}>
-            <IconButton iconName={iconName} size="medium" />
+            <IconButton iconName="arrow back" size="medium" />
             <h2 className="text-h2-bold line-clamp-1">{title}</h2>
-            <IconButton iconName={iconName2} color='primary' size='medium' />
+            <IconButton iconName={iconName} color='primary' size='medium' />
         </div>
     );
 };

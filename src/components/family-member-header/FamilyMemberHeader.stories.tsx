@@ -29,9 +29,16 @@ export default meta;
 
 type Story = StoryObj<typeof FamilyMemberHeader>;
 
-export const DefaultFamilyMemberHeader: Story = {
+export const Default: Story = {
     args: {
-        link: 'https://via.placeholder.com/150',
-        userName: 'John Doe',
+        link: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
+        userName: 'User Name',
+    },
+};
+
+export const Detailed: Story = {
+    args: {
+        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
+        userName: 'Clone',
     },
 };

@@ -63,7 +63,7 @@ const RouteList = () => {
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
             {/* Header */}
             <div>
-                <IconButton iconName="arrow back" size="small" onClick={() => navigate("/notifications")}/>
+                <IconButton iconName="arrow back" size="small" onClick={() => navigate("/presentation")}/>
             </div>
 
             {/* Searchbar */}

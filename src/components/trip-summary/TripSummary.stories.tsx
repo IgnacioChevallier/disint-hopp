@@ -15,7 +15,7 @@ type Story = StoryObj<typeof TripSummary>;
 
 export const Default: Story = {
     args: {
-        time: "6:30 am",
+        time: "6:30hrs",
         children: [
             <TransportationMethod icon={"directions bus"} text={"1234"}/>,
             <TransportationMethod icon={"directions walk"} text={""}/>,

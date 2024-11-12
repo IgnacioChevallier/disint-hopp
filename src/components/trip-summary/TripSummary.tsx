@@ -11,7 +11,7 @@ export interface TripSummaryProps extends HTMLAttributes<HTMLDivElement> {
 
 export type TripSummaryComponent = React.ReactElement<TransportationMethodProps>;
 
-export const TripSummary = ({children, time, ...props}: TripSummaryProps): TripSummaryComponent => {
+export const TripSummary = ({children, time, onClick, ...props}: TripSummaryProps): TripSummaryComponent => {
     const [isFavourite, setIsFavourite] = useState<boolean>(false);
     const childrenArray = React.Children.toArray(children);
 
@@ -21,7 +21,7 @@ export const TripSummary = ({children, time, ...props}: TripSummaryProps): TripS
                 <p className={"text-p-bold"}>{time}</p>
             </div>
             <div className={"flex flex-row items-center justify-between gap-[20px]"}>
-                <div className={"flex flex-row flex-grow items-center gap-[10px] min-w-[347px] overflow-x-auto custom-scrollbar"}>
+                <div className={"flex flex-row flex-grow items-center gap-[10px] min-w-[347px] overflow-x-auto custom-scrollbar"} onClick={onClick}>
                     {childrenArray.map((child, index) => (
                         <React.Fragment key={index}>
                             <div className={"flex-shrink-0"}>

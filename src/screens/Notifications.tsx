@@ -104,23 +104,23 @@ const Notifications = () => {
                     link={false}
                     href=""
                     text="High passenger volume on Line 843 due to local events."
-                    time="6:24 am"
+                    time="6:30 am"
                     icon="bus alert"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
-                    time="6:24 am"
+                    text="Unexpected incident on Line 123. Delays expected."
+                    time="8:00 am"
                     icon="calendar clock"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Unexpected incident on Line 123. Delays expected."
-                    time="6:24 am"
+                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
+                    time="10:00 pm"
                     icon="calendar clock"
                 />
             </div>

@@ -26,7 +26,7 @@ export interface CheckBoxProps
     onClick?: () => void;
 }
 
-export const CheckBox = ({selected, onClick, size = "sm", ...props}: CheckBoxProps) => {
+export const CheckBox = ({selected, onClick, size = "md", ...props}: CheckBoxProps) => {
     return (
         <label className="inline-flex items-center">
             <input

@@ -24,6 +24,9 @@ const meta: Meta<typeof ListItem> = {
         },
         additionalText: {
             control: "text",
+        },
+        leadingIconSize: {
+            table: { disable: true },  // This hides the argument from Storybook
         }
     },
 };
@@ -37,7 +40,6 @@ export const Default: Story = {
         text: 'List Item Example',
         leadingIcon: 'placeholder',
         trailingIcon: 'placeholder',
-        controlType: 'toggle',
         additionalText: 'Additional Text'
     },
 };

@@ -23,11 +23,18 @@ const meta: Meta<typeof IconButton> = {
         iconName: {
             control: "select",
             options: Array.from(iconMap.keys())
+        },
+        iconColor: {
+            table: { disable: true }  // Hide from controls
+        },
+        iconSize: {
+            table: { disable: true }  // Hide from controls
         }
     },
 }
 
 export default meta;
+
 
 type Story = StoryObj<typeof IconButton>;
 
@@ -36,7 +43,7 @@ export const Default: Story = {
         color: "gray",
         size: "medium",
         disabled: false,
-        iconName: 'placeholder',
+        iconName: '360',
         onClick: () => {}
     }
 }

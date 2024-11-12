@@ -39,7 +39,7 @@ const Notifications = () => {
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
             {/* Header */}
             <div className="flex items-center justify-center relative">
-                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/route-list")}/>
+                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/presentation")}/>
                 <span className="text-h2-regular">
                     Alerts
                 </span>

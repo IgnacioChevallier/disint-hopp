@@ -12,18 +12,18 @@ const meta: Meta<typeof ListItem> = {
     argTypes: {
         controlType: {
             control: "select",
-            options: ["checkbox", "radio", "toggle"]
+            options: [undefined, "checkbox", "radio", "toggle"]
         },
         leadingIcon: {
             control: "select",
-            options: Array.from(iconMap.keys())
+            options: [undefined, ...Array.from(iconMap.keys())]
         },
         trailingIcon: {
             control: "select",
-            options: Array.from(iconMap.keys())
+            options: [undefined, ...Array.from(iconMap.keys())]
         },
         additionalText: {
-            control: "text"
+            control: "text",
         }
     },
 };
@@ -37,7 +37,7 @@ export const Default: Story = {
         text: 'List Item Example',
         leadingIcon: 'placeholder',
         trailingIcon: 'placeholder',
-        controlType: 'checkbox',
+        controlType: 'toggle',
         additionalText: 'Additional Text'
     },
 };

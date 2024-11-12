@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Searchbar } from "./Searchbar";
+import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Searchbar> = {
     title: 'Components/Searchbar',
@@ -7,6 +8,16 @@ const meta: Meta<typeof Searchbar> = {
     parameters: {
         layout: 'top',
     },
+    argTypes: {
+        leadingIcon: {
+            control: "select",
+            options: [undefined, ...Array.from(iconMap.keys())]
+        },
+        trailingIcon: {
+            control: "select",
+            options: [undefined, ...Array.from(iconMap.keys())]
+        }
+    }
 };
 
 export default meta;

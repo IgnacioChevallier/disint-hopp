@@ -1,5 +1,4 @@
 import {Dropdown} from "../components/dropdown/Dropdown";
-import {Toggle} from "../components/toggle/Toggle";
 import React, {useState} from "react";
 import {CheckBox} from "../components/checkbox/CheckBox";
 import {Searchbar} from "../components/searchbar/Searchbar";

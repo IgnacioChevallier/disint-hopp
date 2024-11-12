@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from 'react';
-import { iconMap } from '../icon/IconMap';
 import Icon, {IconProps} from "../icon/Icon";
 
 interface SearchbarProps {
@@ -88,7 +87,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
                 </div>
             </div>
 
-            {isDropdownOpen && (options.length != 0) && (
+            {isDropdownOpen && (options.length !== 0) && (
                 <div
                     style={{
                         marginTop: '-24px',

@@ -1,13 +1,11 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Searchbar } from '../components/searchbar/Searchbar';
-import { iconMap } from "../components/icon/IconMap";
 import {Dropdown} from "../components/dropdown/Dropdown";
 import {Toggle} from "../components/toggle/Toggle";
 import {CheckBox} from "../components/checkbox/CheckBox";
 import {IconButton} from "../components/icon-button/IconButton";
 import {useNavigate} from "react-router-dom";
-import {AlertList} from "../components/alert-list/AlertList";
 
 const Notifications = () => {
     const alerts = [

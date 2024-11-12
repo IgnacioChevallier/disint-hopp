@@ -45,14 +45,14 @@ export const Dropdown = ({
         if (buttonRef.current) {
             const rect = buttonRef.current.getBoundingClientRect();
             const calculatedPosition = {
-                top: rect.bottom + window.scrollY,
+                top: rect.bottom,
             };
-            const alignment = overlayAlignment === "right" ? {
-                right: rect.left - window.scrollX,
-                }: {
-                left: rect.left + window.scrollX,
-            }
-            setOverlayPosition({...calculatedPosition, ...alignment});
+
+            const alignment = overlayAlignment === "right"
+                ? { right: window.innerWidth - rect.right }
+                : { left: rect.left + window.scrollX };
+
+            setOverlayPosition({ ...calculatedPosition, ...alignment });
         }
 
         buttonProps?.onClick && buttonProps.onClick(e);

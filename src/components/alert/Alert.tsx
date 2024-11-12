@@ -1,6 +1,6 @@
 import {cva} from "class-variance-authority";
-import Icon from "../icon/Icon";
 import {HTMLAttributes} from "react";
+import Icon, {IconProps} from "../icon/Icon";
 
 const alertVariant = cva("flex flex-row rounded px-3 py-4 gap-3 h-[90px] w-full", {
     variants: {
@@ -17,14 +17,14 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
     href: string,
     text: string,
     time: string,
-    icon: string
+    icon?: IconProps["name"]
 }
 
 export const Alert = ({ active, link, href, text, time, icon, ...props }: AlertProps) => {
     return (
         <div className={alertVariant({ active })} {...props}>
             <div className="flex items-center">
-                <Icon name={icon} size="medium" />
+                {icon && <Icon name={icon} size="medium" /> }
             </div>
             <div className="flex flex-col flex-grow text-ellipsis overflow-hidden">
                 <span className={`text-p-regular text-ellipsis ${link ? "line-clamp-2" : "line-clamp-3"}`}>

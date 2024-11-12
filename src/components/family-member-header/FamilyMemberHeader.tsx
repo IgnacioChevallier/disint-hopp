@@ -22,7 +22,7 @@ const FamilyMemberHeader = ({ type, link, userName }: familyMemberHeaderProps) =
                 <ProfilePicture link={link} size="small"/>
                 <h2 className="text-h2-bold line-clamp-1">{userName}</h2>
             </div>
-            <IconButton iconName="location" color="primary" size="medium"/>
+            <IconButton iconName="location" color="primary" size="medium" iconColor={'#FFF'}/>
         </div>
 );
 };

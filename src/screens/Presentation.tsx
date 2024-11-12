@@ -14,6 +14,10 @@ const HomePage: React.FC = () => {
         navigate('/route-list');
     };
 
+    const openStorybook = () => {
+        window.open("https://ignaciochevallier.github.io/disint-hopp/?path=/docs/configure-your-project--docs", "_blank");
+    };
+
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-background-main text-center p-4">
             <div className="flex flex-col items-center">
@@ -25,7 +29,6 @@ const HomePage: React.FC = () => {
                 <Button
                     text="Notifications"
                     color="primary"
-                    variant="outlined"
                     onClick={navigateToNotifications}
                     size="medium"
                     rounded={true}
@@ -33,8 +36,14 @@ const HomePage: React.FC = () => {
                 <Button
                     text="Route List"
                     color="primary"
-                    variant="outlined"
                     onClick={navigateToRouteList}
+                    size="medium"
+                    rounded={true}
+                />
+                <Button
+                    text="Storybook"
+                    color="danger"
+                    onClick={openStorybook}
                     size="medium"
                     rounded={true}
                 />

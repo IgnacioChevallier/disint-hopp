@@ -2,7 +2,7 @@ import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const profilePictureStyles = cva(
-    'rounded-full flex items-center justify-center overflow-hidden',
+    'rounded-full flex items-center justify-center overflow-hidden flex-shrink-0',
     {
         variants: {
             size: {

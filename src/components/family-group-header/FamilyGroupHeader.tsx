@@ -1,7 +1,5 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import ProfilePicture from '../profile-picture/ProfilePicture';
-import Icon from '../icon/Icon';
 import {iconMap} from "../icon/IconMap";
 import {IconButton} from "../icon-button/IconButton";
 

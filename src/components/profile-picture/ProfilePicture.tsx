@@ -19,11 +19,11 @@ const profilePictureStyles = cva(
 
 interface ProfilePictureProps extends VariantProps<typeof profilePictureStyles> {
     link: string;
-    altLink: string;
+    altLink?: string;
 
 }
 
-const ProfilePicture = ({ size, link, altLink }: ProfilePictureProps) => {
+const ProfilePicture = ({ size, link, altLink = "https://cdn-icons-png.flaticon.com/128/149/149071.png" }: ProfilePictureProps) => {
     return (
         <div className={profilePictureStyles({ size })}>
             <img src={link} alt="profile pic" onError={(e) => (e.currentTarget.src = altLink)} className="object-cover w-full h-full" />

@@ -7,6 +7,7 @@ const iconVariant = cva("", {
             small: "w-6 h-6",
             medium: "w-8 h-8",
             large: "w-12 h-12",
+            xlarge: "w-36 h-36",
         },
     },
     defaultVariants: {
@@ -23,6 +24,7 @@ const sizeMap = {
     small: 24,
     medium: 32,
     large: 48,
+    xlarge: 150,
 };
 
 const Icon = ({ name, size, color = "#1A1A1A" }: IconProps) => {

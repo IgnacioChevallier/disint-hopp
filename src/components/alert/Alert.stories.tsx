@@ -1,6 +1,7 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {Alert} from "./Alert";
 import Icon from "../icon/Icon";
+import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Alert> = {
     title: 'Components/Alert',
@@ -9,6 +10,10 @@ const meta: Meta<typeof Alert> = {
         layout: 'centered'
     },
     argTypes: {
+        icon: {
+            control: "select",
+            options: [...Array.from(iconMap.keys()), undefined],
+        },
         active: {
             control: "boolean",
         },

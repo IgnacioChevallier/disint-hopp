@@ -119,9 +119,9 @@ export const Button = ({
                        }: ButtonProps) => {
     return (
         <button className={buttonVariant({size, rounded, variant, color, disabled: props.disabled})} {...props}>
-            {leadingIcon && <Icon name={leadingIcon} size={"medium"} />}
+            {leadingIcon && <Icon name={leadingIcon} size={"medium"}/>}
             {text}
-            {trailingIcon && <Icon name={trailingIcon} size={"medium"} />}
+            {trailingIcon && <Icon name={trailingIcon} size={"medium"}/>}
         </button>
     );
 }

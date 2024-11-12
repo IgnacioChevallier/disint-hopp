@@ -57,6 +57,7 @@ const HomePage: React.FC = () => {
                     <li>Chialva Matias</li>
                     <li>Pochat Federico</li>
                     <li>Sazaki Marcos</li>
+                    <li>Valle Durán Tomás</li>
                     <li>Zizzi Francisco</li>
                 </ul>
             </footer>

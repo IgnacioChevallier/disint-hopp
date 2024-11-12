@@ -18,7 +18,7 @@ const SlideModalShare = ({ profiles }: SlideModalShareProps) => {
             <div className={"flex flex-col gap-4"}>
                 <div className="flex flex-row items-center gap-[8px] min-w-[350px] overflow-x-auto custom-scrollbar">
                     {profiles.map((profile, index) => (
-                        <div key={index} className="flex flex-col items-center w-[100px] cursor-pointer hover:bg-gray-100" onClick={() => alert(`Clicked ${profile.name}`)}>
+                        <div key={index} className="flex flex-col p-1 items-center min-w-[100px] max-w-[100px] cursor-pointer hover:bg-gray-100" onClick={() => alert(`Clicked ${profile.name}`)}>
                             <ProfilePicture link={profile.src} size="small"/>
                             <p className="text-regular overflow-hidden line-clamp-1">{profile.name}</p>
                         </div>

@@ -6,7 +6,7 @@ const meta: Meta<typeof TripSummary> = {
     title: "Components/TripSummary",
     component: TripSummary,
     parameters: {
-        layout: "centered",
+        layout: "top",
     },
 };
 export default meta;

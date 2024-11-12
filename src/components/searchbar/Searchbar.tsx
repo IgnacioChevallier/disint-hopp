@@ -69,7 +69,6 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
                     {leadingIcon && (<Icon name={leadingIcon} size={"small"}/>)}
                 </div>
 
-                {/* Campo de texto de búsqueda */}
                 <input
                     type="text"
                     placeholder={placeholder}

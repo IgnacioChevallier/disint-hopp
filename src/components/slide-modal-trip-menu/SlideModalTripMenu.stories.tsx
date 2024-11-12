@@ -27,3 +27,15 @@ export const Default: Story = {
         return <SlideModalTripMenu {...args} />;
     },
 };
+
+export const Open: Story = {
+    args: {
+        arrivalTime: "5:24 pm",
+        distance: "30 km",
+        time: "25 min",
+        open: true,
+    },
+    render: (args) => {
+        return <SlideModalTripMenu {...args} />;
+    },
+};

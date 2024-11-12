@@ -8,6 +8,7 @@ import {TripSummaryList} from "../components/trip-summary-list/TripSummaryList";
 import {TripSummary} from "../components/trip-summary/TripSummary";
 import {TransportationMethod} from "../components/transportation-method/TransportationMethod";
 import {useNavigate} from "react-router-dom";
+import Icon from "../components/icon/Icon";
 
 const RouteList = () => {
     const places = [
@@ -25,20 +26,21 @@ const RouteList = () => {
     const [filteredRouteOptions, setFilteredRouteOptions] = useState(places.filter(alert => alert.toLowerCase().includes(routeValue.toLowerCase())));
     const navigate = useNavigate()
 
-    const [isAllSelected, setIsAllSelected] = useState(false);
-    const [isFavoritesSelected, setIsFavoritesSelected] = useState(false);
-    const [isOngoingSelected, setIsOngoingSelected] = useState(false);
+    const [isSubwaySelected, setIsSubwaySelected] = useState(false);
+    const [isBusSelected, setIsBusSelected] = useState(false);
+    const [isTrainSelected, setIsTrainSelected] = useState(false);
 
-    const handleAllToggleClick = () =>{
-        setIsAllSelected(!isAllSelected);
+
+    const handleSubwayToggleClick = () =>{
+        setIsSubwaySelected(!isSubwaySelected);
     }
 
-    const handleFavoritesToggleClick = () =>{
-        setIsFavoritesSelected(!isFavoritesSelected);
+    const handleBusToggleClick = () => {
+        setIsBusSelected(!isBusSelected);
     }
 
-    const handleOngoingToggleClick = () => {
-        setIsOngoingSelected(!isOngoingSelected);
+    const handleTrainToggleClick = () => {
+        setIsTrainSelected(!isTrainSelected);
     }
 
     // Handle autocomplete for location
@@ -92,17 +94,19 @@ const RouteList = () => {
                     overlayProps={{
                         rows: [
                             {
-                                label: "All",
-                                right: (<Toggle selected={isAllSelected} onClick={handleAllToggleClick}/>)
+                                left: <Icon name={"subway"} size={"small"} />,
+                                label: "Subway",
+                                right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick}/>
                             },
                             {
-                                label: "Favorites",
-                                right: <CheckBox selected={isFavoritesSelected}
-                                                 onClick={handleFavoritesToggleClick}/>
+                                left: <Icon name={"bus"} size={"small"} />,
+                                label: "Bus",
+                                right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick}/>
                             },
                             {
-                                label: "Ongoing",
-                                right: <CheckBox selected={isOngoingSelected} onClick={handleOngoingToggleClick}/>
+                                left: <Icon name={"train"} size={"small"} />,
+                                label: "Train",
+                                right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick}/>
                             }
                         ]
                     }}

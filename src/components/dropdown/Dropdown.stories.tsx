@@ -80,3 +80,32 @@ export const WithDifferentIcon: Story = {
         }
     }
 };
+
+export const alignedToTheRight: Story = {
+    args: {
+        overlayAlignment: "right", // Alineación a la derecha
+        overlayProps: {
+            rows: [
+                {
+                    left: <Icon name={"bus alert"} size={"medium"} />,
+                    label: "Option",
+                    right: <ToggleExample />,
+                },
+                {
+                    left: <Icon name={"placeholder"} size={"medium"} />,
+                    label: "Option",
+                    right: <Icon name={"placeholder"} size={"medium"} />,
+                },
+                {
+                    left: <Icon name={"placeholder"} size={"medium"} />,
+                    label: "Option",
+                    right: <Icon name={"placeholder"} size={"medium"} />,
+                }
+            ]
+        },
+        buttonProps: {
+            text: "Button"
+        }
+    }
+};
+

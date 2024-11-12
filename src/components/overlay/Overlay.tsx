@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
-import {OverlayRow, OverlayRowProps} from "../overlay-row/OverlayRow";
-import {createPortal} from "react-dom";
+import { OverlayRow, OverlayRowProps } from "../overlay-row/OverlayRow";
+import { createPortal } from "react-dom";
 
 export interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
     rows: OverlayRowProps[]
@@ -11,13 +11,11 @@ export const Overlay = ({ rows, ...props }: OverlayProps) => {
 
     if (!overlayRoot) return null;
     return createPortal(
-        <div className="flex flex-col bg-gray-200 rounded " {...props}>
+        <div className="flex flex-col bg-gray-200 rounded max-w-[300px]" {...props}> {/* ancho máximo para consistencia */}
             {rows.map((overlayRowProps, index) => (
-                <div key={index} className="flex flex-col items-start">
-                    <OverlayRow {...overlayRowProps} />
-                </div>
+                <OverlayRow key={index} {...overlayRowProps} />
             ))}
-        </div>
-        , overlayRoot
+        </div>,
+        overlayRoot
     );
 };

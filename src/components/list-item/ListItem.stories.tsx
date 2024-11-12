@@ -10,6 +10,9 @@ const meta: Meta<typeof ListItem> = {
         layout: 'centered',
     },
     argTypes: {
+        text: {
+            control: "text"
+        },
         controlType: {
             control: "select",
             options: [undefined, "checkbox", "radio", "toggle"]

@@ -19,7 +19,7 @@ interface FamilyGroupHeaderProps extends VariantProps<typeof familyGroupHeaderSt
 const FamilyGroupHeader = ({ type, title, iconName, iconName2 }: FamilyGroupHeaderProps) => {
     return (
         <div className={familyGroupHeaderStyles({ type })}>
-            <Icon name={iconName} size="medium" />
+            <IconButton iconName={iconName} size="medium" />
             <h2 className="text-h2-bold line-clamp-1">{title}</h2>
             <IconButton iconName={iconName2} color='primary' size='medium' />
         </div>

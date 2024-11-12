@@ -1,7 +1,5 @@
 import React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { iconMap } from '../icon/IconMap';
-import Icon from '../icon/Icon';
 
 const profilePictureStyles = cva(
     'rounded-full flex items-center justify-center overflow-hidden',
@@ -20,13 +18,15 @@ const profilePictureStyles = cva(
 );
 
 interface ProfilePictureProps extends VariantProps<typeof profilePictureStyles> {
-    iconName: keyof typeof iconMap;
+    link: string;
+    altLink: string;
+
 }
 
-const ProfilePicture = ({ size, iconName }: ProfilePictureProps) => {
+const ProfilePicture = ({ size, link, altLink }: ProfilePictureProps) => {
     return (
         <div className={profilePictureStyles({ size })}>
-            <Icon name={iconName} size={size} />
+            <img src={link} alt="profile pic" onError={(e) => (e.currentTarget.src = altLink)} className="object-cover w-full h-full" />
         </div>
     );
 };

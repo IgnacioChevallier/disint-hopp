@@ -12,9 +12,9 @@ const iconButtonVariant = cva(
                 gray: "hover:bg-gray-300",
             },
             size: {
-                small: "w-8 h-8",
-                medium: "w-10 h-10",
-                large: "w-14 h-14",
+                small: "w-6 h-6",
+                medium: "w-8 h-8",
+                large: "w-12 h-12",
             },
             disabled: {
                 true: "opacity-50 cursor-not-allowed pointer-events-none",
@@ -46,12 +46,13 @@ export interface IconButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
     disabled?: boolean;
     iconName: IconProps["name"];
     iconColor?: IconProps["color"];
+    iconSize?: IconProps["size"];
 }
 
-export const IconButton = ({ color, size, iconName, iconColor, ...props }: IconButtonProps) => {
+export const IconButton = ({ color, size, iconName, iconColor, iconSize, ...props }: IconButtonProps) => {
     return (
         <button className={iconButtonVariant({ size, color, disabled: props.disabled })} {...props}>
-            <Icon name={iconName} size={size} color={iconColor}/>
+            <Icon name={iconName} size={iconSize ? iconSize : size} color={iconColor}/>
         </button>
     );
 };

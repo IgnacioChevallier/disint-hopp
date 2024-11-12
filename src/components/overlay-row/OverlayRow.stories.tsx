@@ -30,7 +30,7 @@ export const Default: Story = {
 
 export const CheckLeft: Story = {
     args: {
-        left: <CheckBox selected={true} />,
+        left: <CheckBox selected={true} size={"md"} />,
         label: "Option",
         right: ""
     }
@@ -38,7 +38,7 @@ export const CheckLeft: Story = {
 
 export const UncheckLeft: Story = {
     args: {
-        left: <CheckBox selected={false} />,
+        left: <CheckBox selected={false} size={"md"} />,
         label: "Option",
         right: ""
     }

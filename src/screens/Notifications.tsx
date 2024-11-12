@@ -1,13 +1,11 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
 import { Searchbar } from '../components/searchbar/Searchbar';
-import { iconMap } from "../components/icon/IconMap";
 import {Dropdown} from "../components/dropdown/Dropdown";
 import {Toggle} from "../components/toggle/Toggle";
 import {CheckBox} from "../components/checkbox/CheckBox";
 import {IconButton} from "../components/icon-button/IconButton";
 import {useNavigate} from "react-router-dom";
-import {AlertList} from "../components/alert-list/AlertList";
 
 const Notifications = () => {
     const alerts = [
@@ -37,15 +35,13 @@ const Notifications = () => {
 
     return (
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
-            {/* Header */}
             <div className="flex items-center justify-center relative">
-                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/route-list")}/>
+                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/presentation")}/>
                 <span className="text-h2-regular">
                     Alerts
                 </span>
             </div>
 
-            {/* Searchbar */}
             <div className="w-full">
                 <Searchbar
                     placeholder="Search..."
@@ -55,7 +51,6 @@ const Notifications = () => {
                 />
             </div>
 
-            {/* Filter dropdown */}
             <div className='flex justify-end'>
                 <Dropdown
                     overlayProps={{
@@ -88,8 +83,6 @@ const Notifications = () => {
                 />
             </div>
 
-
-            {/* List of Alerts */}
             <div className="flex flex-col gap-2 w-full">
                 <Alert
                     active={true}

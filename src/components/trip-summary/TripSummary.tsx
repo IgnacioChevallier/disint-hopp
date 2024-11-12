@@ -2,7 +2,7 @@ import {TransportationMethodComponent, TransportationMethodProps} from "../trans
 import React, {HTMLAttributes, useState} from "react";
 import Icon from "../icon/Icon";
 import "../../styles/customScrollbar.css";
-import {IconButton} from "../icon-button/IconButton"; // Import the custom scrollbar styles
+import {IconButton} from "../icon-button/IconButton";
 
 export interface TripSummaryProps extends HTMLAttributes<HTMLDivElement> {
     children: TransportationMethodComponent | TransportationMethodComponent[];
@@ -16,12 +16,12 @@ export const TripSummary = ({children, time, onClick, ...props}: TripSummaryProp
     const childrenArray = React.Children.toArray(children);
 
     return(
-        <div className={"min-w-[393px] h-[100px] p-[8px] flex flex-col content-end"} {...props}>
+        <div className={"w-full max-w-full h-auto p-4 flex flex-col space-y-2"} {...props}>
             <div className={"flex justify-end"}>
                 <p className={"text-p-bold"}>{time}</p>
             </div>
-            <div className={"flex flex-row items-center justify-between gap-[20px]"}>
-                <div className={"flex flex-row flex-grow items-center gap-[10px] min-w-[347px] overflow-x-auto custom-scrollbar"} onClick={onClick}>
+            <div className={"flex flex-row items-center justify-between gap-2"}>
+                <div className={"flex flex-row items-center gap-4 overflow-x-auto custom-scrollbar"} onClick={onClick}>
                     {childrenArray.map((child, index) => (
                         <React.Fragment key={index}>
                             <div className={"flex-shrink-0"}>

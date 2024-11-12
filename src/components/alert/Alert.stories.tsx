@@ -1,6 +1,5 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {Alert} from "./Alert";
-import Icon from "../icon/Icon";
 import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Alert> = {

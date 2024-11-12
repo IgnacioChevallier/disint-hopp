@@ -16,8 +16,8 @@ type Story = StoryObj<typeof Searchbar>;
 export const Default: Story = {
     args: {
         placeholder: 'Search...',
-        left_icon: 'bus alert',
-        right_icon: 'search',
+        leadingIcon: 'bus alert',
+        trailingIcon: 'search',
         options: [
             'Chicago University of Chicago',
             'Chicago Lincoln Park Zoo',
@@ -30,8 +30,8 @@ export const Default: Story = {
 export const WithDifferentIcon: Story = {
     args: {
         placeholder: 'Search...',
-        left_icon: 'add stop',
-        right_icon: 'search',
+        leadingIcon: 'add stop',
+        trailingIcon: 'search',
         options: [
             'New York Times Square',
             'New York Central Park',
@@ -44,8 +44,8 @@ export const WithDifferentIcon: Story = {
 export const WithManyOptions: Story = {
     args: {
         placeholder: 'Search...',
-        left_icon: 'account circle',
-        right_icon: 'search',
+        leadingIcon: 'account circle',
+        trailingIcon: 'search',
         options: [
             'Option 1',
             'Option 2',

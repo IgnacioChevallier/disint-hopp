@@ -1,20 +1,22 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { iconMap } from '../icon/IconMap';
+import Icon, {IconProps} from "../icon/Icon";
 
 interface SearchbarProps {
     placeholder: string;
-    left_icon: string;
-    right_icon: string;
+    leadingIcon?: IconProps["name"];
+    trailingIcon?: IconProps["name"];
     options: string[];
+    searchBarZIndex?: number;
+    dropdownZIndex?: number;
+    value?: string;
+    onChange?: (value: string) => void;
 }
 
-export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, right_icon, options }) => {
+export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, trailingIcon, options, searchBarZIndex, dropdownZIndex, value, onChange }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState(value || '');
     const searchbarRef = useRef<HTMLDivElement>(null);
-
-    const LeftIcon = iconMap.get(left_icon);
-    const RightIcon = iconMap.get(right_icon);
 
     const handleInputClick = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -24,6 +26,11 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
         setSearchText(option);
         setDropdownOpen(false);
     };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchText(e.target.value);
+        onChange && onChange(e.target.value);
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -46,7 +53,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '48px',
-                    width: '95%',
+                    width: '100%',
                     padding: '0px 16px',
                     border: '1px solid #000',
                     borderRadius: '24px',
@@ -54,12 +61,12 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                     gap: '8px',
                     cursor: 'pointer',
                     boxSizing: 'border-box',
-                    zIndex: '150'
+                    zIndex: searchBarZIndex ?? 100
                 }}
                 onClick={handleInputClick}
             >
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {LeftIcon && LeftIcon(20, 'black')}
+                    {leadingIcon && (<Icon name={leadingIcon} size={"small"}/>)}
                 </div>
 
                 {/* Campo de texto de búsqueda */}
@@ -67,7 +74,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                     type="text"
                     placeholder={placeholder}
                     value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
+                    onChange={handleInputChange}
                     style={{
                         flex: 1,
                         border: 'none',
@@ -78,15 +85,15 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                 />
 
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {RightIcon && RightIcon(20, 'black')}
+                    {trailingIcon && (<Icon name={trailingIcon} size={"small"}/>)}
                 </div>
             </div>
 
-            {isDropdownOpen && (
+            {isDropdownOpen && (options.length != 0) && (
                 <div
                     style={{
                         marginTop: '-24px',
-                        width: '95%',
+                        width: '100%',
                         padding: '8px 16px',
                         border: '1px solid #000',
                         borderBottomLeftRadius: '24px',
@@ -94,7 +101,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, left_icon, ri
                         backgroundColor: '#f5f5f5',
                         boxSizing: 'border-box',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-                        zIndex: 100,
+                        zIndex: dropdownZIndex ?? 75,
                         maxHeight: '200px',
                         overflowY: 'auto',
                         position: 'absolute',

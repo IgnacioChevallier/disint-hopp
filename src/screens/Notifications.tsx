@@ -5,21 +5,24 @@ import { iconMap } from "../components/icon/IconMap";
 import {Dropdown} from "../components/dropdown/Dropdown";
 import {Toggle} from "../components/toggle/Toggle";
 import {CheckBox} from "../components/checkbox/CheckBox";
+import {IconButton} from "../components/icon-button/IconButton";
+import {useNavigate} from "react-router-dom";
+import {AlertList} from "../components/alert-list/AlertList";
 
 const Notifications = () => {
-    const BackIcon = iconMap.get('arrow back');
-
     const alerts = [
-        "Lines 123, 434, 843, 947 currently affected by service issues.",
-        "High passenger volume on Line 843 due to local events.",
-        "Line 123 will be temporarily unavailable from 10 pm to 5 am.",
-        "Unexpected incident on Line 123. Delays expected."
+        "Line 123",
+        "Line 134",
+        "Line 843",
+        "Line 947",
+        "Line 988",
+        "Line 256",
     ];
 
     const [isAllSelected, setIsAllSelected] = React.useState(false);
     const [isFavoritesSelected, setIsFavoritesSelected] = React.useState(false);
     const [isOngoingSelected, setIsOngoingSelected] = React.useState(false);
-
+    const navigate = useNavigate();
     const handleAllToggleClick = () =>{
         setIsAllSelected(!isAllSelected);
     }
@@ -33,27 +36,27 @@ const Notifications = () => {
     }
 
     return (
-        <div className="p-4 bg-background-main text-black min-h-screen">
+        <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
             {/* Header */}
-            <header className="flex items-center mb-4">
-                <button className="bg-none border-none cursor-pointer text-black">
-                    {BackIcon && BackIcon(24, "black")}
-                </button>
-                <h1 className="flex-1 text-center text-h1-bold m-0">Alerts</h1>
-            </header>
+            <div className="flex items-center justify-center relative">
+                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/route-list")}/>
+                <span className="text-h2-regular">
+                    Alerts
+                </span>
+            </div>
 
             {/* Searchbar */}
-            <div className="mb-4 w-full">
+            <div className="w-full">
                 <Searchbar
                     placeholder="Search..."
-                    left_icon=""
-                    right_icon="search"
+                    leadingIcon=""
+                    trailingIcon="search"
                     options={alerts}
                 />
             </div>
 
             {/* Filter dropdown */}
-            <div className='flex justify-end mb-4'>
+            <div className='flex justify-end'>
                 <Dropdown
                     overlayProps={{
                         rows: [
@@ -101,23 +104,23 @@ const Notifications = () => {
                     link={false}
                     href=""
                     text="High passenger volume on Line 843 due to local events."
-                    time="6:24 am"
+                    time="6:30 am"
                     icon="bus alert"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
-                    time="6:24 am"
+                    text="Unexpected incident on Line 123. Delays expected."
+                    time="8:00 am"
                     icon="calendar clock"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Unexpected incident on Line 123. Delays expected."
-                    time="6:24 am"
+                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
+                    time="10:00 pm"
                     icon="calendar clock"
                 />
             </div>

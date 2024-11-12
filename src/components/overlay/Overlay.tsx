@@ -7,7 +7,7 @@ export interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Overlay = ({ rows, ...props }: OverlayProps) => {
-    const overlayRoot = document.getElementById('overlay-root');
+    const overlayRoot = document.getElementById('modal-root');
 
     if (!overlayRoot) return null;
     return createPortal(

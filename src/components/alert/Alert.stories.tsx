@@ -7,7 +7,7 @@ const meta: Meta<typeof Alert> = {
     title: 'Components/Alert',
     component: Alert,
     parameters: {
-        layout: 'centered'
+        layout: 'top'
     },
     argTypes: {
         icon: {

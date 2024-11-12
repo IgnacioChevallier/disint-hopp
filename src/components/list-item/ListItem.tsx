@@ -5,7 +5,7 @@ import {Radio} from "../radio/Radio";
 import {Toggle} from "../toggle/Toggle";
 import Icon, {IconProps} from "../icon/Icon";
 
-const listItemVariant = cva("flex items-center gap-2 p-2 bg-gray-100 rounded-lg", {
+const listItemVariant = cva("flex items-center gap-2 p-2 bg-background-main rounded-lg", {
     variants: {
         controlType: {
             checkbox: "",
@@ -21,6 +21,7 @@ export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement
     trailingIcon?: IconProps["name"];
     controlType?: "checkbox" | "radio" | "toggle";
     additionalText?: ReactNode;
+    leadingIconSize?: IconProps["size"];
 }
 
 export const ListItem = ({
@@ -29,6 +30,7 @@ export const ListItem = ({
                              trailingIcon,
                              controlType,
                              additionalText,
+                             leadingIconSize = "medium",
                              ...props
                          }: ListItemProps) => {
 
@@ -48,7 +50,7 @@ export const ListItem = ({
             {leadingIcon &&
                 <div
                     className="flex justify-center items-center w-12 h-7 min-w-12 min-h-6 rounded-full flex-shrink-0">
-                    <Icon name={leadingIcon} size="medium"/>
+                    <Icon name={leadingIcon} size={leadingIconSize}/>
                 </div>
             }
             <span className="flex-1">

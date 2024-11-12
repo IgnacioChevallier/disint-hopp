@@ -1,7 +1,7 @@
 import {cva, VariantProps} from "class-variance-authority";
 import {InputHTMLAttributes} from "react";
 
-const CheckBoxVariant = cva("w-6 h-6", {
+const CheckBoxVariant = cva("w-6 h-6 cursor-pointer", {
     variants: {
         selected: {
             true: "bg-primary",

@@ -1,7 +1,7 @@
-import {Button} from "./Button";
 import {Meta, StoryObj} from "@storybook/react";
 import {userEvent, within, expect, spyOn} from "@storybook/test";
 import {iconMap} from "../icon/IconMap";
+import {Button} from "./Button";
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',

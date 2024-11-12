@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, ReactNode} from "react";
+import {ReactNode} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 import {createPortal} from "react-dom";
 import {Button} from "../button/Button";
@@ -16,7 +16,7 @@ const modalVariant = cva("flex flex-row gap-2 outline-none", {
 });
 
 
-export interface ModalProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">, VariantProps<typeof modalVariant> {
+export interface ModalProps extends VariantProps<typeof modalVariant> {
     children?: ReactNode;
     title?: string;
     open?: boolean;

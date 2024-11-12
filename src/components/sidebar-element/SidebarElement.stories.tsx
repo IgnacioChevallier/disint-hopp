@@ -1,6 +1,6 @@
-import {SidebarElement} from "./SidebarElement";
-import {Meta, StoryObj} from "@storybook/react";
-import Icon from "../icon/Icon";
+import { SidebarElement } from "./SidebarElement";
+import { Meta, StoryObj } from "@storybook/react";
+import { iconMap } from "../icon/IconMap";
 
 const meta: Meta<typeof SidebarElement> = {
     title: 'Components/SidebarElement',
@@ -10,30 +10,34 @@ const meta: Meta<typeof SidebarElement> = {
     },
     argTypes: {
         selected: {
-            control: "boolean",
+            control: "boolean"
+        },
+        icon: {
+            control: "select",
+            options: Array.from(iconMap.keys())
         },
         text: {
             control: "text"
         }
     }
-}
+};
 
 export default meta;
 
 type Story = StoryObj<typeof SidebarElement>
 
-export const Selected: Story = {
+export const Default: Story = {
     args: {
         selected: true,
         text: 'Dashboard',
-        icon: <Icon name={"placeholder"} size={"small"}/>
-    }
-}
-
-export const NotSelected: Story = {
-    args: {
-        selected: false,
-        text: 'Dashboard',
-        icon: <Icon name={"placeholder"} size={"small"}/>
-    }
-}
+        icon: "placeholder",
+    },
+    render: (args) => (
+        <SidebarElement
+            selected={args.selected}
+            text={args.text}
+            icon={args.icon}
+            onClick={() => {alert("Clicked!")}}
+        />
+    )
+};

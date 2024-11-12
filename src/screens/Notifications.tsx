@@ -1,46 +1,96 @@
 import React from 'react';
 import { Alert } from "../components/alert/Alert";
-import { Button } from "../components/button/Button";
-import { iconMap } from "../components/icon/IconMap"; // Importa iconMap
+import { Searchbar } from '../components/searchbar/Searchbar';
+import { iconMap } from "../components/icon/IconMap";
+import {Dropdown} from "../components/dropdown/Dropdown";
+import {Toggle} from "../components/toggle/Toggle";
+import {CheckBox} from "../components/checkbox/CheckBox";
+import {IconButton} from "../components/icon-button/IconButton";
+import {useNavigate} from "react-router-dom";
+import {AlertList} from "../components/alert-list/AlertList";
 
 const Notifications = () => {
-    // Obtener el icono de flecha hacia atrás
-    const BackIcon = iconMap.get('arrow back');
+    const alerts = [
+        "Line 123",
+        "Line 134",
+        "Line 843",
+        "Line 947",
+        "Line 988",
+        "Line 256",
+    ];
+
+    const [isAllSelected, setIsAllSelected] = React.useState(false);
+    const [isFavoritesSelected, setIsFavoritesSelected] = React.useState(false);
+    const [isOngoingSelected, setIsOngoingSelected] = React.useState(false);
+    const navigate = useNavigate();
+    const handleAllToggleClick = () =>{
+        setIsAllSelected(!isAllSelected);
+    }
+
+    const handleFavoritesToggleClick = () =>{
+        setIsFavoritesSelected(!isFavoritesSelected);
+    }
+
+    const handleOngoingToggleClick = () => {
+        setIsOngoingSelected(!isOngoingSelected);
+    }
 
     return (
-        <div style={{ padding: '16px', backgroundColor: '#ffffff', color: 'black', minHeight: '100vh' }}>
-            <header style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'black' }}>
-                    {BackIcon && BackIcon(24, "black")} {/* Renderiza el icono si existe */}
-                </button>
-                <h1 style={{ flex: 1, textAlign: 'center', margin: 0 }}>Alerts</h1>
-            </header>
+        <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
+            {/* Header */}
+            <div className="flex items-center justify-center relative">
+                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/route-list")}/>
+                <span className="text-h2-regular">
+                    Alerts
+                </span>
+            </div>
 
-            {/* Search bar hardcoded */}
-            <div style={{ display: 'flex', alignItems: 'center', marginTop: '8px', marginBottom: '16px' }}>
-                <input
-                    type="text"
+            {/* Searchbar */}
+            <div className="w-full">
+                <Searchbar
                     placeholder="Search..."
-                    style={{
-                        flex: 1,
-                        padding: '8px',
-                        borderRadius: '16px',
-                        border: '1px solid #ccc',
-                        outline: 'none',
-                        backgroundColor: '#f5f5f5' // color de fondo para el input
-                    }}
-                    disabled
+                    leadingIcon=""
+                    trailingIcon="search"
+                    options={alerts}
                 />
-                <button style={{ marginLeft: '8px', background: 'none', border: 'none', cursor: 'default' }}>🔍</button>
             </div>
 
-            {/* Button dropdown */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
-                <Button>Button</Button>
+            {/* Filter dropdown */}
+            <div className='flex justify-end'>
+                <Dropdown
+                    overlayProps={{
+                        rows: [
+                            {
+                                label: "All",
+                                right: (<Toggle selected={isAllSelected} onClick={handleAllToggleClick}/>)
+                            },
+                            {
+                                label: "Favorites",
+                                right: <CheckBox selected={isFavoritesSelected}
+                                                 onClick={handleFavoritesToggleClick}/>
+                            },
+                            {
+                                label: "Ongoing",
+                                right: <CheckBox selected={isOngoingSelected} onClick={handleOngoingToggleClick}/>
+                            }
+                        ]
+                    }}
+                    buttonProps={{
+                        text: "Filter",
+                        color: "primary",
+                        variant: "outlined",
+                        trailingIcon: "arrow down",
+                        rounded: "full",
+                        size: "medium",
+                        disableHover: true,
+                    }}
+                    overlayAlignment={"right"}
+                />
             </div>
+
 
             {/* List of Alerts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="flex flex-col gap-2 w-full">
                 <Alert
                     active={true}
                     link={false}
@@ -54,23 +104,23 @@ const Notifications = () => {
                     link={false}
                     href=""
                     text="High passenger volume on Line 843 due to local events."
-                    time="6:24 am"
+                    time="6:30 am"
                     icon="bus alert"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
-                    time="6:24 am"
+                    text="Unexpected incident on Line 123. Delays expected."
+                    time="8:00 am"
                     icon="calendar clock"
                 />
                 <Alert
                     active={false}
                     link={false}
                     href=""
-                    text="Unexpected incident on Line 123. Delays expected."
-                    time="6:24 am"
+                    text="Line 123 will be temporarily unavailable from 10 pm to 5 am."
+                    time="10:00 pm"
                     icon="calendar clock"
                 />
             </div>

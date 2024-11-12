@@ -6,6 +6,8 @@ import {Dropdown} from "../components/dropdown/Dropdown";
 import {Toggle} from "../components/toggle/Toggle";
 import {CheckBox} from "../components/checkbox/CheckBox";
 import {IconButton} from "../components/icon-button/IconButton";
+import {useNavigate} from "react-router-dom";
+import {AlertList} from "../components/alert-list/AlertList";
 
 const Notifications = () => {
     const alerts = [
@@ -20,7 +22,7 @@ const Notifications = () => {
     const [isAllSelected, setIsAllSelected] = React.useState(false);
     const [isFavoritesSelected, setIsFavoritesSelected] = React.useState(false);
     const [isOngoingSelected, setIsOngoingSelected] = React.useState(false);
-
+    const navigate = useNavigate();
     const handleAllToggleClick = () =>{
         setIsAllSelected(!isAllSelected);
     }
@@ -37,7 +39,7 @@ const Notifications = () => {
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
             {/* Header */}
             <div className="flex items-center justify-center relative">
-                <IconButton iconName="arrow back" size="small" className="absolute left-0" />
+                <IconButton iconName="arrow back" size="small" className="absolute left-0" onClick={() => navigate("/route-list")}/>
                 <span className="text-h2-regular">
                     Alerts
                 </span>

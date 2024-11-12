@@ -7,6 +7,7 @@ import {IconButton} from "../components/icon-button/IconButton";
 import {TripSummaryList} from "../components/trip-summary-list/TripSummaryList";
 import {TripSummary} from "../components/trip-summary/TripSummary";
 import {TransportationMethod} from "../components/transportation-method/TransportationMethod";
+import {useNavigate} from "react-router-dom";
 
 const RouteList = () => {
     const places = [
@@ -22,7 +23,7 @@ const RouteList = () => {
     const [routeValue, setRouteValue] = useState("University of Chicago");
     const [filteredLocationOptions, setFilteredLocationOptions] = useState(places.filter(alert => alert.toLowerCase().includes(locationValue.toLowerCase())));
     const [filteredRouteOptions, setFilteredRouteOptions] = useState(places.filter(alert => alert.toLowerCase().includes(routeValue.toLowerCase())));
-
+    const navigate = useNavigate()
 
     const [isAllSelected, setIsAllSelected] = useState(false);
     const [isFavoritesSelected, setIsFavoritesSelected] = useState(false);
@@ -60,7 +61,7 @@ const RouteList = () => {
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
             {/* Header */}
             <div>
-                <IconButton iconName="arrow back" size="small" onClick={() => alert("going back")}/>
+                <IconButton iconName="arrow back" size="small" onClick={() => navigate("/notifications")}/>
             </div>
 
             {/* Searchbar */}

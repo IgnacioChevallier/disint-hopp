@@ -24,6 +24,8 @@ export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement
     leadingIconSize?: IconProps["size"];
 }
 
+export type ListItemComponent = React.ReactElement<ListItemProps>
+
 export const ListItem = ({
                              text,
                              leadingIcon,

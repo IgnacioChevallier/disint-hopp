@@ -35,6 +35,9 @@ type Story = StoryObj<typeof ListItem>;
 export const Default: Story = {
     args: {
         text: 'List Item Example',
-        color: 'primary',
+        leadingIcon: 'placeholder',
+        trailingIcon: 'placeholder',
+        controlType: 'checkbox',
+        additionalText: 'Additional Text'
     },
 };

@@ -1,5 +1,4 @@
 import React, { HTMLAttributes } from "react";
-import {RouteDirection, RouteDirectionProps} from "../route-direction/RouteDirection";
 import {ListItem, ListItemProps} from "../list-item/ListItem";
 
 export interface PastTripsProps extends HTMLAttributes<HTMLDivElement> {

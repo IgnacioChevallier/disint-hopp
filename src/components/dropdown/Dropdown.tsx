@@ -26,7 +26,8 @@ export const Dropdown = ({
         const handleClickOutside = (event: MouseEvent) => {
             if (
                 buttonRef.current &&
-                !buttonRef.current.contains(event.target as Node)
+                !buttonRef.current.contains(event.target as Node) &&
+                !(event.target as HTMLElement).closest("[data-inside-overlay='true']")
             ) {
                 setIsOpen(false);
             }
@@ -71,6 +72,7 @@ export const Dropdown = ({
             {isOpen && (
                 <Overlay
                     {...overlayProps}
+                    data-inside-overlay="true"
                     style={{
                         position: "absolute",
                         ...overlayPosition

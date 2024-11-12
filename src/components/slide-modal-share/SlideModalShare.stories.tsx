@@ -13,11 +13,7 @@ export default meta;
 type Story = StoryObj<typeof SlideModalShare>;
 
 export const Default: Story = {
-    args: {
-    },
-
-
-    render: (args) => {
+    render: () => {
         const sampleProfiles = [
             { name: "Luke", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyymRQzlmlWpFUl2W506mVg1ttrBzwj19zA&s" },
             { name: "Leia", src: "https://lasdaoalplay.com/wp-content/uploads/2015/07/leia-princess-leia-organa-solo-skywalker-9301324-449-661.jpg" },

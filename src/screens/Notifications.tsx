@@ -57,16 +57,15 @@ const Notifications = () => {
                         rows: [
                             {
                                 label: "All",
-                                right: (<Toggle selected={isAllSelected} onClick={handleAllToggleClick}/>)
+                                right: (<Toggle selected={isAllSelected} onClick={handleAllToggleClick} />)
                             },
                             {
                                 label: "Favorites",
-                                right: <CheckBox selected={isFavoritesSelected}
-                                                 onClick={handleFavoritesToggleClick}/>
+                                right: <CheckBox selected={isFavoritesSelected} onClick={handleFavoritesToggleClick} size={"md"}/>
                             },
                             {
                                 label: "Ongoing",
-                                right: <CheckBox selected={isOngoingSelected} onClick={handleOngoingToggleClick}/>
+                                right: <CheckBox selected={isOngoingSelected} onClick={handleOngoingToggleClick} size={"md"}/>
                             }
                         ]
                     }}

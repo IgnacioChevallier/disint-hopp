@@ -61,12 +61,10 @@ const RouteList = () => {
 
     return (
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
-            {/* Header */}
             <div>
                 <IconButton iconName="arrow back" size="small" onClick={() => navigate("/presentation")}/>
             </div>
 
-            {/* Searchbar */}
             <div className="flex flex-col gap-4 w-full">
                 <Searchbar
                     placeholder="Search..."
@@ -88,7 +86,6 @@ const RouteList = () => {
                 />
             </div>
 
-            {/* Filter dropdown */}
             <div className='flex justify-end'>
                 <Dropdown
                     overlayProps={{

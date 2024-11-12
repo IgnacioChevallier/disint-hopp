@@ -2,7 +2,7 @@ import {TransportationMethodComponent, TransportationMethodProps} from "../trans
 import React, {HTMLAttributes, useState} from "react";
 import Icon from "../icon/Icon";
 import "../../styles/customScrollbar.css";
-import {IconButton} from "../icon-button/IconButton"; // Import the custom scrollbar styles
+import {IconButton} from "../icon-button/IconButton";
 
 export interface TripSummaryProps extends HTMLAttributes<HTMLDivElement> {
     children: TransportationMethodComponent | TransportationMethodComponent[];

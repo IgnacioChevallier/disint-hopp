@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, ButtonProps } from "../button/Button";
 import { Overlay, OverlayProps } from "../overlay/Overlay";
+const theme = {
+    primary: "#0095FF"
+}
 
 export interface DropdownProps {
     open?: boolean;
@@ -67,7 +70,7 @@ export const Dropdown = ({
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
                 trailingIconSize="small"
-                trailingIconColor="blue" // FIXME: COMO LE PASO EL COLOR PRIMARY DE TAILWIND???
+                trailingIconColor={theme.primary}
             />
             {isOpen && (
                 <Overlay

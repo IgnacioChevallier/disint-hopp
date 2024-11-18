@@ -7,7 +7,7 @@ export interface DestinationPreviewProps {
 
 export const DestinationPreview = ({destination, finalStop}: DestinationPreviewProps) => {
     return (
-        <div className={"min-w-[300px] min-h-[184px] bg-gray-100 rounded-[16px] py-[16px]"}>
+        <div className={"min-w-[300px] min-h-[184px] bg-white rounded-[16px] py-[16px]"}>
             <div className={"flex flex-col justify-center items-center"}>
                 <h3 className={"text-h3-bold"}>{destination}</h3>
                 <h1 className={"text-h1-bold"}>{finalStop}</h1>

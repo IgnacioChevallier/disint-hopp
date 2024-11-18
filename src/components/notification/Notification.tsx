@@ -4,12 +4,12 @@ import {iconMap} from "../icon/IconMap";
 import Icon from "../icon/Icon";
 
 const notificationStyles = cva(
-    ' rounded-lg flex flex-col gap-2.5 px-2.5 py-2.5 rounded-[24px]',
+    ' rounded-lg flex flex-col gap-[10px] px-[10px] py-[10px] rounded-[24px] min-h-[87px] justify-center',
     {
         variants: {
             type: {
-                default: 'bg-gray-100',
-                detailed: 'bg-gray-100',
+                default: 'bg-white',
+                detailed: 'bg-white',
             },
         },
         defaultVariants: {
@@ -29,10 +29,10 @@ export type NotificationProps =
 
 export const Notification = ({ type, title, subtitle, description, iconName }: NotificationProps) => {
     return (
-        <div className="px-2.5 py-2.5">
+        <div className="px-[10px] py-[10px]">
             <div className={notificationStyles({ type })}>
                 <div className="flex items-center gap-2 max-w-full truncate overflow-hidden">
-                    <Icon name={iconName} size={'large'} />
+                    <Icon name={iconName} size={'large'} color={"black"}/>
                     <div>
                         {subtitle && <p className="text-p-regular line-clamp-1">{subtitle}</p>}
                         <p className="text-h3-bold line-clamp-1">{title}</p>

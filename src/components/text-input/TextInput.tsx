@@ -1,7 +1,7 @@
 import {InputHTMLAttributes} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 
-const textInputVariant = cva("flex flex-row gap-2 p-2 bg-gray-100", {
+const textInputVariant = cva("flex flex-row gap-2 p-2 bg-white", {
     variants: {
         color: {
             primary: "focus:outline-primary",

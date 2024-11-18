@@ -77,6 +77,7 @@ export const Dropdown = ({
                     {...overlayProps}
                     data-inside-overlay="true"
                     style={{
+                        width: "170px",
                         position: "absolute",
                         ...overlayPosition
                     }}

@@ -11,7 +11,7 @@ export const Overlay = ({ rows, ...props }: OverlayProps) => {
 
     if (!overlayRoot) return null;
     return createPortal(
-        <div className="flex flex-col bg-gray-200 rounded max-w-[300px]" {...props}>
+        <div className="flex flex-col bg-white rounded-[10px] w-full shadow-xl" {...props}>
             {rows.map((overlayRowProps, index) => (
                 <OverlayRow key={index} {...overlayRowProps} />
             ))}

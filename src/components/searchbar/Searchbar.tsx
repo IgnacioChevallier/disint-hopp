@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Icon, {IconProps} from "../icon/Icon";
+import {Overlay} from "../overlay/Overlay";
+import {OverlayRowProps} from "../overlay-row/OverlayRow";
 
 interface SearchbarProps {
     placeholder: string;
@@ -16,12 +18,18 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchText, setSearchText] = useState(value || '');
     const searchbarRef = useRef<HTMLDivElement>(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
+    const [overlayPosition, setOverlayPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
 
     const handleInputClick = () => {
         setDropdownOpen(!isDropdownOpen);
+        if (searchbarRef.current) {
+            const rect = searchbarRef.current.getBoundingClientRect();
+            setOverlayPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+        }
     };
 
-    const handleOptionClick = (option: string) => {
+    const handleOptionClick = (option: string, event: React.MouseEvent<HTMLDivElement>) => {
         setSearchText(option);
         setDropdownOpen(false);
     };
@@ -33,7 +41,8 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (searchbarRef.current && !searchbarRef.current.contains(event.target as Node)) {
+            if (searchbarRef.current && !searchbarRef.current.contains(event.target as Node)&&
+                !(event.target as HTMLElement).closest("[data-inside-overlay='true']")) {
                 setDropdownOpen(false);
             }
         };
@@ -45,26 +54,12 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
     }, []);
 
     return (
-        <div ref={searchbarRef} style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', position: 'relative' }}>
+        <div ref={searchbarRef} className={"flex flex-col w-screen items-center relative"}>
             <div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: '48px',
-                    width: '100%',
-                    padding: '0px 16px',
-                    border: '1px solid #000',
-                    borderRadius: '24px',
-                    backgroundColor: '#FFF',
-                    gap: '8px',
-                    cursor: 'pointer',
-                    boxSizing: 'border-box',
-                    zIndex: searchBarZIndex ?? 100
-                }}
+                className={"flex items-center justify-center min-h-[48px] w-screen px-[16px] py-0 z-10 box-border cursor-pointer rounded-[8px] bg-white gap-[8px]"}
                 onClick={handleInputClick}
             >
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div className={"flex items-center"}>
                     {leadingIcon && (<Icon name={leadingIcon} size={"small"}/>)}
                 </div>
 
@@ -73,63 +68,34 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
                     placeholder={placeholder}
                     value={searchText}
                     onChange={handleInputChange}
-                    style={{
-                        flex: 1,
-                        border: 'none',
-                        outline: 'none',
-                        backgroundColor: 'transparent',
-                        textAlign: 'left'
-                    }}
+                    className={"flex-1 border-none outline-none bg-transparent text-gray-800 text-left"}
                 />
 
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div className={"flex items-center"}>
                     {trailingIcon && (<Icon name={trailingIcon} size={"small"}/>)}
                 </div>
             </div>
 
             {isDropdownOpen && (options.length !== 0) && (
-                <div
-                    style={{
-                        marginTop: '-24px',
-                        width: '100%',
-                        padding: '8px 16px',
-                        border: '1px solid #000',
-                        borderBottomLeftRadius: '24px',
-                        borderBottomRightRadius: '24px',
-                        backgroundColor: '#f5f5f5',
-                        boxSizing: 'border-box',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-                        zIndex: dropdownZIndex ?? 75,
-                        maxHeight: '200px',
-                        overflowY: 'auto',
-                        position: 'absolute',
-                        top: '100%',
-                        paddingTop: '24px',
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none'
-                    }}
-                >
-                    <style>
-                        {`
-                            div::-webkit-scrollbar {
-                                display: none;
-                            }
-                        `}
-                    </style>
-
-                    {options.map((option, index) => (
-                        <div
-                            key={index}
-                            onClick={() => handleOptionClick(option)}
-                            style={{
-                                padding: '8px 0',
-                                cursor: 'pointer',
-                                borderBottom: index < options.length - 1 ? '1px solid #eaeaea' : 'none'
-                            }}
-                        >
-                            {option}
-                        </div>
-                    ))}
+                <div ref={overlayRef}>
+                    <Overlay
+                        data-inside-overlay="true"
+                        rows={options.map((option: string): OverlayRowProps => ({
+                                onClick: (event) => handleOptionClick(option, event),
+                                label: option,
+                                style: {cursor: "pointer"},
+                            })
+                        )}
+                        style={{
+                            position: 'absolute',
+                            top: overlayPosition.top + 2,
+                            left: overlayPosition.left + 2,
+                            zIndex: dropdownZIndex ?? 100,
+                            maxHeight: "200px",
+                            overflowY: "auto",
+                            scrollbarWidth: "none"
+                        }}
+                    />
                 </div>
             )}
         </div>

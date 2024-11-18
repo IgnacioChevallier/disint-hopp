@@ -52,7 +52,7 @@ module.exports = {
           800: "#1A1A1A"
         },
         background: {
-          main: "#F1F1F1",
+          main: "#F8F8FF",
         },
         white: "#FFFFFF",
         black: "#000000"

@@ -7,7 +7,7 @@ const meta: Meta<typeof Sidebar> = {
     title: "Components/Sidebar",
     component: Sidebar,
     parameters: {
-        layout: "centered",
+        layout: "fullscreen",
     },
 };
 export default meta;

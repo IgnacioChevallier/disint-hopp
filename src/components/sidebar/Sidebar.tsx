@@ -7,7 +7,7 @@ export interface SidebarProps {
 
 export const Sidebar = ({children}: SidebarProps) => {
     return (
-        <div className={"min-w-[243px] min-h-[851px] bg-background-main py-[24px] px-[32px]"}>
+        <div className={"min-w-[243px] max-w-[243px] h-screen bg-background-main py-[24px] px-[32px]"}>
             <div className={"flex flex-row items-center p-[10px] gap-[10px]"}>
                 <Icon name={"hopp"} size={"large"} color={"black"}/>
                 <h2 className={"text-gray-800 text-h2-bold"}>Hopp</h2>

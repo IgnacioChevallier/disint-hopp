@@ -6,8 +6,8 @@ const sidebarElementVariant = cva(
     "flex flex-row items-center gap-2 px-3 py-1 rounded min-w-[179px] max-w-[179px] min-h-[29px] max-h-[29px] hover:cursor-pointer", {
     variants: {
         selected: {
-            true: "bg-primary-light text-primary",
-            false: "bg-white text-gray-400"
+            true: "bg-primary-light text-primary bg-opacity-10",
+            false: "text-gray-400"
         }
     }
 })

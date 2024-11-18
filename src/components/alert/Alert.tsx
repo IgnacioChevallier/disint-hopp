@@ -6,7 +6,7 @@ const alertVariant = cva("flex flex-row rounded px-3 py-4 gap-3 h-[90px] w-full"
     variants: {
         active: {
             true: "bg-white",
-            false: "bg-gray-200",
+            false: "bg-gray-100",
         }
     }
 });

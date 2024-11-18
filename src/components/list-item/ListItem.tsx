@@ -5,7 +5,7 @@ import {Radio} from "../radio/Radio";
 import {Toggle} from "../toggle/Toggle";
 import Icon, {IconProps} from "../icon/Icon";
 
-const listItemVariant = cva("flex items-center gap-2 p-2 bg-background-main rounded-lg", {
+const listItemVariant = cva("flex items-center gap-2 p-2 bg-white rounded-lg", {
     variants: {
         controlType: {
             checkbox: "",

@@ -6,17 +6,9 @@ export interface TripSummaryListProps {
 }
 
 export const TripSummaryList = ({ children }: TripSummaryListProps) => {
-    const childrenArray = React.Children.toArray(children);
-
     return (
-        <div>
-            {childrenArray.map((child, index) => (
-                <React.Fragment key={index}>
-                    {index === 0 && (<hr className="border-t-[1px] border-gray-300"/>)}
-                    {child}
-                    <hr className="border-t-[1px] border-gray-300" />
-                </React.Fragment>
-            ))}
+        <div className={"flex flex-col gap-[8px] py-[8px]"}>
+            {children}
         </div>
     )
 }

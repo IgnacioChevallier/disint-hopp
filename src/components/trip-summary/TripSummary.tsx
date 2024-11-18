@@ -16,7 +16,7 @@ export const TripSummary = ({children, time, onClick, ...props}: TripSummaryProp
     const childrenArray = React.Children.toArray(children);
 
     return(
-        <div className={"w-full max-w-full h-auto p-4 flex flex-col space-y-2"} {...props}>
+        <div className={"w-full max-w-full h-auto p-[16px] flex flex-col space-y-2 bg-white rounded-[8px]"} {...props}>
             <div className={"flex justify-end"}>
                 <p className={"text-p-bold"}>{time}</p>
             </div>

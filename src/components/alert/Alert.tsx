@@ -22,11 +22,11 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Alert = ({ active, link, href, text, time, icon, ...props }: AlertProps) => {
     return (
-        <div className={alertVariant({ active })} {...props}>
+        <div className={alertVariant({ active })} {...props} >
             <div className="flex items-center">
                 {icon && <Icon name={icon} size="medium" /> }
             </div>
-            <div className="flex flex-col flex-grow text-ellipsis overflow-hidden">
+            <div className="flex flex-col flex-grow text-ellipsis overflow-hidden justify-center">
                 <span className={`text-p-regular text-ellipsis ${link ? "line-clamp-2" : "line-clamp-3"}`}>
                     {text}
                 </span>

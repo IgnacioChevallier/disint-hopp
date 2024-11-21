@@ -20,6 +20,12 @@ export interface IconProps extends VariantProps<typeof iconVariant> {
     color?: string;
 }
 
+const colorMap: { [key: string]: string } = {
+    primary: "#0095FF",
+    danger: "#DC3545",
+    gray: "#4C4C4C",
+};
+
 const sizeMap = {
     small: 24,
     medium: 32,
@@ -31,7 +37,9 @@ const Icon = ({ name, size, color = "#1A1A1A" }: IconProps) => {
     const icon = iconMap.get(name.toString());
     if (!icon) return null;
     const numericSize = sizeMap[size!];
-    return <div className={iconVariant({ size })}>{icon(numericSize, color)}</div>;
+    const hexaColor = colorMap[color] || color;
+    console.log(hexaColor);
+    return <div className={iconVariant({ size })}>{icon(numericSize, hexaColor)}</div>;
 };
 
 export default Icon;

@@ -42,8 +42,8 @@ type Story = StoryObj<typeof ListItem>;
 export const Default: Story = {
     args: {
         text: 'List Item Example',
-        leadingIcon: 'placeholder',
-        trailingIcon: 'placeholder',
+        leadingIcon: 'bus alert',
+        trailingIcon: 'location',
         additionalText: 'Additional Text'
     },
 };
@@ -53,6 +53,7 @@ export const WithLeadingIcon: Story = {
         text: 'Share routes',
         leadingIcon: 'share',
         trailingIcon: 'undefined',
+        additionalText: ''
     },
 }
 
@@ -60,6 +61,7 @@ export const WithTrailingIcon: Story = {
     args: {
         text: 'Inspect options',
         trailingIcon: 'three dots',
+        additionalText: ''
     },
 }
 
@@ -67,5 +69,6 @@ export const WithControlType: Story = {
     args: {
         text: 'Toggle me',
         controlType: 'toggle',
+        additionalText: ''
     },
 }

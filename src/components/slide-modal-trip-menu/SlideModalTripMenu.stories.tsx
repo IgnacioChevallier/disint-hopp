@@ -18,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof SlideModalTripMenu>;
 
-export const Default: Story = {
+export const Closed: Story = {
     args: {
         arrivalTime: "5:24 pm",
         distance: "30 km",
@@ -29,7 +29,7 @@ export const Default: Story = {
     },
 };
 
-export const Open: Story = {
+export const Opened: Story = {
     args: {
         arrivalTime: "5:24 pm",
         distance: "30 km",

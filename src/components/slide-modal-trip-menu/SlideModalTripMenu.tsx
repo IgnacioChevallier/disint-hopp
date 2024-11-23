@@ -3,7 +3,7 @@ import {SlideModalBox} from "../slide-modal-box/SlideModalBox";
 import {IconButton} from "../icon-button/IconButton";
 import {Button} from "../button/Button";
 import {List} from "../list/List";
-import {ListItemProps} from "../list-item/ListItem";
+import {ListItem, ListItemComponent, ListItemProps} from "../list-item/ListItem";
 
 export interface SlideModalTripMenuProps {
     arrivalTime: string;
@@ -14,22 +14,10 @@ export interface SlideModalTripMenuProps {
 
 const SlideModalTripMenu = ({ arrivalTime, time, distance, open} : SlideModalTripMenuProps) => {
     const [isOpen, setOpen] = useState(open);
-    const menuSettings: ListItemProps[] = [
-        {
-            text: "Share progress of the trip",
-            leadingIcon: "share",
-            leadingIconSize: "small"
-        },
-        {
-            text: "Route directions",
-            leadingIcon: "alt routes",
-            leadingIconSize: "small"
-        },
-        {
-            text: "Add stop to the trip",
-            leadingIcon: "add stop",
-            leadingIconSize: "small"
-        },
+    const menuSettings: ListItemComponent[] = [
+        <ListItem text="Share progress of the trip" leadingIcon="share" leadingIconSize="small"/>,
+        <ListItem text="Route directions" leadingIcon="alt routes" leadingIconSize="small"/>,
+        <ListItem text="Add stop to the trip" leadingIcon="add stop" leadingIconSize="small"/>
     ]
 
     return (
@@ -44,7 +32,9 @@ const SlideModalTripMenu = ({ arrivalTime, time, distance, open} : SlideModalTri
                     <Button text={"Back"} size={"medium"} variant={"contained"} color={"danger"} rounded={true}/>
                 </div>
                 {isOpen && (
-                    <List items={menuSettings} endLine={false}/>
+                    <List>
+                        {menuSettings}
+                    </List>
                 )}
             </div>
         </SlideModalBox>

@@ -1,26 +1,25 @@
 import React, {HTMLAttributes} from "react";
-import {ListItem, ListItemProps} from "../list-item/ListItem";
-
+import { ListItemComponent, ListItemProps} from "../list-item/ListItem";
 
 export interface ListProps extends HTMLAttributes<HTMLDivElement> {
-    items: ListItemProps[];
+    children: ListItemComponent | ListItemComponent[];
     endLine?: boolean;
+    dividingLines?: boolean;
     onItemClick?: (item: ListItemProps) => void;
 }
 
-export const List = ({items, endLine, onItemClick, ...props}: ListProps) => {
+export const List = ({children, endLine, dividingLines, onItemClick, ...props}: ListProps) => {
+    const childrenArray = React.Children.toArray(children);
     return (
         <div className="flex flex-col gap-2" {...props}>
             <div className="w-full h-px bg-gray-300"/>
-            {items.map((itemProps, index) => (
+            {childrenArray.map((child, index) => (
+                <React.Fragment key={index}>
                 <div key={index} className={"flex flex-col gap-2"}>
-                    <ListItem
-                        {...itemProps}
-                        onClick={() => onItemClick && onItemClick(itemProps)}
-                        className="cursor-pointer hover:bg-gray-100"
-                    />
-                    {!endLine && index === items.length - 1 ? null : <div className="w-full h-px bg-gray-300"/>}
+                    {child}
+                    {dividingLines && (!endLine && index === childrenArray.length - 1 ? null : <div className="w-full h-px bg-gray-300"/>)}
                 </div>
+                </React.Fragment>
             ))}
         </div>
     );

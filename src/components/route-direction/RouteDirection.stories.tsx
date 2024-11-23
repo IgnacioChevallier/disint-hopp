@@ -3,7 +3,7 @@ import { RouteDirection } from "./RouteDirection";
 import { iconMap } from "../icon/IconMap";
 
 const meta: Meta<typeof RouteDirection> = {
-    title: 'Travel/RouteDirection',
+    title: 'Travel/Sub-Components/RouteDirection',
     component: RouteDirection,
     tags: ['autodocs'],
     parameters: {

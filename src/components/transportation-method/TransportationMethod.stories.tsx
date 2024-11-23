@@ -3,7 +3,7 @@ import { TransportationMethod } from "./TransportationMethod";
 import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof TransportationMethod> = {
-    title: "Travel/TransportationMethod",
+    title: "Travel/Sub-Components/TransportationMethod",
     component: TransportationMethod,
     tags: ['autodocs'],
     parameters: {

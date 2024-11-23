@@ -4,8 +4,9 @@ import {iconMap} from "../icon/IconMap";
 
 
 const meta: Meta<typeof ListItem> = {
-    title: 'Components/ListItem',
+    title: 'Common/ListItem',
     component: ListItem,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

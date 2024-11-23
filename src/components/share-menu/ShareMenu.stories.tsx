@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import {ShareMenu} from "./ShareMenu";
 
 const meta: Meta<typeof ShareMenu> = {
-    title: "Components/ShareMenu",
+    title: "Modals/ShareMenu",
     component: ShareMenu,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

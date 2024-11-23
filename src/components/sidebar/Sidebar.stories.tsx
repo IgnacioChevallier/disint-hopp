@@ -4,8 +4,9 @@ import {SidebarElement} from "../sidebar-element/SidebarElement";
 import {useState} from "react";
 
 const meta: Meta<typeof Sidebar> = {
-    title: "Components/Sidebar",
+    title: "Common/Sidebar",
     component: Sidebar,
+    tags: ['autodocs'],
     parameters: {
         layout: "fullscreen",
     },

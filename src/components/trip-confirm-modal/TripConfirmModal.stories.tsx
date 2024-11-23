@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { TripConfirmModal } from "./TripConfirmModal";
 
 const meta: Meta<typeof TripConfirmModal> = {
-    title: "Components/TripConfirmModal",
+    title: "Modals/TripConfirmModal",
     component: TripConfirmModal,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

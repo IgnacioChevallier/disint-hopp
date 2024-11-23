@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { RouteDirectionList } from "./RouteDirectionList";
 
 const meta: Meta<typeof RouteDirectionList> = {
-    title: 'Components/RouteDirectionList',
+    title: 'Travel/RouteDirectionList',
     component: RouteDirectionList,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

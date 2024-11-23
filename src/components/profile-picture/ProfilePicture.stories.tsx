@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import ProfilePicture from './ProfilePicture';
-import { iconMap } from '../icon/IconMap';
 
 const meta: Meta<typeof ProfilePicture> = {
-    title: 'Components/ProfilePicture',
+    title: 'ProfilePicture/ProfilePicture',
     component: ProfilePicture,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

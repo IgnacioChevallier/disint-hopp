@@ -4,8 +4,9 @@ import {TripSummary} from "../trip-summary/TripSummary";
 import {TransportationMethod} from "../transportation-method/TransportationMethod";
 
 const meta: Meta<typeof TripSummaryList> = {
-    title: "Components/TripSummaryList",
+    title: "Travel/TripSummaryList",
     component: TripSummaryList,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

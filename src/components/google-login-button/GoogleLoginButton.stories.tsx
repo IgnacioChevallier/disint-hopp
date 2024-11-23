@@ -2,8 +2,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import {GoogleLoginButton} from "./GoogleLoginButton";
 
 const meta: Meta<typeof GoogleLoginButton> = {
-    title: 'Components/GoogleLoginButton',
+    title: 'Common/GoogleLoginButton',
     component: GoogleLoginButton,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

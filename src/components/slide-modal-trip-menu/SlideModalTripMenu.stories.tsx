@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import SlideModalTripMenu from "./SlideModalTripMenu";
 
 const meta: Meta<typeof SlideModalTripMenu> = {
-    title: "Components/SlideModalTripMenu",
+    title: "Modals/SlideModalTripMenu",
     component: SlideModalTripMenu,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

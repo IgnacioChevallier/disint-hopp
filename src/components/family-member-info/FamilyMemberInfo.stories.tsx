@@ -3,8 +3,9 @@ import { Meta, StoryObj } from '@storybook/react';
 import FamilyMemberInfo from './FamilyMemberInfo';
 
 const meta: Meta<typeof FamilyMemberInfo> = {
-    title: 'Components/FamilyMemberInfo',
+    title: 'Family/FamilyMemberInfo',
     component: FamilyMemberInfo,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

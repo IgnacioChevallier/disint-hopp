@@ -3,8 +3,9 @@ import { useArgs } from "@storybook/preview-api";
 import { Toggle } from "./Toggle";
 
 const meta: Meta<typeof Toggle> = {
-    title: "Components/Toggle",
+    title: "Buttons/Toggle",
     component: Toggle,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

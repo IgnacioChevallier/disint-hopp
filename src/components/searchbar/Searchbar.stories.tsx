@@ -3,8 +3,9 @@ import { Searchbar } from "./Searchbar";
 import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Searchbar> = {
-    title: 'Components/Searchbar',
+    title: 'Common/Searchbar',
     component: Searchbar,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

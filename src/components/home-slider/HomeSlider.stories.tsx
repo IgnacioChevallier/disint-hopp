@@ -3,8 +3,9 @@ import { HomeSlider } from "./HomeSlider";
 import {ListItem} from "../list-item/ListItem";
 
 const meta: Meta<typeof HomeSlider> = {
-    title: "Components/HomeSlider",
+    title: "Modals/HomeSlider",
     component: HomeSlider,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

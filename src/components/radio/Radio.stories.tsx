@@ -3,8 +3,9 @@ import {Meta, StoryObj} from "@storybook/react";
 import {useArgs} from "@storybook/preview-api";
 
 const meta: Meta<typeof Radio> = {
-    title: 'Components/Radio',
+    title: 'Buttons/Radio',
     component: Radio,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered'
     },

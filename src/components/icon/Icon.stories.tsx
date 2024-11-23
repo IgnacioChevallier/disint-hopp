@@ -3,8 +3,9 @@ import Icon from "./Icon";
 import {iconMap} from "./IconMap";
 
 const meta: Meta<typeof Icon> = {
-    title: 'Components/Icon',
+    title: 'Icons/Icon',
     component: Icon,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

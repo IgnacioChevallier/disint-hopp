@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import SlideModalShare from "./SlideModalShare";
 
 const meta: Meta<typeof SlideModalShare> = {
-    title: "Components/SlideModalShare",
+    title: "Modals/SlideModalShare",
     component: SlideModalShare,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

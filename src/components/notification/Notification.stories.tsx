@@ -4,8 +4,9 @@ import { Notification } from "./Notification";
 import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Notification> = {
-    title: 'Components/Notification',
+    title: 'Common/Notification',
     component: Notification,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

@@ -4,8 +4,9 @@ import Icon from "../icon/Icon";
 import {CheckBox} from "../checkbox/CheckBox";
 
 const meta: Meta<typeof Overlay> = {
-    title: 'Components/Overlay',
+    title: 'Common/Overlay',
     component: Overlay,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ConfirmStopModal } from "./ConfirmStopModal";
 
 const meta: Meta<typeof ConfirmStopModal> = {
-    title: "Components/ConfirmStopModal",
+    title: "Modals/ConfirmStopModal",
     component: ConfirmStopModal,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

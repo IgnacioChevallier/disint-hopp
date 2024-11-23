@@ -5,8 +5,9 @@ import {Button} from "../button/Button";
 import {useState} from "react";
 
 const meta: Meta<typeof Modal> = {
-    title: 'Components/Modal',
+    title: 'Modals/Modal',
     component: Modal,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

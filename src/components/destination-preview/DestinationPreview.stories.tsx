@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { DestinationPreview } from "./DestinationPreview";
 
 const meta: Meta<typeof DestinationPreview> = {
-    title: "Components/DestinationPreview",
+    title: "Travel/DestinationPreview",
     component: DestinationPreview,
+    tags: ['autodocs'],
     parameters: {
         layout: "centered",
     },

@@ -2,8 +2,9 @@ import { Meta, StoryObj } from "@storybook/react";
 import { FavoriteTrips } from "./FavoriteTrips";
 
 const meta: Meta<typeof FavoriteTrips> = {
-    title: 'Components/FavoriteTrips',
+    title: 'Family/FavoriteTrips',
     component: FavoriteTrips,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

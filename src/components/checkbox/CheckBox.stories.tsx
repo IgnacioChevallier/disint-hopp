@@ -3,8 +3,9 @@ import { CheckBox } from "./CheckBox";
 import React, { useState, useEffect } from "react";
 
 const meta: Meta<typeof CheckBox> = {
-    title: 'Components/CheckBox',
+    title: 'Buttons/CheckBox',
     component: CheckBox,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },

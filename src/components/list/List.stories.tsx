@@ -2,8 +2,9 @@ import {Meta, StoryObj} from "@storybook/react";
 import {List} from "./List";
 
 const meta: Meta<typeof List> = {
-    title: 'Components/List',
+    title: 'Common/List',
     component: List,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top',
     },

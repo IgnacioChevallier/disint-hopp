@@ -27,11 +27,18 @@ export const Default: Story = {
             updateArgs({ checked: !args.checked });
         };
 
-        return <Radio checked={args.checked} onClick={handleClick} name={args.name} value={args.value}/>;
+        return (
+            <Radio
+                checked={args.checked}
+                onClick={handleClick}
+                name={args.name}
+                value={args.value}
+            />
+        );
     },
     args: {
-        checked: true,
+        checked: false,
         name: 'radio',
-        value: 'some value'
-    }
-}
+        value: 'some value',
+    },
+};

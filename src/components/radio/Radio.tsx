@@ -30,7 +30,13 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 export const Radio = ({checked, onClick, ...props}: RadioProps) => {
     return (
         <label style={{display: 'flex', alignItems: 'center', margin: 0, padding: 0}}>
-            <input type="radio" checked={checked} onChange={onClick} {...props} className="hidden" />
+            <input
+                type="radio"
+                checked={checked}
+                readOnly // Para evitar conflictos con el valor interno del input
+                {...props}
+                className="hidden"
+            />
             <span className={radioBackground({checked})} onClick={onClick}>
                 <span className={radioCircle({checked})}></span>
             </span>

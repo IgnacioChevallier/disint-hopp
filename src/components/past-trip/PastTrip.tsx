@@ -20,6 +20,7 @@ export const PastTrip = ({
                              end,
                              price,
                              time,
+                             style,
                              ...props
                          }: PastTripProps) => {
 
@@ -31,19 +32,22 @@ export const PastTrip = ({
                 justifyContent: "space-between",
                 width: '100%',
                 minHeight: 35,
+                ...style,
             }}>
-            {mainIcon &&
-                <div
-                    className="flex justify-center items-center w-12 h-7 min-w-12 min-h-6 rounded-full flex-shrink-0">
-                    <Icon name={mainIcon} size={"large"}/>
-                </div>
-            }
-            <div className="flex flex-col">
-                <div className="flex">
-                    <ListItem text={start} additionalText={price} leadingIcon="radio button checked" leadingIconSize="small" additionalTextColor="text-primary"/>
-                </div>
-                <div className="flex">
-                    <ListItem text={end} additionalText={time} leadingIcon="location" leadingIconSize="small"/>
+            <div className="flex items-center gap-4">
+                {mainIcon &&
+                    <div
+                        className="flex justify-center items-center w-12 h-7 min-w-12 min-h-6 rounded-full flex-shrink-0">
+                        <Icon name={mainIcon} size={"large"}/>
+                    </div>
+                }
+                <div className="flex flex-col">
+                    <div className="flex">
+                        <ListItem text={start} additionalText={price} leadingIcon="radio button checked" leadingIconSize="small" additionalTextColor="text-primary"/>
+                    </div>
+                    <div className="flex">
+                        <ListItem text={end} additionalText={time} leadingIcon="location" leadingIconSize="small"/>
+                    </div>
                 </div>
             </div>
         </li>

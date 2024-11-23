@@ -22,6 +22,7 @@ export interface ListItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement
     controlType?: "checkbox" | "radio" | "toggle";
     additionalText?: ReactNode;
     leadingIconSize?: IconProps["size"];
+    additionalTextColor?: string;
 }
 
 export type ListItemComponent = React.ReactElement<ListItemProps>
@@ -33,6 +34,7 @@ export const ListItem = ({
                              controlType,
                              additionalText,
                              leadingIconSize = "medium",
+                             additionalTextColor = "text-gray-500",
                              ...props
                          }: ListItemProps) => {
 
@@ -58,7 +60,7 @@ export const ListItem = ({
             <span className="flex-1 px-2">
                 {text}
             </span>
-            {additionalText && <span className="text-gray-500 px-2">{additionalText}</span>}
+            {additionalText && <span className={additionalTextColor + " px-2"}>{additionalText}</span>}
             {controlType === "checkbox" &&
                 <CheckBox size={"sm"} onClick={() => setCheckBox(!checkBox)} selected={checkBox}/>}
             {controlType === "radio" && <Radio onClick={() => setRadio(!radio)} checked={radio}/>}

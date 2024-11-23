@@ -3,8 +3,9 @@ import {Alert} from "./Alert";
 import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Alert> = {
-    title: 'Components/Alert',
+    title: 'Common/Alert',
     component: Alert,
+    tags: ['autodocs'],
     parameters: {
         layout: 'top'
     },

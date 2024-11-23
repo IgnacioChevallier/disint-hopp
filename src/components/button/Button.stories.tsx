@@ -10,6 +10,7 @@ const meta: Meta<typeof Button> = {
         layout: 'centered',
     },
     argTypes: {
+        onClick: {table: {disable: true}},
         leadingIcon: {
             control: "select",
             options: [...Array.from(iconMap.keys()), undefined],
@@ -31,20 +32,38 @@ const meta: Meta<typeof Button> = {
             options: ["primary", "danger", "gray"]
         },
         rounded: {
-            control: "boolean",
+            control: "select",
+            options: ["false", "true", "full"]
         },
         disabled: {
             control: "boolean"
-        }
+        },
+        trailingIconColor: {
+            control: "select",
+            options: ["primary", "danger", "gray"]
+        },
+        leadingIconColor: {
+            control: "select",
+            options: ["primary", "danger", "gray"]
+        },
+        leadingIconSize: {
+            control: "select",
+            options: ["small", "medium", "large"]
+        },
+        trailingIconSize: {
+            control: "select",
+            options: ["small", "medium", "large"]
+        },
     },
     args: {
         onClick: () => alert("button clicked!")
     },
-    play: async ({ args, canvasElement }) => {
-        const alertMock = spyOn(window, 'alert').mockImplementation(() => {});
+    play: async ({args, canvasElement}) => {
+        const alertMock = spyOn(window, 'alert').mockImplementation(() => {
+        });
 
         const canvas = within(canvasElement);
-        const button = canvas.getByRole('button', { name: args.text });
+        const button = canvas.getByRole('button', {name: args.text});
         await userEvent.click(button);
         await expect(alertMock).toHaveBeenCalledWith("button clicked!");
 
@@ -60,6 +79,29 @@ export const Default: Story = {
         variant: 'contained',
         color: 'primary',
         size: 'medium',
+        rounded: 'full',
+    },
+};
+
+export const Cancel: Story = {
+    args: {
+        text: 'Cancel',
+        variant: 'contained',
+        color: 'danger',
+        size: 'medium',
+        rounded: 'full',
+        bold: true,
+    },
+};
+
+export const Start: Story = {
+    args: {
+        text: 'Start',
+        variant: 'contained',
+        color: 'primary',
+        size: 'medium',
+        rounded: 'full',
+        bold: true,
     },
 };
 
@@ -89,7 +131,9 @@ export const WithLeadingIcon: Story = {
         leadingIcon: "arrow back",
         variant: 'contained',
         color: 'primary',
+        leadingIconSize: 'small',
         size: 'medium',
+        bold: true,
     },
 };
 
@@ -100,6 +144,8 @@ export const WithTrailingIcon: Story = {
         variant: 'outlined',
         color: 'primary',
         size: 'medium',
+        trailingIconSize: 'small',
+        bold: true,
     },
 };
 

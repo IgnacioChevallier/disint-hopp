@@ -1,8 +1,8 @@
 import {ButtonHTMLAttributes, forwardRef} from "react";
-import { cva, VariantProps } from "class-variance-authority";
-import Icon, { IconProps } from "../icon/Icon";
+import {cva, VariantProps} from "class-variance-authority";
+import Icon, {IconProps} from "../icon/Icon";
 
-const buttonVariant = cva("flex flex-row gap-2 outline-none justify-center", {
+const buttonVariant = cva("flex flex-row gap-2 outline-none justify-center items-center", {
     variants: {
         color: {
             primary: "",
@@ -157,27 +157,31 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
     trailingIconSize?: IconProps["size"];
     text?: string;
     disableHover?: boolean;
+    bold?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-                           leadingIcon,
-                           leadingIconColor,
-                           leadingIconSize = "medium",
-                           trailingIcon,
-                           trailingIconColor,
-                           trailingIconSize = "medium",
-                           text,
-                           size,
-                           rounded,
-                           variant,
-                           color,
-                           disableHover = false,
-                           ...props
-                       }: ButtonProps, ref) => {
+                                                                      leadingIcon,
+                                                                      leadingIconColor,
+                                                                      leadingIconSize = "medium",
+                                                                      trailingIcon,
+                                                                      trailingIconColor,
+                                                                      trailingIconSize = "medium",
+                                                                      text,
+                                                                      size,
+                                                                      rounded,
+                                                                      variant,
+                                                                      color,
+                                                                      bold,
+                                                                      disableHover = false,
+                                                                      ...props
+                                                                  }: ButtonProps, ref) => {
     return (
-        <button className={buttonVariant({ size, rounded, variant, color, disabled: props.disabled, disableHover })} ref={ref} {...props}>
-            {leadingIcon && <Icon name={leadingIcon} size={leadingIconSize} color={leadingIconColor} />}
-            {text}
+        <button className={buttonVariant({size, rounded, variant, color, disabled: props.disabled, disableHover})}
+                ref={ref} {...props}
+        >
+            {leadingIcon && <Icon name={leadingIcon} size={leadingIconSize} color={leadingIconColor}/>}
+            {text && <span className={bold ? "font-bold" : ""}>{text}</span>}
             {trailingIcon && <Icon name={trailingIcon} size={trailingIconSize} color={trailingIconColor}/>}
         </button>
     );

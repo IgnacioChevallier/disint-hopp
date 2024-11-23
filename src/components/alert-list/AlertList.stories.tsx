@@ -7,6 +7,9 @@ const meta: Meta<typeof AlertList> = {
     parameters: {
         layout: 'top',
     },
+    argTypes: {
+        alerts: { table: { disable: true } },
+    },
 };
 
 export default meta;
@@ -20,9 +23,9 @@ export const Default: Story = {
                 active: true,
                 link: true,
                 href: "https://example.com",
-                text: "This is an active alert with a link",
+                text: "Lines 123, 434, 843, 945 currently affected by strike",
                 time: "6:34 am",
-                icon: 'placeholder'
+                icon: 'bus alert'
             },
             {
                 active: true,
@@ -30,7 +33,7 @@ export const Default: Story = {
                 href: "https://example.com",
                 text: "Another active alert with a link",
                 time: "6:24 am",
-                icon: 'placeholder'
+                icon: 'bus alert'
             },
             {
                 active: false,
@@ -38,7 +41,15 @@ export const Default: Story = {
                 href: "",
                 text: "This is an inactive alert without a link",
                 time: "11:00 am",
-                icon: 'placeholder'
+                icon: 'calendar clock'
+            },
+            {
+                active: false,
+                link: false,
+                href: "",
+                text: "This is an inactive alert without a link",
+                time: "4:11 pm",
+                icon: 'calendar clock'
             }
         ]
     }

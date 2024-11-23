@@ -7,8 +7,15 @@ const meta: Meta<typeof HomeSlider> = {
     component: HomeSlider,
     tags: ['autodocs'],
     parameters: {
-        layout: "centered",
+        layout: "top",
     },
+    decorators: [
+        (Story) => (
+            <div style={{ paddingTop: '50%' }}>
+                <Story />
+            </div>
+        ),
+    ],
     argTypes: {
         opened: {
             control: "boolean"

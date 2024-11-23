@@ -12,7 +12,7 @@ export interface TripConfirmModalProps {
 export const TripConfirmModal = ({destination, arrivalTime, icons, onBackClick, onStartClick}: TripConfirmModalProps) => {
     return (
         <div
-            className={"min-w-[395px] max-w-[395px] rounded-t-[16px] bg-background-main p-[8px] shadow-[rgba(0,0,15,0.5)_0px_-2px_3px_-1px] gap-[16px] flex-col"}>
+            className={"w-screen rounded-t-[16px] bg-background-main p-[8px] shadow-[rgba(0,0,15,0.5)_0px_-2px_3px_-1px] gap-[16px] flex-col"}>
             <div className={"mt-[10px] flex flex-row justify-between"}>
                 <div>
                     <h3 className={"text-h3-extra-bold text-gray-800"}>{destination}</h3>

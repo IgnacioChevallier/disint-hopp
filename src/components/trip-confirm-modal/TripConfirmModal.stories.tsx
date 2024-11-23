@@ -6,8 +6,15 @@ const meta: Meta<typeof TripConfirmModal> = {
     component: TripConfirmModal,
     tags: ['autodocs'],
     parameters: {
-        layout: "centered",
+        layout: "top",
     },
+    decorators: [
+        (Story) => (
+            <div style={{ paddingTop: '50%' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 export default meta;
 

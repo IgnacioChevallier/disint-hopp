@@ -6,8 +6,15 @@ const meta: Meta<typeof SlideModalShare> = {
     component: SlideModalShare,
     tags: ['autodocs'],
     parameters: {
-        layout: "centered",
+        layout: "top",
     },
+    decorators: [
+        (Story) => (
+            <div style={{ paddingTop: '50%' }}>
+                <Story />
+            </div>
+        ),
+    ],
     argTypes: {
         profiles: {
             control: {

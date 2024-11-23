@@ -40,7 +40,7 @@ export const PastTrip = ({
             }
             <div className="flex flex-col">
                 <div className="flex">
-                    <ListItem text={start} additionalText={price} leadingIcon="radio button checked" leadingIconSize="small"/>
+                    <ListItem text={start} additionalText={price} leadingIcon="radio button checked" leadingIconSize="small" additionalTextColor="text-primary"/>
                 </div>
                 <div className="flex">
                     <ListItem text={end} additionalText={time} leadingIcon="location" leadingIconSize="small"/>

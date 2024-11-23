@@ -1,25 +1,14 @@
 import { Meta } from "@storybook/blocks";
 
 import Github from "./assets/github.svg";
-import Discord from "./assets/discord.svg";
-import Youtube from "./assets/youtube.svg";
-import Tutorials from "./assets/tutorials.svg";
-import Styling from "./assets/styling.png";
-import Context from "./assets/context.png";
-import Assets from "./assets/assets.png";
-import Docs from "./assets/docs.png";
-import Share from "./assets/share.png";
-import FigmaPlugin from "./assets/figma-plugin.png";
-import Testing from "./assets/testing.png";
-import Accessibility from "./assets/accessibility.png";
-import Theming from "./assets/theming.png";
-import AddonLibrary from "./assets/addon-library.png";
+import Figma from "./assets/figma.webp";
+import Storybook from "./assets/storybook.png"
 
-export const RightArrow = () => <svg 
-    viewBox="0 0 14 14" 
-    width="8px" 
-    height="14px" 
-    style={{ 
+export const RightArrow = () => <svg
+    viewBox="0 0 14 14"
+    width="8px"
+    height="14px"
+    style={{
       marginLeft: '4px',
       display: 'inline-block',
       shapeRendering: 'inherit',
@@ -31,178 +20,46 @@ export const RightArrow = () => <svg
   <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
 </svg>
 
-<Meta title="Configure your project" />
+<Meta title="Welcome" />
 
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Configure your project
-
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+  <div className='sb-section-title' style={{gap: "10px", alignItems: "center", display: "flex"}}>
+      <svg
+                  width="239"
+                  height="160"
+                  viewBox="0 0 239 160"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+              >
+                  <g
+                      transform="translate(0.000000,160.000000) scale(0.100000,-0.100000)"
+                      fill="#000000"
+                      stroke="none"
+                  >
+                      <path d="M1571 1569 c-21 -8 -23 -13 -17 -52 14 -85 61 -163 161 -267 122 -126 132 -152 82 -207 -33 -37 -80 -30 -203 28 -128 60 -171 77 -239 90 -70 14 -1095 12 -1112 -3 -16 -13 -17 -60 -1 -76 9 -9 94 -12 321 -12 l309 0 -41 -46 c-23 -26 -41 -51 -41 -55 0 -5 -161 -9 -358 -9 -335 0 -360 -1 -375 -18 -22 -24 -21 -55 1 -75 17 -15 56 -17 356 -17 l338 0 -6 -22 c-3 -13 -6 -38 -6 -55 l0 -33 -258 0 c-276 0 -282 -1 -282 -50 0 -49 6 -50 291 -50 l267 0 30 -55 30 -55 -137 0 c-107 0 -141 -3 -159 -16 -27 -18 -29 -55 -4 -77 16 -15 48 -17 240 -17 125 0 232 -4 247 -10 15 -6 68 -19 117 -30 129 -28 167 -53 212 -140 21 -40 48 -76 60 -81 17 -8 52 -3 147 21 164 41 237 46 375 23 124 -21 165 -16 190 22 14 21 14 26 0 53 -17 33 -70 62 -127 69 -48 7 -312 -14 -404 -32 -38 -7 -72 -11 -75 -8 -3 3 -5 82 -5 176 0 167 -1 174 -27 228 -30 60 -96 131 -149 161 l-34 19 40 -6 c85 -13 162 -79 208 -178 35 -72 46 -127 47 -215 l0 -72 63 31 c114 57 182 114 245 202 73 103 96 116 240 126 122 9 163 25 182 70 14 34 10 57 -26 153 -33 86 -82 132 -230 213 -124 68 -181 116 -231 195 -79 124 -178 187 -252 159z"/>
+                      <path d="M1402 1400 c-56 -53 1 -150 118 -204 65 -29 235 -79 251 -74 13 4 -205 242 -253 276 -40 28 -87 28 -116 2z"/>
+                      <path d="M1205 239 c-26 -17 -41 -18 -116 -13 -79 6 -88 5 -108 -15 -24 -24 -27 -68 -7 -97 13 -17 27 -19 118 -19 105 1 137 9 194 54 20 16 21 19 7 47 -17 33 -43 64 -52 63 -3 0 -19 -9 -36 -20z"/>
+                  </g>
+              </svg>
+    # Welcome to Hopp
   </div>
   <div className="sb-section">
     <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=react"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+      <img src={Github} alt="Github" className="sb-explore-image" />
+      <h3 className="sb-section-item-heading">Github Repository</h3>
+      <a href="https://github.com/IgnacioChevallier/disint-hopp">Check out our repo</a>
     </div>
     <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=react#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+      <img src={Figma} alt="Figma" className="sb-explore-image" />
+      <h3 className="sb-section-item-heading">Figma</h3>
+      <a href="placeholder">Check out our design</a>
     </div>
     <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
+      <img src={Storybook} alt="Testing" className="sb-explore-image" />
+      <h3 className="sb-section-item-heading">Storybook</h3>
+      <a href="http://ignaciochevallier.github.io/disint-hopp/">Check out our components</a>
     </div>
   </div>
-</div>
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with Storybook
-
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
-  </div>
-
-  <div className="sb-section">
-    <div className="sb-features-grid">
-      <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=react#publish-storybook-with-chromatic"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=react#embed-storybook-in-figma-with-the-plugin"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/theming/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        href="https://storybook.js.org/addons/"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
-  </div>
-</div>
-
-<div className="sb-section sb-socials">
-    <div className="sb-section-item">
-      <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
-
-      <a
-        href="https://github.com/storybookjs/storybook"
-        target="_blank"
-      >Star on GitHub<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
-
-        <a
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
-
-        <a
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
-
-      <a
-          href="https://storybook.js.org/tutorials/"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
-    </div>
 </div>
 
 <style>

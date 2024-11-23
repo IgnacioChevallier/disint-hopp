@@ -379,5 +379,35 @@ export const iconMap = new Map<string, (size: number, color: string) => JSX.Elem
                 d="M8 22C5.31667 19.7167 3.3125 17.5958 1.9875 15.6375C0.6625 13.6792 0 11.8667 0 10.2C0 7.7 0.804167 5.70833 2.4125 4.225C4.02083 2.74167 5.88333 2 8 2H8.5C8.66667 2 8.83333 2.01667 9 2.05V4.075C8.83333 4.04167 8.67083 4.02083 8.5125 4.0125C8.35417 4.00417 8.18333 4 8 4C6.31667 4 4.89583 4.57917 3.7375 5.7375C2.57917 6.89583 2 8.38333 2 10.2C2 11.3833 2.49167 12.7375 3.475 14.2625C4.45833 15.7875 5.96667 17.4833 8 19.35C10.0333 17.4833 11.5417 15.7875 12.525 14.2625C13.5083 12.7375 14 11.3833 14 10.2V10H16V10.2C16 11.8667 15.3375 13.6792 14.0125 15.6375C12.6875 17.5958 10.6833 19.7167 8 22ZM8 12C8.55 12 9.02083 11.8042 9.4125 11.4125C9.80417 11.0208 10 10.55 10 10C10 9.45 9.80417 8.97917 9.4125 8.5875C9.02083 8.19583 8.55 8 8 8C7.45 8 6.97917 8.19583 6.5875 8.5875C6.19583 8.97917 6 9.45 6 10C6 10.55 6.19583 11.0208 6.5875 11.4125C6.97917 11.8042 7.45 12 8 12ZM14 8H16V5H19V3H16V0H14V3H11V5H14V8Z"
                 fill={color}/>
         </svg>
+    ],
+    ['home', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_614_3796" maskUnits="userSpaceOnUse" x="0" y="0" width={size} height={size}>
+                <rect width={size} height={size} fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_614_3796)">
+                <path d="M6 19H9V13H15V19H18V10L12 5.5L6 10V19ZM4 21V9L12 3L20 9V21H13V15H11V21H4Z" fill={color} transform={`scale(${size / 24})`}/>
+            </g>
+        </svg>
+    ],
+    ['school', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_1400_7014" maskUnits="userSpaceOnUse" x="0" y="0" width={size} height={size}>
+                <rect width={size} height={size} fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_1400_7014)">
+                <path d="M12 21L5 17.2V11.2L1 9L12 3L23 9V17H21V10.1L19 11.2V17.2L12 21ZM12 12.7L18.85 9L12 5.3L5.15 9L12 12.7ZM12 18.725L17 16.025V12.25L12 15L7 12.25V16.025L12 18.725Z" fill={color} transform={`scale(${size / 24})`}/>
+            </g>
+        </svg>
+    ],
+    ['work', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_614_3810" maskUnits="userSpaceOnUse" x="0" y="0" width={size} height={size}>
+                <rect width={size} height={size} fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_614_3810)">
+                <path d="M4 21C3.45 21 2.97917 20.8042 2.5875 20.4125C2.19583 20.0208 2 19.55 2 19V8C2 7.45 2.19583 6.97917 2.5875 6.5875C2.97917 6.19583 3.45 6 4 6H8V4C8 3.45 8.19583 2.97917 8.5875 2.5875C8.97917 2.19583 9.45 2 10 2H14C14.55 2 15.0208 2.19583 15.4125 2.5875C15.8042 2.97917 16 3.45 16 4V6H20C20.55 6 21.0208 6.19583 21.4125 6.5875C21.8042 6.97917 22 7.45 22 8V19C22 19.55 21.8042 20.0208 21.4125 20.4125C21.0208 20.8042 20.55 21 20 21H4ZM10 6H14V4H10V6ZM20 15H15V17H9V15H4V19H20V15ZM11 15H13V13H11V15ZM4 13H9V11H15V13H20V8H4V13Z" fill={color} transform={`scale(${size / 24})`}/>
+            </g>
+        </svg>
     ]
 ]);

@@ -17,14 +17,17 @@ export const Default: Story = {
     args: {
         items: [
             {
+                leadingIcon: 'home',
                 text: 'Home',
                 trailingIcon: 'dots'
             },
             {
+                leadingIcon: 'work',
                 text: 'Work',
                 trailingIcon: 'dots'
             },
             {
+                leadingIcon: 'school',
                 text: 'School',
                 trailingIcon: 'dots',
             },

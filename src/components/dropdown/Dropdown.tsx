@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button, ButtonProps } from "../button/Button";
 import { Overlay, OverlayProps } from "../overlay/Overlay";
 const theme = {
+    white: "#FFFFFF",
     primary: "#0095FF"
 }
 
@@ -70,14 +71,14 @@ export const Dropdown = ({
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
                 trailingIconSize="small"
-                trailingIconColor={theme.primary}
+                trailingIconColor={theme.white}
             />
             {isOpen && (
                 <Overlay
                     {...overlayProps}
                     data-inside-overlay="true"
                     style={{
-                        width: "170px",
+                        width: "auto",
                         position: "absolute",
                         ...overlayPosition
                     }}

@@ -3,13 +3,29 @@ import {Dropdown} from "./Dropdown";
 import Icon from "../icon/Icon";
 import {Toggle} from "../toggle/Toggle";
 import React, {useState} from "react";
+import {iconMap} from "../icon/IconMap";
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'Components/Dropdown',
+    title: 'Common/Dropdown',
     component: Dropdown,
+    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },
+    argTypes: {
+        overlayAlignment: {
+            control: "radio",
+            options: ['left', 'right']
+        },
+        openIcon: {
+            control: "select",
+            options: Array.from(iconMap.keys())
+        },
+        closeIcon: {
+            control: "select",
+            options: Array.from(iconMap.keys())
+        }
+    }
 };
 
 export default meta;
@@ -18,27 +34,24 @@ type Story = StoryObj<typeof Dropdown>;
 
 export const Default: Story = {
     args: {
+        overlayAlignment: "left",
+        openIcon: "arrow down",
+        closeIcon: "arrow up",
+        buttonProps: {
+            text: "Open"
+        },
         overlayProps: {
             rows: [
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    label: "Option 1",
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    label: "Option 2",
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    label: "Option 3",
                 }
             ]
-        },
-        buttonProps: {
-            text: "Open"
         }
     }
 };
@@ -53,59 +66,60 @@ const ToggleExample: React.FC = () => {
     return <Toggle selected={selected} onClick={handleToggleClick} />;
 };
 
-export const WithDifferentIcon: Story = {
+export const WithLeftIcon: Story = {
     args: {
-
+        overlayAlignment: "left",
+        openIcon: "arrow down",
+        closeIcon: "arrow up",
+        buttonProps: {
+            text: "Open"
+        },
         overlayProps: {
             rows: [
                 {
                     left: <Icon name={"bus alert"} size={"medium"} />,
-                    label: "Option",
-                    right: <ToggleExample />,
+                    label: "Option 1",
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    left: <Icon name={"location"} size={"medium"} />,
+                    label: "Option 2",
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    left: <Icon name={"search"} size={"medium"} />,
+                    label: "Option 3",
                 }
             ]
         },
-        buttonProps: {
-            text: "Button"
-        }
     }
 };
 
-export const alignedToTheRight: Story = {
+export const WithToggle: Story = {
     args: {
-        overlayAlignment: "right", // Alineación a la derecha
+        overlayAlignment: "right",
+        openIcon: "arrow down",
+        closeIcon: "arrow up",
+        buttonProps: {
+            text: "Open"
+        },
         overlayProps: {
             rows: [
                 {
                     left: <Icon name={"bus alert"} size={"medium"} />,
-                    label: "Option",
+                    label: "Option 1",
                     right: <ToggleExample />,
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    left: <Icon name={"location"} size={"medium"} />,
+                    label: "Option 2",
+                    right: <ToggleExample />
                 },
                 {
-                    left: <Icon name={"placeholder"} size={"medium"} />,
-                    label: "Option",
-                    right: <Icon name={"placeholder"} size={"medium"} />,
+                    left: <Icon name={"search"} size={"medium"} />,
+                    label: "Option 3",
+                    right: <ToggleExample />
                 }
             ]
         },
-        buttonProps: {
-            text: "Button"
-        }
     }
 };
 

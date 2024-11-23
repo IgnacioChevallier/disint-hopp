@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { iconMap } from "../icon/IconMap";
 
 const meta: Meta<typeof SidebarElement> = {
-    title: 'Common/SidebarElement',
+    title: 'Common/Sub-Components/SidebarElement',
     component: SidebarElement,
     tags: ['autodocs'],
     parameters: {

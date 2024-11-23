@@ -4,7 +4,7 @@ import {iconMap} from "../icon/IconMap";
 
 
 const meta: Meta<typeof ListItem> = {
-    title: 'Common/ListItem',
+    title: 'Common/Sub-components/ListItem',
     component: ListItem,
     tags: ['autodocs'],
     parameters: {

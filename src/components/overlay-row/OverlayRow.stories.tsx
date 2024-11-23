@@ -4,7 +4,7 @@ import Icon from "../icon/Icon";
 import {CheckBox} from "../checkbox/CheckBox";
 
 const meta: Meta<typeof OverlayRow> = {
-    title: 'Common/OverlayRow',
+    title: 'Common/Sub-Components/OverlayRow',
     component: OverlayRow,
     tags: ['autodocs'],
     parameters: {

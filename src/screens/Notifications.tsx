@@ -60,6 +60,56 @@ const Notifications = () => {
 
     return (
         <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3 relative">
+            {/*{isSidebarOpen && (*/}
+            {/*    <div*/}
+            {/*        className="fixed inset-0 bg-black bg-opacity-50 z-40"*/}
+            {/*        onClick={() => setIsSidebarOpen(false)}*/}
+            {/*    />*/}
+            {/*)}*/}
+
+            {/*{isSidebarOpen && (*/}
+            {/*    <div*/}
+            {/*        ref={sidebarRef}*/}
+            {/*        className="absolute left-0 top-0 z-50"*/}
+            {/*    >*/}
+            {/*        <Sidebar>*/}
+            {/*            <SidebarElement*/}
+            {/*                selected={selectedElement === 0}*/}
+            {/*                icon={"search"}*/}
+            {/*                text={"Search"}*/}
+            {/*                onClick={() => setSelectedElement(0)}*/}
+            {/*            />*/}
+            {/*            <SidebarElement*/}
+            {/*                selected={selectedElement === 1}*/}
+            {/*                icon={"groups"}*/}
+            {/*                text={"Family Group"}*/}
+            {/*                onClick={() => setSelectedElement(1)}*/}
+            {/*            />*/}
+            {/*            <SidebarElement*/}
+            {/*                selected={selectedElement === 2}*/}
+            {/*                icon={"history"}*/}
+            {/*                text={"Trip History"}*/}
+            {/*                onClick={() => setSelectedElement(2)}*/}
+            {/*            />*/}
+            {/*            <SidebarElement*/}
+            {/*                selected={selectedElement === 3}*/}
+            {/*                icon={"bus alert"}*/}
+            {/*                text={"Alerts"}*/}
+            {/*                onClick={() => setSelectedElement(3)}*/}
+            {/*            />*/}
+            {/*            <SidebarElement*/}
+            {/*                selected={selectedElement === 4}*/}
+            {/*                icon={"account circle"}*/}
+            {/*                text={"Account"}*/}
+            {/*                onClick={() => setSelectedElement(4)}*/}
+            {/*            />*/}
+            {/*        </Sidebar>*/}
+            {/*    </div>*/}
+            {/*)}*/}
+
+
+            {/*FIXME: Rompe las imagenes de las alertas y no toco nada de ese codigo*/}
+
             {isSidebarOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -67,45 +117,47 @@ const Notifications = () => {
                 />
             )}
 
-            {isSidebarOpen && (
-                <div
-                    ref={sidebarRef}
-                    className="absolute left-0 top-0 z-50"
-                >
-                    <Sidebar>
-                        <SidebarElement
-                            selected={selectedElement === 0}
-                            icon={"search"}
-                            text={"Search"}
-                            onClick={() => setSelectedElement(0)}
-                        />
-                        <SidebarElement
-                            selected={selectedElement === 1}
-                            icon={"groups"}
-                            text={"Family Group"}
-                            onClick={() => setSelectedElement(1)}
-                        />
-                        <SidebarElement
-                            selected={selectedElement === 2}
-                            icon={"history"}
-                            text={"Trip History"}
-                            onClick={() => setSelectedElement(2)}
-                        />
-                        <SidebarElement
-                            selected={selectedElement === 3}
-                            icon={"bus alert"}
-                            text={"Alerts"}
-                            onClick={() => setSelectedElement(3)}
-                        />
-                        <SidebarElement
-                            selected={selectedElement === 4}
-                            icon={"account circle"}
-                            text={"Account"}
-                            onClick={() => setSelectedElement(4)}
-                        />
-                    </Sidebar>
-                </div>
-            )}
+            <div
+                ref={sidebarRef}
+                className={`
+                    fixed top-0 left-0 h-full z-50 bg-background-main w-64 
+                    transform transition-transform duration-300 
+                    ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+                `}
+            >
+                <Sidebar>
+                    <SidebarElement
+                        selected={selectedElement === 0}
+                        icon={"search"}
+                        text={"Search"}
+                        onClick={() => setSelectedElement(0)}
+                    />
+                    <SidebarElement
+                        selected={selectedElement === 1}
+                        icon={"groups"}
+                        text={"Family Group"}
+                        onClick={() => setSelectedElement(1)}
+                    />
+                    <SidebarElement
+                        selected={selectedElement === 2}
+                        icon={"history"}
+                        text={"Trip History"}
+                        onClick={() => setSelectedElement(2)}
+                    />
+                    <SidebarElement
+                        selected={selectedElement === 3}
+                        icon={"bus alert"}
+                        text={"Alerts"}
+                        onClick={() => setSelectedElement(3)}
+                    />
+                    <SidebarElement
+                        selected={selectedElement === 4}
+                        icon={"account circle"}
+                        text={"Account"}
+                        onClick={() => setSelectedElement(4)}
+                    />
+                </Sidebar>
+            </div>
 
             <div className="flex items-center justify-center relative">
                 <IconButton

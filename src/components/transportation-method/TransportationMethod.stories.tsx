@@ -22,8 +22,8 @@ type Story = StoryObj<typeof TransportationMethod>;
 
 export const Default: Story = {
     args: {
-        icon: 'placeholder',
-        text: '1234',
+        icon: 'train',
+        text: '123',
         duration: '14min',
         color: "blue"
     }

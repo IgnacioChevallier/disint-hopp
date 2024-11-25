@@ -47,6 +47,9 @@ export const Default: Story = {
         openIcon: "arrow down",
         closeIcon: "arrow up",
         color: "#FFFFFF",
+        buttonProps: {
+            text: "Open"
+        },
         overlayProps: {
             rows: [
                 {

@@ -19,10 +19,10 @@ export const Default: Story = {
         time: "8:00am - 8:23am",
         duration: "23min",
         children: [
-            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"5min"}/>,
-            <TransportationMethod icon={"directions walk"} text={""} duration={"8min"}/>,
-            <TransportationMethod icon={"directions bus"} text={"985"} duration={"10min"}/>,
-            <TransportationMethod icon={"directions bus"} text={"777"} duration={"10min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"5min"} color={"blue"}/>,
+            <TransportationMethod icon={"directions walk"} text={""} duration={"8min"} color={"gray"}/>,
+            <TransportationMethod icon={"directions bus"} text={"985"} duration={"10min"} color={"darkBlue"}/>,
+            <TransportationMethod icon={"directions bus"} text={"777"} duration={"10min"} color={"yellow"}/>,
         ]
     },
 
@@ -38,7 +38,7 @@ export const SingleStep: Story = {
     args: {
         time: "6:30hrs",
         children: [
-            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"20min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"20min"} color={"blue"}/>,
         ]
     },
 

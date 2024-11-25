@@ -24,6 +24,7 @@ export const Default: Story = {
     args: {
         icon: 'placeholder',
         text: '1234',
-        duration: '14min'
+        duration: '14min',
+        color: "blue"
     }
 };

@@ -42,6 +42,12 @@ export const ListItem = ({
     const [checkBox, setCheckBox] = React.useState(false);
     const [radio, setRadio] = React.useState(false);
 
+    const colorMap: { [key: string]: string } = {
+        primary: "text-blue-500",
+        danger: "text-red-500",
+        gray: "text-gray-500",
+    };
+
     return (
         <li className={listItemVariant({controlType})} {...props}
             style={{
@@ -60,7 +66,7 @@ export const ListItem = ({
             <span className="flex-1 px-2">
                 {text}
             </span>
-            {additionalText && <span className={additionalTextColor + " px-2"}>{additionalText}</span>}
+            {additionalText && <span className={`${colorMap[additionalTextColor || "gray"]} px-2`}>{additionalText}</span>}
             {controlType === "checkbox" &&
                 <CheckBox size={"sm"} onClick={() => setCheckBox(!checkBox)} selected={checkBox}/>}
             {controlType === "radio" && <Radio onClick={() => setRadio(!radio)} checked={radio}/>}

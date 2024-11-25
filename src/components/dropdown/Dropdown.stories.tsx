@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import {Meta, StoryObj} from "@storybook/react";
 import {Dropdown} from "./Dropdown";
 import Icon from "../icon/Icon";
 import {Toggle} from "../toggle/Toggle";
@@ -13,6 +13,15 @@ const meta: Meta<typeof Dropdown> = {
         layout: 'centered',
     },
     argTypes: {
+        buttonProps: {
+            table: {disable: true}
+        },
+        overlayProps: {
+            table: {disable: true}
+        },
+        open: {
+            table: {disable: true}
+        },
         overlayAlignment: {
             control: "radio",
             options: ['left', 'right']
@@ -37,9 +46,6 @@ export const Default: Story = {
         overlayAlignment: "left",
         openIcon: "arrow down",
         closeIcon: "arrow up",
-        buttonProps: {
-            text: "Open"
-        },
         overlayProps: {
             rows: [
                 {
@@ -63,7 +69,7 @@ const ToggleExample: React.FC = () => {
         setSelected(!selected);
     };
 
-    return <Toggle selected={selected} onClick={handleToggleClick} />;
+    return <Toggle selected={selected} onClick={handleToggleClick}/>;
 };
 
 export const WithLeftIcon: Story = {
@@ -77,15 +83,15 @@ export const WithLeftIcon: Story = {
         overlayProps: {
             rows: [
                 {
-                    left: <Icon name={"bus alert"} size={"medium"} />,
+                    left: <Icon name={"bus alert"} size={"medium"}/>,
                     label: "Option 1",
                 },
                 {
-                    left: <Icon name={"location"} size={"medium"} />,
+                    left: <Icon name={"location"} size={"medium"}/>,
                     label: "Option 2",
                 },
                 {
-                    left: <Icon name={"search"} size={"medium"} />,
+                    left: <Icon name={"search"} size={"medium"}/>,
                     label: "Option 3",
                 }
             ]
@@ -104,19 +110,19 @@ export const WithToggle: Story = {
         overlayProps: {
             rows: [
                 {
-                    left: <Icon name={"bus alert"} size={"medium"} />,
+                    left: <Icon name={"bus alert"} size={"medium"}/>,
                     label: "Option 1",
-                    right: <ToggleExample />,
+                    right: <ToggleExample/>,
                 },
                 {
-                    left: <Icon name={"location"} size={"medium"} />,
+                    left: <Icon name={"location"} size={"medium"}/>,
                     label: "Option 2",
-                    right: <ToggleExample />
+                    right: <ToggleExample/>
                 },
                 {
-                    left: <Icon name={"search"} size={"medium"} />,
+                    left: <Icon name={"search"} size={"medium"}/>,
                     label: "Option 3",
-                    right: <ToggleExample />
+                    right: <ToggleExample/>
                 }
             ]
         },

@@ -9,6 +9,11 @@ const meta: Meta<typeof AlertList> = {
     parameters: {
         layout: 'top',
     },
+    argTypes: {
+        children: {
+            table: {disable: true}
+        }
+    }
 };
 
 export default meta;

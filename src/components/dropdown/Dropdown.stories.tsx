@@ -46,6 +46,7 @@ export const Default: Story = {
         overlayAlignment: "left",
         openIcon: "arrow down",
         closeIcon: "arrow up",
+        color: "#FFFFFF",
         overlayProps: {
             rows: [
                 {
@@ -77,6 +78,7 @@ export const WithLeftIcon: Story = {
         overlayAlignment: "left",
         openIcon: "arrow down",
         closeIcon: "arrow up",
+        color: "#FFFFFF",
         buttonProps: {
             text: "Open"
         },
@@ -104,6 +106,7 @@ export const WithToggle: Story = {
         overlayAlignment: "right",
         openIcon: "arrow down",
         closeIcon: "arrow up",
+        color: "#FFFFFF",
         buttonProps: {
             text: "Open"
         },

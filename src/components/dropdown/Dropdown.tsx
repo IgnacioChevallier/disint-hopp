@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button, ButtonProps } from "../button/Button";
 import { Overlay, OverlayProps } from "../overlay/Overlay";
 const theme = {
-    white: "#FFFFFF",
     primary: "#0095FF"
 }
 
@@ -13,6 +12,7 @@ export interface DropdownProps {
     overlayAlignment?: "left" | "right";
     openIcon?: string;
     closeIcon?: string;
+    color?: string;
 }
 
 export const Dropdown = ({
@@ -21,6 +21,7 @@ export const Dropdown = ({
                              overlayAlignment = "left",
                              openIcon = "arrow down",
                              closeIcon = "arrow up",
+                             color = theme.primary
                          }: DropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [overlayPosition, setOverlayPosition] = useState<{top: number, left?: number, right?: number}>({ top: 0, left: 0 });
@@ -71,7 +72,7 @@ export const Dropdown = ({
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
                 trailingIconSize="small"
-                trailingIconColor={theme.primary}
+                trailingIconColor={color}
             />
             {isOpen && (
                 <Overlay

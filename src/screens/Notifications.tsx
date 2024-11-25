@@ -65,7 +65,7 @@ const Notifications = () => {
                 <Header
                     trailingIconName="empty"
                     title={"Alerts"}
-                    leadingIconName="menu"
+                    leadingIconName="sidebar"
                     leadingOnClick={handleSidebarToggle}
                     showSearchbar={true}
                     options={alerts}

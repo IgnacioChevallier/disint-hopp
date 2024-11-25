@@ -39,7 +39,7 @@ export default header;
 export const Account = {
     args: {
         title: 'Account',
-        leadingIconName: 'menu',
+        leadingIconName: 'sidebar',
         trailingIconName: 'empty',
         showSearchbar: false,
     },
@@ -48,7 +48,7 @@ export const Account = {
 export const TripHistory = {
     args: {
         title: 'Trip History',
-        leadingIconName: 'menu',
+        leadingIconName: 'sidebar',
         trailingIconName: 'empty',
         showSearchbar: false,
     },
@@ -57,7 +57,7 @@ export const TripHistory = {
 export const FamilyGroup = {
     args: {
         title: 'Family Group',
-        leadingIconName: 'menu',
+        leadingIconName: 'sidebar',
         trailingIconName: 'empty',
         showSearchbar: false,
     },
@@ -66,7 +66,7 @@ export const FamilyGroup = {
 export const Alerts = {
     args: {
         title: 'Alerts',
-        leadingIconName: 'menu',
+        leadingIconName: 'sidebar',
         trailingIconName: 'empty',
         showSearchbar: true,
         placeholder: 'Search',

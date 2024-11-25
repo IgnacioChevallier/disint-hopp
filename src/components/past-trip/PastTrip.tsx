@@ -43,10 +43,23 @@ export const PastTrip = ({
                 }
                 <div className="flex flex-col">
                     <div className="flex">
-                        <ListItem text={start} additionalText={price} leadingIcon="radio button checked" leadingIconSize="small" additionalTextColor="text-primary"/>
+                        <ListItem
+                            text={start}
+                            additionalText={price}
+                            leadingIcon="radio button checked"
+                            leadingIconSize="small"
+                            additionalTextColor="text-primary"
+                            className={"cursor-default"}
+                        />
                     </div>
                     <div className="flex">
-                        <ListItem text={end} additionalText={time} leadingIcon="location" leadingIconSize="small"/>
+                        <ListItem
+                            text={end}
+                            additionalText={time}
+                            leadingIcon="location"
+                            leadingIconSize="small"
+                            className={"cursor-default"}
+                        />
                     </div>
                 </div>
             </div>

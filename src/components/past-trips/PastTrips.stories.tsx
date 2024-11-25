@@ -2,10 +2,11 @@ import {Meta, StoryObj} from "@storybook/react";
 import {PastTrips} from "./PastTrips";
 
 const meta: Meta<typeof PastTrips> = {
-    title: 'Components/PastTrips',
+    title: 'Common/PastTrips',
     component: PastTrips,
+    tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
 };
 

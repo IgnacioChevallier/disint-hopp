@@ -447,5 +447,9 @@ export const iconMap = new Map<string, (size: number, color: string) => JSX.Elem
                 <path d="M14 18L8 12L14 6L15.4 7.4L10.8 12L15.4 16.6L14 18Z" fill={color}/>
             </g>
         </svg>
+    ],
+    ['empty', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
+        </svg>
     ]
 ]);

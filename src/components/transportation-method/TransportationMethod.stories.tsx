@@ -23,6 +23,7 @@ type Story = StoryObj<typeof TransportationMethod>;
 export const Default: Story = {
     args: {
         icon: 'placeholder',
-        text: '1234'
+        text: '1234',
+        time: '14min'
     }
 };

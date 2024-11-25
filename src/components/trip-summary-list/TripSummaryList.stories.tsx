@@ -19,19 +19,19 @@ export const Default: Story = {
     args: {
         children: [
             <TripSummary time={"2:30hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"123"}/>
-                <TransportationMethod icon={"directions bus"} text={"321"}/>
-                <TransportationMethod icon={"directions bus"} text={"789"}/>
-                <TransportationMethod icon={"directions bus"} text={"1000"}/>
+                <TransportationMethod icon={"directions bus"} text={"123"} time={"10min"}/>
+                <TransportationMethod icon={"directions bus"} text={"321"} time={"10min"}/>
+                <TransportationMethod icon={"directions bus"} text={"789"} time={"10min"}/>
+                <TransportationMethod icon={"directions bus"} text={"1000"} time={"9min"}/>
             </TripSummary>,
             <TripSummary time={"2:00hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"678"}/>
-                <TransportationMethod icon={"directions bus"} text={"123"}/>
-                <TransportationMethod icon={"directions bus"} text={"900"}/>
+                <TransportationMethod icon={"directions bus"} text={"678"} time={"6min"}/>
+                <TransportationMethod icon={"directions bus"} text={"123"} time={"6min"}/>
+                <TransportationMethod icon={"directions bus"} text={"900"} time={"6min"}/>
             </TripSummary>,
             <TripSummary time={"3:00hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"555"}/>
-                <TransportationMethod icon={"directions walk"} text={""}/>
+                <TransportationMethod icon={"directions bus"} text={"555"} time={"5min"}/>
+                <TransportationMethod icon={"directions walk"} text={""} time={"3min"}/>
             </TripSummary>
         ]
     },

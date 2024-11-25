@@ -18,20 +18,20 @@ type Story = StoryObj<typeof TripSummaryList>;
 export const Default: Story = {
     args: {
         children: [
-            <TripSummary time={"2:30hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"123"}/>
-                <TransportationMethod icon={"directions bus"} text={"321"}/>
-                <TransportationMethod icon={"directions bus"} text={"789"}/>
-                <TransportationMethod icon={"directions bus"} text={"1000"}/>
+            <TripSummary time={"2:30pm - 3:11pm"} duration={"41min"}>
+                <TransportationMethod icon={"directions bus"} text={"123"} duration={"15min"} color={"blue"}/>
+                <TransportationMethod icon={"directions bus"} text={"321"} duration={"7min"} color={"red"}/>
+                <TransportationMethod icon={"directions bus"} text={"789"} duration={"10min"} color={"darkBlue"}/>
+                <TransportationMethod icon={"directions bus"} text={"1000"} duration={"9min"} color={"black"}/>
             </TripSummary>,
-            <TripSummary time={"2:00hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"678"}/>
-                <TransportationMethod icon={"directions bus"} text={"123"}/>
-                <TransportationMethod icon={"directions bus"} text={"900"}/>
+            <TripSummary time={"2:27pm - 3:00pm"} duration={"33min"}>
+                <TransportationMethod icon={"directions bus"} text={"678"} duration={"10min"} color={"yellow"}/>
+                <TransportationMethod icon={"directions bus"} text={"123"} duration={"15min"} color={"darkBlue"}/>
+                <TransportationMethod icon={"directions bus"} text={"900"} duration={"8min"} color={"blue"}/>
             </TripSummary>,
-            <TripSummary time={"3:00hrs"}>
-                <TransportationMethod icon={"directions bus"} text={"555"}/>
-                <TransportationMethod icon={"directions walk"} text={""}/>
+            <TripSummary time={"2:45pm - 3:30pm"} duration={"30min"}>
+                <TransportationMethod icon={"directions bus"} text={"555"} duration={"30min"} color={"blue"}/>
+                <TransportationMethod icon={"directions walk"} text={""} duration={"15min"} color={"gray"}/>
             </TripSummary>
         ]
     },

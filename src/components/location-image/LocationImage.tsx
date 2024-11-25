@@ -1,4 +1,5 @@
 import { cva } from 'class-variance-authority'
+import React from "react";
 
 export const locationImage = cva(
     "object-cover rounded-lg",
@@ -15,14 +16,14 @@ export const locationImage = cva(
     }
 )
 
-export interface LocationImageProps {
+export interface LocationImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src: string;
     alt: string;
     size: "small" | "medium";
 }
 
-export const LocationImage = ({src, alt, size} : LocationImageProps) => {
+export const LocationImage = ({src, alt, size, ...props} : LocationImageProps) => {
     return (
-        <img className={locationImage({size})} src={src} alt={alt} />
+        <img className={locationImage({size})} src={src} alt={alt} {...props}/>
     );
 }

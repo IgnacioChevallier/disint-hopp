@@ -19,13 +19,13 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
     const [searchText, setSearchText] = useState(value || '');
     const searchbarRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
-    const [overlayPosition, setOverlayPosition] = useState<{ top: number, left: number }>({ top: 0, left: 0 });
+    const [overlayPosition, setOverlayPosition] = useState<{ top: number, left: number, width: number }>({ top: 0, left: 0, width: 0 });
 
     const handleInputClick = () => {
         setDropdownOpen(!isDropdownOpen);
         if (searchbarRef.current) {
             const rect = searchbarRef.current.getBoundingClientRect();
-            setOverlayPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+            setOverlayPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX, width: rect.width });
         }
     };
 
@@ -41,7 +41,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (searchbarRef.current && !searchbarRef.current.contains(event.target as Node)&&
+            if (searchbarRef.current && !searchbarRef.current.contains(event.target as Node) &&
                 !(event.target as HTMLElement).closest("[data-inside-overlay='true']")) {
                 setDropdownOpen(false);
             }
@@ -88,6 +88,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
                         )}
                         style={{
                             position: 'absolute',
+                            width: overlayPosition.width,
                             top: overlayPosition.top + 2,
                             left: overlayPosition.left + 2,
                             zIndex: dropdownZIndex ?? 100,

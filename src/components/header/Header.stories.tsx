@@ -7,7 +7,7 @@ const header: Meta<typeof Header> = {
     component: Header,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         leadingIconName: {
@@ -40,7 +40,6 @@ export const Account = {
     args: {
         title: 'Account',
         leadingIconName: 'sidebar',
-        trailingIconName: 'empty',
         showSearchbar: false,
     },
 };
@@ -49,7 +48,6 @@ export const TripHistory = {
     args: {
         title: 'Trip History',
         leadingIconName: 'sidebar',
-        trailingIconName: 'empty',
         showSearchbar: false,
     },
 };
@@ -58,7 +56,6 @@ export const FamilyGroup = {
     args: {
         title: 'Family Group',
         leadingIconName: 'sidebar',
-        trailingIconName: 'empty',
         showSearchbar: false,
     },
 };
@@ -67,7 +64,6 @@ export const Alerts = {
     args: {
         title: 'Alerts',
         leadingIconName: 'sidebar',
-        trailingIconName: 'empty',
         showSearchbar: true,
         placeholder: 'Search',
         options: ['Option 1', 'Option 2', 'Option 3'],

@@ -1,7 +1,6 @@
 import React from "react";
 
 export const iconMap = new Map<string, (size: number, color: string) => JSX.Element>([
-
     ['account circle', (size: number, color: string) =>
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_545_1148" maskUnits="userSpaceOnUse" x="0" y="0" width={size} height={size}>

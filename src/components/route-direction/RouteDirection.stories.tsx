@@ -16,7 +16,18 @@ const meta: Meta<typeof RouteDirection> = {
         },
         label: {
             control: "text"
-        }
+        },
+        position: {
+            control: "select",
+            options: ["first", "middle", "last"],
+        },
+        state: {
+            control: "select",
+            options: ["default", "previous", "disabled"],
+        },
+        actual: {
+            control: "boolean",
+        },
     },
     decorators: [
         (Story) => (
@@ -27,6 +38,7 @@ const meta: Meta<typeof RouteDirection> = {
     ]
 }
 
+
 export default meta;
 
 type Story = StoryObj<typeof RouteDirection>;
@@ -34,6 +46,9 @@ type Story = StoryObj<typeof RouteDirection>;
 export const Default: Story = {
     args: {
         icon: "alt routes",
-        label: "Route Direction"
+        label: "Route Direction",
+        position: "middle",
+        state: "default",
+        actual: false
     }
-}
+};

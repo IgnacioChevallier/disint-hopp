@@ -54,9 +54,9 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
     }, []);
 
     return (
-        <div ref={searchbarRef} className={"flex flex-col w-screen items-center relative"}>
+        <div ref={searchbarRef} className={"flex flex-col w-full items-center relative"}>
             <div
-                className={"flex items-center justify-center min-h-[48px] w-screen px-[16px] py-0 z-10 box-border cursor-pointer rounded-[8px] bg-white gap-[8px]"}
+                className={"flex items-center justify-center min-h-[48px] w-full px-[16px] py-0 z-10 box-border cursor-pointer rounded-[8px] bg-white gap-[8px]"}
                 onClick={handleInputClick}
             >
                 <div className={"flex items-center"}>

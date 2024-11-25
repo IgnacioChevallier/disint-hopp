@@ -8,6 +8,8 @@ import {TripSummary} from "../components/trip-summary/TripSummary";
 import {TransportationMethod} from "../components/transportation-method/TransportationMethod";
 import {useNavigate} from "react-router-dom";
 import Icon from "../components/icon/Icon";
+import {LocationInformation} from "../components/location-information/LocationInformation";
+import {LocationImageProps} from "../components/location-image/LocationImage";
 
 const RouteList = () => {
     const places = [
@@ -19,6 +21,25 @@ const RouteList = () => {
         "Tower City",
         "University of Michigan",
     ];
+
+    const images: LocationImageProps[] = [
+        {
+            src: "https://www.usnews.com/cmsmedia/5c/38cc5da3a6a0f690dd7f46438ae170/Above-Cobb-Gate.jpg",
+            alt: "University of Chicago",
+            size: "small"
+        },
+        {
+            src: "https://www.edvisehub.com/wp-content/uploads/2022/11/UChicagoUpdate_0912.jpg",
+            alt: "University of Chicago",
+            size: "small"
+        },
+        {
+            src: "https://www.chicagomag.com/wp-content/archive/images/2011/0311/C201103-U-of-C-campus.jpg",
+            alt: "University of Chicago",
+            size: "small"
+        }
+    ];
+
     const [locationValue, setLocationValue] = useState("Current Location");
     const [routeValue, setRouteValue] = useState("University of Chicago");
     const [filteredLocationOptions, setFilteredLocationOptions] = useState(places.filter(alert => alert.toLowerCase().includes(locationValue.toLowerCase())));
@@ -59,68 +80,70 @@ const RouteList = () => {
     };
 
     return (
-        <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3">
-            <div>
-                <IconButton iconName="arrow back" size="small" onClick={() => navigate("/presentation")}/>
+        <div className="flex flex-col h-full w-full bg-background-main">
+            <div className="p-4 flex flex-col gap-y-3">
+                <div>
+                    <IconButton iconName="arrow back" size="small" onClick={() => navigate("/presentation")}/>
+                </div>
+                <div className="flex flex-col gap-4 w-full">
+                    <Searchbar
+                        placeholder="Search..."
+                        leadingIcon="radio button checked"
+                        value={locationValue}
+                        onChange={handleLocationChange}
+                        options={filteredLocationOptions}
+                        searchBarZIndex={5}
+                        dropdownZIndex={10}
+                    />
+                    <Searchbar
+                        placeholder="Search..."
+                        leadingIcon="location"
+                        value={routeValue}
+                        onChange={handleRouteChange}
+                        options={filteredRouteOptions}
+                        searchBarZIndex={3}
+                        dropdownZIndex={2}
+                    />
+                </div>
+                <div className="flex justify-end">
+                    <Dropdown
+                        overlayProps={{
+                            rows: [
+                                {
+                                    left: <Icon name={"subway"} size={"small"}/>,
+                                    label: "Subway",
+                                    right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick}
+                                                     size={"md"}/>
+                                },
+                                {
+                                    left: <Icon name={"bus"} size={"small"}/>,
+                                    label: "Bus",
+                                    right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick}
+                                                     size={"md"}/>
+                                },
+                                {
+                                    left: <Icon name={"train"} size={"small"}/>,
+                                    label: "Train",
+                                    right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick}
+                                                     size={"md"}/>
+                                }
+                            ]
+                        }}
+                        buttonProps={{
+                            text: "Filter",
+                            color: "primary",
+                            variant: "outlined",
+                            trailingIcon: "arrow down",
+                            rounded: "full",
+                            size: "medium",
+                            disableHover: true,
+                        }}
+                        overlayAlignment={"right"}
+                    />
+                </div>
             </div>
-
-            <div className="flex flex-col gap-4 w-full">
-                <Searchbar
-                    placeholder="Search..."
-                    leadingIcon="radio button checked"
-                    value={locationValue}
-                    onChange={handleLocationChange}
-                    options={filteredLocationOptions}
-                    searchBarZIndex={5}
-                    dropdownZIndex={4}
-                />
-                <Searchbar
-                    placeholder="Search..."
-                    leadingIcon="location"
-                    value={routeValue}
-                    onChange={handleRouteChange}
-                    options={filteredRouteOptions}
-                    searchBarZIndex={3}
-                    dropdownZIndex={2}
-                />
-            </div>
-
-            <div className='flex justify-end'>
-                <Dropdown
-                    overlayProps={{
-                        rows: [
-                            {
-                                    left: <Icon name={"subway"} size={"small"} />,
-                                label: "Subway",
-                                right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick} size={"md"}/>
-                            },
-                            {
-                                left: <Icon name={"bus"} size={"small"} />,
-                                label: "Bus",
-                                right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick} size={"md"}/>
-                            },
-                            {
-                                left: <Icon name={"train"} size={"small"} />,
-                                label: "Train",
-                                right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick} size={"md"}/>
-                            }
-                        ]
-                    }}
-                    buttonProps={{
-                        text: "Filter",
-                        color: "primary",
-                        variant: "outlined",
-                        trailingIcon: "arrow down",
-                        rounded: "full",
-                        size: "medium",
-                        disableHover: true,
-                    }}
-                    overlayAlignment={"right"}
-                />
-            </div>
-
-            <div>
-                <TripSummaryList>
+            <div className="flex-grow overflow-y-auto">
+                <TripSummaryList className="pb-32 mb-8">
                     <TripSummary time={"1:30hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"123"} duration={"15min"} color={"blue"}/>
                         <TransportationMethod icon={"directions bus"} text={"321"} duration={"15min"} color={"blue"}/>
@@ -146,7 +169,15 @@ const RouteList = () => {
                     </TripSummary>
                 </TripSummaryList>
             </div>
+            <div className="fixed bottom-0 left-0 right-0">
+                <LocationInformation
+                    name="University of Chicago"
+                    images={images}
+                    positionAtBottom={true}
+                />
+            </div>
         </div>
+
     );
 };
 

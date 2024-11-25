@@ -12,6 +12,16 @@ const meta: Meta<typeof LocationInformation> = {
         name: {
             control: "text"
         },
+        images: {
+            table: {
+                disable: true
+            }
+        },
+        positionAtBottom: {
+            table: {
+                disable: true
+            }
+        }
     }
 }
 

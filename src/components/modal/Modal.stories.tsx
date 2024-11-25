@@ -16,6 +16,11 @@ const meta: Meta<typeof Modal> = {
             control: "select",
             options: ["primary", "danger", "gray"]
         },
+        children: {
+            control: {
+                disable: true
+            }
+        },
     },
     args: {
         onConfirm: () => alert("button clicked!"),

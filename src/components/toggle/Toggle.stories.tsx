@@ -13,6 +13,11 @@ const meta: Meta<typeof Toggle> = {
         selected: {
             control: "boolean",
         },
+        onClick: {
+            table: {
+                disable: true,
+            },
+        },
     },
 };
 export default meta;

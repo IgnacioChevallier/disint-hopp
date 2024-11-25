@@ -19,6 +19,16 @@ const meta: Meta<typeof HomeSlider> = {
     argTypes: {
         opened: {
             control: "boolean"
+        },
+        favouriteRoutes: {
+            table: {
+                disable: true
+            }
+        },
+        recentRoutes: {
+            table: {
+                disable: true
+            }
         }
     }
 };

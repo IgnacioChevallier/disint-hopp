@@ -15,6 +15,23 @@ const meta: Meta<typeof TripConfirmModal> = {
             </div>
         ),
     ],
+    argTypes: {
+        icons: {
+            table: {
+                disable: true
+            }
+        },
+        onBackClick: {
+            table: {
+                disable: true
+            }
+        },
+        onStartClick: {
+            table: {
+                disable: true
+            }
+        }
+    }
 };
 export default meta;
 

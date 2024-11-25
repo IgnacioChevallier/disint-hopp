@@ -30,8 +30,8 @@ type Story = StoryObj<typeof SidebarElement>
 export const Default: Story = {
     args: {
         selected: true,
-        text: 'Dashboard',
-        icon: "placeholder",
+        text: 'Search',
+        icon: 'search',
     },
     render: (args) => (
         <SidebarElement

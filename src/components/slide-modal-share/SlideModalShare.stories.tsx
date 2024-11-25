@@ -17,9 +17,9 @@ const meta: Meta<typeof SlideModalShare> = {
     ],
     argTypes: {
         profiles: {
-            control: {
-                type: 'object', // Set control type to "object" for array of objects
-            },
+            table: {
+                disable: true
+            }
         },
     },
 };

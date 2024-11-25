@@ -41,21 +41,21 @@ type Story = StoryObj<typeof ProfilePicture>;
 export const Large: Story = {
     args: {
         size: 'large',
-        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
+        link: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png',
     },
 };
 
 export const Medium: Story = {
     args: {
         size: 'medium',
-        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
+        link: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png',
     },
 };
 
 export const Small: Story = {
     args: {
         size: 'small',
-        link: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
+        link: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png',
     },
 };
 

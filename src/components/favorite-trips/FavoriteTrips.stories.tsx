@@ -8,6 +8,13 @@ const meta: Meta<typeof FavoriteTrips> = {
     parameters: {
         layout: 'top',
     },
+    argTypes: {
+        items: {
+            table: {
+                disable: true
+            }
+        },
+    }
 };
 
 export default meta;

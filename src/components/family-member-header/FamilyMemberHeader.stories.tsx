@@ -32,14 +32,8 @@ type Story = StoryObj<typeof FamilyMemberHeader>;
 
 export const Default: Story = {
     args: {
-        link: 'https://cdn-icons-png.flaticon.com/128/149/149071.png',
-        userName: 'User Name',
+        link: 'https://cdn-icons-png.flaticon.com/128/3135/3135715.png',
+        userName: 'John Doe',
     },
 };
 
-export const Detailed: Story = {
-    args: {
-        link: 'https://i.imgur.com/izOWPQW_d.webp?maxwidth=520&shape=thumb&fidelity=high',
-        userName: 'Clone',
-    },
-};

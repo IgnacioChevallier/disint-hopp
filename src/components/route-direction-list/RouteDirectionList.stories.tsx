@@ -18,16 +18,23 @@ export const Default: Story = {
     args: {
         routeDirections: [
             {
-                icon: "alt routes",
-                label: "Route Direction 1"
+                icon: "train",
+                label: "Route Direction 1",
+                state: "previous",
+                actual: false
+
             },
             {
-                icon: "alt routes",
-                label: "Route Direction 2"
+                icon: "bus",
+                label: "Route Direction 2",
+                state: "default",
+                actual: true
             },
             {
-                icon: "alt routes",
-                label: "Route Direction 3"
+                icon: "location",
+                label: "Route Direction 3",
+                state: "default",
+                actual: false
             }
         ]
     }

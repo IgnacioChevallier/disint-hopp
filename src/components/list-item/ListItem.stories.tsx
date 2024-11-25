@@ -31,6 +31,10 @@ const meta: Meta<typeof ListItem> = {
         },
         leadingIconSize: {
             table: { disable: true },  // This hides the argument from Storybook
+        },
+        additionalTextColor: {
+            control: "select",
+            options: ["primary", "danger", "gray"]
         }
     },
 };

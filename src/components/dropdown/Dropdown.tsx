@@ -71,7 +71,7 @@ export const Dropdown = ({
                 onClick={handleToggle}
                 trailingIcon={isOpen ? closeIcon : openIcon}
                 trailingIconSize="small"
-                trailingIconColor={theme.white}
+                trailingIconColor={theme.primary}
             />
             {isOpen && (
                 <Overlay

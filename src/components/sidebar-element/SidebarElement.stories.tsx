@@ -19,6 +19,9 @@ const meta: Meta<typeof SidebarElement> = {
         },
         text: {
             control: "text"
+        },
+        onClick: {
+            table: { disable: true }
         }
     }
 };

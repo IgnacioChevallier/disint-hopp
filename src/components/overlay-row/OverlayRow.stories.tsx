@@ -13,6 +13,12 @@ const meta: Meta<typeof OverlayRow> = {
     argTypes: {
         label: {
             control: "text"
+        },
+        left: {
+            table: { disable: true }
+        },
+        right: {
+            table: { disable: true }
         }
     },
 }
@@ -23,9 +29,9 @@ type Story = StoryObj<typeof OverlayRow>;
 
 export const Default: Story = {
     args: {
-        left: <Icon name={"placeholder"} size={"medium"} />,
+        left: <Icon name={"bus alert"} size={"medium"} />,
         label: "Option",
-        right: <Icon name={"placeholder"} size={"medium"} />,
+        right: <Icon name={"check"} size={"medium"} />,
     }
 }
 

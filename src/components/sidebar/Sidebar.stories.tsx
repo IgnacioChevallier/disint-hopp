@@ -10,6 +10,11 @@ const meta: Meta<typeof Sidebar> = {
     parameters: {
         layout: "fullscreen",
     },
+    argTypes: {
+        children: {
+            table: {disable: true}
+        }
+    }
 };
 export default meta;
 

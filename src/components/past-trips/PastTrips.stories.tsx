@@ -8,6 +8,14 @@ const meta: Meta<typeof PastTrips> = {
     parameters: {
         layout: 'centered',
     },
+    argTypes: {
+        items: {
+            table: {disable: true}
+        },
+        onItemClick: {
+            table: {disable: true}
+        }
+    }
 };
 
 export default meta;

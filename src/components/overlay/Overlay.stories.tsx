@@ -6,10 +6,14 @@ import {CheckBox} from "../checkbox/CheckBox";
 const meta: Meta<typeof Overlay> = {
     title: 'Common/Sub-Components/Overlay',
     component: Overlay,
-    tags: ['autodocs'],
     parameters: {
         layout: 'centered',
     },
+    argTypes: {
+        rows: {
+            table: {disable: true}
+        }
+    }
 };
 
 export default meta;

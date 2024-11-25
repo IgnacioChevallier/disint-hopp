@@ -7,12 +7,12 @@ const routeDirectionStyles = cva(
     {
         variants: {
             state: {
-                previous: "opacity-50", // Icons appear in gray
+                previous: "opacity-50",
                 default: "",
                 disabled: "opacity-50 cursor-not-allowed",
             },
             actual: {
-                true: "border-green-500 border-[2px]",
+                true: "",
                 false: "",
             },
         },
@@ -32,12 +32,20 @@ export interface RouteDirectionProps
 }
 
 export const RouteDirection = ({ icon, label, position = "middle", state = "default", actual = false, ...props }: RouteDirectionProps) => {
-    const combinedClasses = `${routeDirectionStyles({ state, actual })} ${props.className || ""}`.trim();
+    let combinedClasses = `${routeDirectionStyles({ state, actual })} ${props.className || ""}`.trim();
+
+    if (actual) {
+        if (position === "last") {
+            combinedClasses += " border-green-500 border-[2px]";
+        } else if (position === "first" || position === "middle") {
+            combinedClasses += " border-blue-500 border-[2px]";
+        }
+    }
 
     const topIcon =
-        position === "first" ? "placeholder" : position === "middle" ? "three dots" : null;
+        position === "first" ? "empty" : position === "middle" ? "three dots" : position === "last" ? "three dots" : null;
     const bottomIcon =
-        position === "last" ? "placeholder" : position === "middle" ? "three dots" : null;
+        position === "last" ? "empty" : position === "middle" ? "three dots" : position === "first" ? "three dots" : null;
 
     return (
         <div className={combinedClasses} {...props}>

@@ -16,18 +16,19 @@ type Story = StoryObj<typeof TripSummary>;
 
 export const Default: Story = {
     args: {
-        time: "6:30hrs",
+        time: "8:00am - 8:23am",
+        duration: "23min",
         children: [
-            <TransportationMethod icon={"directions bus"} text={"1234"} time={"5min"}/>,
-            <TransportationMethod icon={"directions walk"} text={""} time={"8min"}/>,
-            <TransportationMethod icon={"directions bus"} text={"985"} time={"10min"}/>,
-            <TransportationMethod icon={"directions bus"} text={"777"} time={"10min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"5min"}/>,
+            <TransportationMethod icon={"directions walk"} text={""} duration={"8min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"985"} duration={"10min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"777"} duration={"10min"}/>,
         ]
     },
 
     render: (args) => {
         return (
-            <TripSummary time={args.time}>
+            <TripSummary time={args.time} duration={args.duration}>
                 {args.children}
             </TripSummary>
         )
@@ -37,13 +38,13 @@ export const SingleStep: Story = {
     args: {
         time: "6:30hrs",
         children: [
-            <TransportationMethod icon={"directions bus"} text={"1234"} time={"20min"}/>,
+            <TransportationMethod icon={"directions bus"} text={"1234"} duration={"20min"}/>,
         ]
     },
 
     render: (args) => {
         return (
-            <TripSummary time={args.time}>
+            <TripSummary time={args.time} duration={"30min"}>
                 {args.children}
             </TripSummary>
         )

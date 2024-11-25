@@ -22,7 +22,7 @@ const Notifications = () => {
     const [isAllSelected, setIsAllSelected] = useState(false);
     const [isFavoritesSelected, setIsFavoritesSelected] = useState(false);
     const [isOngoingSelected, setIsOngoingSelected] = useState(false);
-    const [selectedElement, setSelectedElement] = useState<number>(0);
+    const [selectedElement, setSelectedElement] = useState<number>(3);
     const sidebarRef = useRef<HTMLDivElement | null>(null);
 
     const handleOutsideClick = (event: MouseEvent) => {

@@ -12,7 +12,12 @@ const meta: Meta<typeof Radio> = {
     argTypes: {
         checked: {
             control: "boolean",
-        }
+        },
+        onClick: {
+            table: {
+                disable: true
+            }
+        },
     }
 }
 

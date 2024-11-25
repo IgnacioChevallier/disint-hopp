@@ -17,9 +17,9 @@ const meta: Meta<typeof ShareMenu> = {
     ],
     argTypes: {
         iconList: {
-            control: {
-                type: 'object',
-            },
+            table: {
+                disable: true
+            }
         },
     },
 };

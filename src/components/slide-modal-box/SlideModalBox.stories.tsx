@@ -15,6 +15,13 @@ const meta: Meta<typeof SlideModalBox> = {
             </div>
         ),
     ],
+    argTypes: {
+        children: {
+            table: {
+                disable: true
+            }
+        }
+    }
 };
 export default meta;
 

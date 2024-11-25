@@ -8,6 +8,18 @@ const meta: Meta<typeof LocationImageCarousel> = {
     parameters: {
         layout: 'centered',
     },
+    argTypes: {
+        images: {
+            table: {
+                disable: true
+            }
+        },
+        index: {
+            table: {
+                disable: true
+            }
+        }
+    }
 }
 
 export default meta;

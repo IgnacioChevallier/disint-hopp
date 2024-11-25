@@ -8,7 +8,7 @@ export interface RouteDirectionListProps extends HTMLAttributes<HTMLDivElement> 
 export const RouteDirectionList = ({ routeDirections, ...props }: RouteDirectionListProps) => {
     return (
         <div className="flex flex-col gap-[10px] py-[10px]" {...props}>
-            {routeDirections.map((routeDirectionProps, index) => (
+            {routeDirections.map((routeDirectionProps   , index) => (
                 <div key={index} className="flex flex-col items-start">
                     <RouteDirection {...routeDirectionProps} />
                 </div>

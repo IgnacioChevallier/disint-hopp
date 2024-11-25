@@ -448,6 +448,12 @@ export const iconMap = new Map<string, (size: number, color: string) => JSX.Elem
             </g>
         </svg>
     ],
+    ['empty', (size: number, color: string) =>
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d=""
+                  fill={color}/>
+        </svg>
+    ],
     ['sidebar', (size: number, color: string) =>
         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_545_1150" maskUnits="userSpaceOnUse" x="0" y="0" width={size}

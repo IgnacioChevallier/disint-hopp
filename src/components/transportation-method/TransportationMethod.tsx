@@ -1,6 +1,7 @@
 import Icon from "../icon/Icon";
 import {iconMap} from "../icon/IconMap";
 import React from "react";
+import theme from "tailwindcss/defaultTheme";
 
 export interface TransportationMethodProps {
     icon: keyof typeof iconMap | string;
@@ -29,7 +30,7 @@ export const TransportationMethod = ({icon, text, duration, color}: Transportati
         <div className={"flex flex-col items-center gap-[2px]"}>
             <div
                 className={`min-w-[24px] min-h-[40px] max-h-[40px] ${bgColorClass} rounded-full py-[12px] px-[12px] flex flex-row justify-between items-center align-center`}>
-                <Icon name={icon} color={"white"} size={"small"}/>
+                <Icon name={icon} color={"#FFF"} size={"small"}/>
                 {text && <span className={"text-p-regular text-white ml-[4px]"}>{text}</span>}
             </div>
             <p className={"text-p-regular text-gray-400"}>{duration}</p>

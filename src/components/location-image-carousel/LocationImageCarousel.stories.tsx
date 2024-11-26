@@ -19,7 +19,14 @@ const meta: Meta<typeof LocationImageCarousel> = {
                 disable: true
             }
         }
-    }
+    },
+    decorators: [
+        (Story) => (
+            <div className={"w-[400px] h-[400px]"}>
+                <Story/>
+            </div>
+        )
+    ]
 }
 
 export default meta;

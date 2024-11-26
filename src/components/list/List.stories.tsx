@@ -42,12 +42,12 @@ type Story = StoryObj<typeof List>;
 export const Default: Story = {
     args: {
         children: [
-            <ListItem text="List Item 1" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
-            <ListItem text="List Item 2" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
-            <ListItem text="List Item 3" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
+            <ListItem text="Share progress of the trip" leadingIcon="share" trailingIcon="" additionalText=""/>,
+            <ListItem text="Route directions" leadingIcon="alt routes" trailingIcon="" additionalText=""/>,
+            <ListItem text="Add stop to the trip" leadingIcon="add stop" trailingIcon="" additionalText=""/>,
         ],
-        endLine: false,
-        dividingLines: false,
-        firstLine: false
+        endLine: true,
+        dividingLines: true,
+        firstLine: true
     }
 };

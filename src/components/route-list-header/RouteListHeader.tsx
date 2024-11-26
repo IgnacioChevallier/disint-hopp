@@ -27,7 +27,7 @@ const RouteListHeader = ({locationValue, routeValue, filteredRouteOptions, filte
 
     return (
         <>
-            <div className="flex flex-col gap-4 w-full bg-gray-100 p-4">
+            <div className="flex flex-col gap-4 p-4 w-full bg-white shadow-custom">
                 <div className="flex items-center">
                     <IconButton iconName="arrow back" size="small" onClick={iconButtonOnClick} className="mr-4"/>
                     <Searchbar
@@ -38,6 +38,7 @@ const RouteListHeader = ({locationValue, routeValue, filteredRouteOptions, filte
                         options={filteredLocationOptions}
                         searchBarZIndex={1}
                         dropdownZIndex={100}
+                        bordered
                     />
                 </div>
                 <Searchbar
@@ -48,9 +49,9 @@ const RouteListHeader = ({locationValue, routeValue, filteredRouteOptions, filte
                     options={filteredRouteOptions}
                     searchBarZIndex={2}
                     dropdownZIndex={3}
+                    bordered
                 />
             </div>
-            <div className="w-full h-0.5 bg-gray-300"></div>
         </>
     );
 };

@@ -46,17 +46,17 @@ export const CheckOverlay: Story = {
     args: {
         rows: [
             {
-                left: <CheckBox selected={true} size={"md"}/>,
+                left: <CheckBox selected={true} size={"medium"}/>,
                 label: "Option 1",
                 right: ""
             },
             {
-                left: <CheckBox selected={true} size={"md"}/>,
+                left: <CheckBox selected={true} size={"medium"}/>,
                 label: "Option 2",
                 right: ""
             },
             {
-                left: <CheckBox selected={true} size={"md"}/>,
+                left: <CheckBox selected={true} size={"medium"}/>,
                 label: "Option 3",
                 right: ""
             }
@@ -68,17 +68,17 @@ export const UncheckOverlay: Story = {
     args: {
         rows: [
             {
-                left: <CheckBox selected={false} size={"md"}/>,
+                left: <CheckBox selected={false} size={"medium"}/>,
                 label: "Option 1",
                 right: ""
             },
             {
-                left: <CheckBox selected={false} size={"md"}/>,
+                left: <CheckBox selected={false} size={"medium"}/>,
                 label: "Option 2",
                 right: ""
             },
             {
-                left: <CheckBox selected={false} size={"md"}/>,
+                left: <CheckBox selected={false} size={"medium"}/>,
                 label: "Option 3",
                 right: ""
             }

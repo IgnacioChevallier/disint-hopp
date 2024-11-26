@@ -113,19 +113,19 @@ const RouteList = () => {
                                     left: <Icon name={"subway"} size={"small"}/>,
                                     label: "Subway",
                                     right: <CheckBox selected={isSubwaySelected} onClick={handleSubwayToggleClick}
-                                                     size={"md"}/>
+                                                     size={"medium"}/>
                                 },
                                 {
                                     left: <Icon name={"bus"} size={"small"}/>,
                                     label: "Bus",
                                     right: <CheckBox selected={isBusSelected} onClick={handleBusToggleClick}
-                                                     size={"md"}/>
+                                                     size={"medium"}/>
                                 },
                                 {
                                     left: <Icon name={"train"} size={"small"}/>,
                                     label: "Train",
                                     right: <CheckBox selected={isTrainSelected} onClick={handleTrainToggleClick}
-                                                     size={"md"}/>
+                                                     size={"medium"}/>
                                 }
                             ]
                         }}

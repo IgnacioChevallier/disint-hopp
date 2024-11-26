@@ -185,7 +185,7 @@ const Notifications = () => {
                                     right: <CheckBox
                                         selected={isFavoritesSelected}
                                         onClick={handleFavoritesToggleClick}
-                                        size={"md"}
+                                        size={"medium"}
                                     />,
                                 },
                                 {
@@ -193,7 +193,7 @@ const Notifications = () => {
                                     right: <CheckBox
                                         selected={isOngoingSelected}
                                         onClick={handleOngoingToggleClick}
-                                        size={"md"}
+                                        size={"medium"}
                                     />,
                                 },
                             ],

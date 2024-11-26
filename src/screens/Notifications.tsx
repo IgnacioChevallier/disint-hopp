@@ -199,6 +199,7 @@ const Notifications = () => {
                             ],
                         }}
                         buttonProps={{
+                            leadingIcon: "filter",
                             text: "Filter",
                             color: "primary",
                             variant: "outlined",

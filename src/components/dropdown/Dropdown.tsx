@@ -70,6 +70,8 @@ export const Dropdown = ({
                 ref={buttonRef}
                 {...buttonProps}
                 onClick={handleToggle}
+                leadingIconSize={"small"}
+                leadingIconColor={color}
                 trailingIcon={isOpen ? closeIcon : openIcon}
                 trailingIconSize="small"
                 trailingIconColor={color}

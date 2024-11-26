@@ -151,7 +151,7 @@ const RouteList = () => {
                         <TransportationMethod icon={"directions bus"} text={"678"} duration={"15min"} color={"blue"}/>
                         <TransportationMethod icon={"directions bus"} text={"123"} duration={"5min"} color={"darkBlue"}/>
                         <TransportationMethod icon={"directions bus"} text={"900"} duration={"5min"} color={"pink"}/>
-                        <TransportationMethod icon={"directions bus"} text={"321"} duration={"15min"} color={"blue"}/>
+                        <TransportationMethod icon={"directions bus"} text={"321"} duration={"20min"} color={"blue"}/>
                     </TripSummary>
                     <TripSummary time={"1:50pm - 2:48pm"} duration={"53min"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"555"} duration={"15min"} color={"yellow"}/>

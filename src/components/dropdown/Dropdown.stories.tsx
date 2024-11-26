@@ -134,4 +134,38 @@ export const WithToggle: Story = {
         },
     }
 };
+export const FilterButton: Story = {
+    args: {
+        buttonProps: {
+            leadingIcon: "filter",
+            text: "Filter",
+            color: "primary",
+            variant: "outlined",
+            trailingIcon: "arrow down",
+            rounded: "full",
+            size: "medium",
+            disableHover: true,
+        },
+        overlayProps: {
+            rows: [
+                {
+                    left: <Icon name={"bus"} size={"medium"}/>,
+                    label: "Bus",
+                    right: <ToggleExample/>,
+                },
+                {
+                    left: <Icon name={"train"} size={"medium"}/>,
+                    label: "Train",
+                    right: <ToggleExample/>
+                },
+                {
+                    left: <Icon name={"subway"} size={"medium"}/>,
+                    label: "Subway",
+                    right: <ToggleExample/>
+                }
+            ]
+        },
+    }
+};
+
 

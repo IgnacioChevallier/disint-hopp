@@ -63,7 +63,6 @@ const Notifications = () => {
         <div>
             <div>
                 <Header
-                    trailingIconName="empty"
                     title={"Alerts"}
                     leadingIconName="sidebar"
                     leadingOnClick={handleSidebarToggle}

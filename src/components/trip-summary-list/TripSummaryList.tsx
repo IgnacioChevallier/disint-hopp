@@ -7,8 +7,12 @@ export interface TripSummaryListProps extends React.HTMLProps<HTMLDivElement>{
 
 export const TripSummaryList = ({ children, ...props }: TripSummaryListProps) => {
     return (
-        <div className={"flex flex-col gap-[8px] py-[8px]"} {...props}>
-            {children}
+        <div className={"flex flex-col py-[8px]"} {...props}>
+            {React.Children.map(children, (child) =>
+                React.cloneElement(child as React.ReactElement, {
+                    style: { marginBottom: "8px" },
+                })
+            )}
         </div>
     )
 }

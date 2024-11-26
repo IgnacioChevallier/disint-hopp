@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { iconMap } from "../icon/IconMap";
 import { IconButton } from "../icon-button/IconButton";
 import { Searchbar } from "../searchbar/Searchbar";
 

@@ -9,8 +9,6 @@ import Icon from "../components/icon/Icon";
 import {LocationInformation} from "../components/location-information/LocationInformation";
 import RouteListHeader from "../components/route-list-header/RouteListHeader";
 import {LocationImageCarousel} from "../components/location-image-carousel/LocationImageCarousel";
-import {Sidebar} from "../components/sidebar/Sidebar";
-import {SidebarElement} from "../components/sidebar-element/SidebarElement";
 
 const RouteList = () => {
     const places = [

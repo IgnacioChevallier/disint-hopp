@@ -99,14 +99,17 @@ export const RouteFilter: Story = {
     args: {
         rows: [
             {
+                left: <Icon name={"bus"} size={"medium"}/>,
                 label: "Bus",
                 right: <CheckBoxExample/>
             },
             {
+                left: <Icon name={"train"} size={"medium"}/>,
                 label: "Train",
                 right: <CheckBoxExample/>
             },
             {
+                left: <Icon name={"subway"} size={"medium"}/>,
                 label: "Subway",
                 right: <CheckBoxExample/>
             }

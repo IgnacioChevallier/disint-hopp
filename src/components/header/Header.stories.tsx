@@ -12,24 +12,29 @@ const header: Meta<typeof Header> = {
     argTypes: {
         leadingIconName: {
             control: 'select',
-            options: Array.from(iconMap.keys()),
+            options: [...Array.from(iconMap.keys()), undefined],
         },
         title: {
             control: 'text',
         },
         trailingIconName: {
             control: 'select',
-            options: Array.from(iconMap.keys()),
+            options: [...Array.from(iconMap.keys()), undefined],
         },
         showSearchbar: {
-            control: 'boolean',
-            options: [true, false],
-        },
-        placeholder: {
-            control: 'text',
+            table: {disable: true}
         },
         options: {
-            disable: true,
+            table: {disable: true}
+        },
+        placeholder: {
+            table: {disable: true}
+        },
+        trailingOnClick: {
+            table: {disable: true,}
+        },
+        leadingOnClick: {
+            table: {disable: true,}
         },
     },
     decorators: [

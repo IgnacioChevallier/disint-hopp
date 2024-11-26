@@ -12,9 +12,10 @@ interface SearchbarProps {
     dropdownZIndex?: number;
     value?: string;
     onChange?: (value: string) => void;
+    bordered?: boolean;
 }
 
-export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, trailingIcon, options, searchBarZIndex, dropdownZIndex, value, onChange }) => {
+export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, trailingIcon, options, searchBarZIndex, dropdownZIndex, value, onChange, bordered }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchText, setSearchText] = useState(value || '');
     const searchbarRef = useRef<HTMLDivElement>(null);
@@ -54,7 +55,7 @@ export const Searchbar: React.FC<SearchbarProps> = ({ placeholder, leadingIcon, 
     }, []);
 
     return (
-        <div ref={searchbarRef} className={"flex flex-col w-full items-center relative"}>
+        <div ref={searchbarRef} className={`flex flex-col w-full items-center relative ${bordered && "rounded-lg border border-gray-200"}`}>
             <div
                 className={"flex items-center justify-center min-h-[48px] w-full px-[16px] py-0 z-10 box-border cursor-pointer rounded-[8px] bg-white gap-[8px]"}
                 onClick={handleInputClick}

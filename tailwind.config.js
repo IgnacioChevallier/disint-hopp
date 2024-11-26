@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        custom: '0px 1px 4px 0px rgba(0, 0, 0, 0.25)',
+      },
       fontSize: {
         // H1 Masthead
         'h1-extra-bold': ['36px', { lineHeight: '48px', fontWeight: '800' }], // Inter ExtraBold 36/48

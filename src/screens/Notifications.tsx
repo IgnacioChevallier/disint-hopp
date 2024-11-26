@@ -72,7 +72,7 @@ const Notifications = () => {
                     placeholder={"Search"}
                 />
             </div>
-            <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3 relative">
+            <div className="p-4 flex flex-col bg-background-main text-black min-h-screen gap-y-3 relative pt-[154px]">
                 {/*{isSidebarOpen && (*/}
                 {/*    <div*/}
                 {/*        className="fixed inset-0 bg-black bg-opacity-50 z-40"*/}

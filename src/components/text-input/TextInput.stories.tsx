@@ -17,8 +17,8 @@ const meta: Meta<typeof TextInput> = {
             control: "boolean"
         },
         rounded: {
-            control: "boolean"
-        }
+            table: {disable: true}
+        },
     },
 };
 export default meta;

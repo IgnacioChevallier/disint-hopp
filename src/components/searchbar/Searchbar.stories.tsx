@@ -17,6 +17,21 @@ const meta: Meta<typeof Searchbar> = {
         trailingIcon: {
             control: "select",
             options: [undefined, ...Array.from(iconMap.keys())]
+        },
+        options: {
+            table: {disable: true}
+        },
+        onChange: {
+            table: {disable: true}
+        },
+        value: {
+            table: {disable: true}
+        },
+        dropdownZIndex: {
+            table: {disable: true}
+        },
+        searchBarZIndex: {
+            table: {disable: true}
         }
     }
 };

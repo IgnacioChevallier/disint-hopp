@@ -9,6 +9,20 @@ const meta: Meta<typeof List> = {
     parameters: {
         layout: 'top',
     },
+    argTypes: {
+        children: {
+            table: {disable: true}
+        },
+        onItemClick: {
+            table: {disable: true}
+        },
+        endLine: {
+            control: "boolean"
+        },
+        dividingLines: {
+            control: "boolean"
+        }
+    }
 };
 
 export default meta;

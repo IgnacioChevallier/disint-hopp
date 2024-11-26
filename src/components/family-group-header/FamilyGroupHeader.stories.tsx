@@ -1,13 +1,14 @@
 import { Meta } from '@storybook/react';
 import FamilyGroupHeader from './FamilyGroupHeader';
 import { iconMap } from '../icon/IconMap';
+import React from "react";
 
 const metaFamilyGroupHeader: Meta<typeof FamilyGroupHeader> = {
     title: 'Family/FamilyGroupHeader',
     component: FamilyGroupHeader,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         iconName: {
@@ -18,6 +19,13 @@ const metaFamilyGroupHeader: Meta<typeof FamilyGroupHeader> = {
             control: 'text',
         },
     },
+    decorators: [
+        (Story) => (
+            <div className={'w-screen flex justify-center'}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export default metaFamilyGroupHeader;

@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 import {IconButton} from "../icon-button/IconButton";
 
-const familyMemberHeaderStyles = cva('flex items-center gap-2 p-2 w-full justify-between', {
+const familyMemberHeaderStyles = cva('flex items-center gap-2 p-2 w-full justify-between max-w-[400px]', {
     variants: {
         type: {},
     },
@@ -22,7 +22,7 @@ const FamilyMemberHeader = ({ type, link, userName }: familyMemberHeaderProps) =
                 <ProfilePicture link={link} size="small"/>
                 <h2 className="text-h2-bold line-clamp-1">{userName}</h2>
             </div>
-            <IconButton iconName="location" color="primary" size="medium" iconColor={'#FFF'}/>
+            <IconButton iconName="location" color="primary" size="medium" iconSize={"small"} iconColor={'#FFF'}/>
         </div>
 );
 };

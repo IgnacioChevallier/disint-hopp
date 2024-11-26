@@ -18,7 +18,7 @@ const FamilyGroupHeader = ({ type, title, iconName }: FamilyGroupHeaderProps) =>
         <div className={familyGroupHeaderStyles({ type })}>
             <IconButton iconName="arrow back" size="medium" />
             <h2 className="text-h2-bold line-clamp-1">{title}</h2>
-            <IconButton iconName={iconName} color='primary' size='medium' iconColor={'#FFF'}/>
+            <IconButton iconName={iconName} color='primary' size='medium' iconSize={"small"} iconColor={'#FFF'}/>
         </div>
     );
 };

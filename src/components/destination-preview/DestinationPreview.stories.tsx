@@ -8,6 +8,13 @@ const meta: Meta<typeof DestinationPreview> = {
     parameters: {
         layout: "centered",
     },
+    decorators: [
+        (Story) => (
+            <div className={"w-screen bg-background-main"}>
+                <Story />
+            </div>
+        )
+    ]
 };
 export default meta;
 

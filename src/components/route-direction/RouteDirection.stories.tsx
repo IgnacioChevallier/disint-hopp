@@ -46,7 +46,7 @@ type Story = StoryObj<typeof RouteDirection>;
 export const Default: Story = {
     args: {
         icon: "alt routes",
-        label: "Route Direction",
+        label: "Get on the next Bus 66",
         position: "middle",
         state: "default",
         actual: false

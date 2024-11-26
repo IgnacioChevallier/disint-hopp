@@ -7,7 +7,7 @@ const meta: Meta<typeof FamilyMemberHeader> = {
     component: FamilyMemberHeader,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         link: {

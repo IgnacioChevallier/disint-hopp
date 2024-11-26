@@ -8,9 +8,16 @@ interface LocationInformationProps {
     name: string;
     images: LocationImageProps[];
     positionAtBottom?: boolean;
+    onImageClick?: (index: number) => void
 }
 
-export const LocationInformation = ({name, images, positionAtBottom = false}: LocationInformationProps) => {
+export const LocationInformation = ({name, images, positionAtBottom = false, onImageClick}: LocationInformationProps) => {
+    const onClick = (index: number) => {
+        if (onImageClick) {
+            onImageClick(index);
+        }
+    }
+
     return (
         <div
             className={`${locationInformation()} ${
@@ -22,7 +29,7 @@ export const LocationInformation = ({name, images, positionAtBottom = false}: Lo
             </span>
             <div className="flex flex-row gap-2 w-full overflow-x-auto custom-scrollbar">
                 {images.map((image, index) => (
-                    <div key={index} className="flex-shrink-0">
+                    <div key={index} className="flex-shrink-0" onClick={() => onClick(index)}>
                         <LocationImage {...image} />
                     </div>
                 ))}

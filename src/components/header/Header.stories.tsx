@@ -1,13 +1,14 @@
 import { Meta } from '@storybook/react';
 import { iconMap } from '../icon/IconMap';
 import Header from "./Header";
+import React from "react";
 
 const header: Meta<typeof Header> = {
     title: 'Common/Header',
     component: Header,
     tags: ['autodocs'],
     parameters: {
-        layout: 'centered',
+        layout: 'top',
     },
     argTypes: {
         leadingIconName: {
@@ -32,6 +33,13 @@ const header: Meta<typeof Header> = {
             disable: true,
         },
     },
+    decorators: [
+        (Story) => (
+            <div className={'flex h-[100px]'}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export default header;

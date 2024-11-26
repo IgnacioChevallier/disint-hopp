@@ -7,7 +7,8 @@ export const locationImage = cva(
         variants: {
             size: {
                 small: "h-[100px] w-auto",
-                medium: "w-[300px] h-auto"
+                medium: "w-[300px] h-auto",
+                auto: "w-auto h-full max-h-[500px]"
             }
         },
         defaultVariants: {
@@ -19,7 +20,7 @@ export const locationImage = cva(
 export interface LocationImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src: string;
     alt: string;
-    size: "small" | "medium";
+    size: "small" | "medium" | "auto";
 }
 
 export const LocationImage = ({src, alt, size, ...props} : LocationImageProps) => {

@@ -3,7 +3,7 @@ import { iconMap } from '../icon/IconMap';
 import RouteListHeader from "./RouteListHeader";
 
 const header: Meta<typeof RouteListHeader> = {
-    title: 'Common/RouteListHeader',
+    title: 'Travel/RouteListHeader',
     component: RouteListHeader,
     tags: ['autodocs'],
     parameters: {

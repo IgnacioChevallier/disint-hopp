@@ -7,11 +7,11 @@ const meta: Meta<typeof HomeSlider> = {
     component: HomeSlider,
     tags: ['autodocs'],
     parameters: {
-        layout: "top",
+        layout: "centered",
     },
     decorators: [
         (Story) => (
-            <div style={{ paddingTop: '50%' }}>
+            <div className={"w-[400px]"}>
                 <Story />
             </div>
         ),

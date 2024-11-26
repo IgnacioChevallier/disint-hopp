@@ -6,11 +6,11 @@ const meta: Meta<typeof TripConfirmModal> = {
     component: TripConfirmModal,
     tags: ['autodocs'],
     parameters: {
-        layout: "top",
+        layout: "centered",
     },
     decorators: [
         (Story) => (
-            <div style={{ paddingTop: '50%' }}>
+            <div className={"w-[400px]"}>
                 <Story />
             </div>
         ),

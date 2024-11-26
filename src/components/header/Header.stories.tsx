@@ -32,6 +32,13 @@ const header: Meta<typeof Header> = {
             disable: true,
         },
     },
+    decorators: [
+        (Story) => (
+            <div className={'w-[400px] h-[100px]'}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export default header;
@@ -66,6 +73,6 @@ export const Alerts = {
         leadingIconName: 'sidebar',
         showSearchbar: true,
         placeholder: 'Search',
-        options: ['Option 1', 'Option 2', 'Option 3'],
+        options: ['Line 123', 'Line 1234', 'Line 435'],
     },
 };

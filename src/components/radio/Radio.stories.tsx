@@ -43,7 +43,5 @@ export const Default: Story = {
     },
     args: {
         checked: false,
-        name: 'radio',
-        value: 'some value',
     },
 };

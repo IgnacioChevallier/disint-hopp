@@ -16,6 +16,21 @@ const header: Meta<typeof RouteListHeader> = {
         routeValue: {
             control: 'text',
         },
+        handleLocationChange: {
+            table: {
+                disable: true
+            }
+        },
+        handleRouteChange: {
+            table: {
+                disable: true
+            }
+        },
+        iconButtonOnClick: {
+            table: {
+                disable: true
+            }
+        }
     },
 };
 

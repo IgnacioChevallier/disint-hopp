@@ -13,7 +13,7 @@ const meta: Meta<typeof CheckBox> = {
         size: {
             control: {
                 type: 'select',
-                options: ['sm', 'md', 'lg'],
+                options: ["small", "medium", "large"]
             },
         },
         selected: {
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof CheckBox>;
 
 const createCheckBoxStory = (initialSelected: boolean): Story => ({
     args: {
-        size: 'md',
+        size: 'small',
         selected: initialSelected,
     },
     render: (args) => {

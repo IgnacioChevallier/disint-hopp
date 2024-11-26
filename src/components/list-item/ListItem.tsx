@@ -66,9 +66,9 @@ export const ListItem = ({
             <span className="flex-1 px-2">
                 {text}
             </span>
-            {additionalText && <span className={`${colorMap[additionalTextColor || "gray"]} px-2`}>{additionalText}</span>}
+            {additionalText && <span className={`${colorMap[additionalTextColor || "text-gray"]} px-2`}>{additionalText}</span>}
             {controlType === "checkbox" &&
-                <CheckBox size={"sm"} onClick={() => setCheckBox(!checkBox)} selected={checkBox}/>}
+                <CheckBox size={"small"} onClick={() => setCheckBox(!checkBox)} selected={checkBox}/>}
             {controlType === "radio" && <Radio onClick={() => setRadio(!radio)} checked={radio}/>}
             {controlType === "toggle" && <Toggle onClick={() => setToggle(!toggle)} selected={toggle}/>}
             {trailingIcon &&

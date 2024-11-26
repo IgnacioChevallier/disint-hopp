@@ -9,6 +9,13 @@ const meta: Meta<typeof TripSummary> = {
     parameters: {
         layout: "top",
     },
+    argTypes: {
+        children: {
+            table: {
+                disable: true
+            }
+        },
+    },
 };
 export default meta;
 

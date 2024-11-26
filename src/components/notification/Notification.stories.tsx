@@ -8,7 +8,7 @@ const meta: Meta<typeof Notification> = {
     component: Notification,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         type: {
@@ -24,7 +24,7 @@ const meta: Meta<typeof Notification> = {
     },
     decorators: [
         (Story) => (
-            <div className={"w-screen"}>
+            <div className={"w-[400px] bg-background-main"}>
                 <Story />
             </div>
         )]

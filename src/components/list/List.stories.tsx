@@ -7,7 +7,7 @@ const meta: Meta<typeof List> = {
     component: List,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         children: {
@@ -21,8 +21,18 @@ const meta: Meta<typeof List> = {
         },
         dividingLines: {
             control: "boolean"
+        },
+        firstLine: {
+            control: "boolean"
         }
-    }
+    },
+    decorators: [
+        (Story) => (
+            <div className={'w-[400px]'}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export default meta;
@@ -35,6 +45,9 @@ export const Default: Story = {
             <ListItem text="List Item 1" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
             <ListItem text="List Item 2" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
             <ListItem text="List Item 3" leadingIcon="bus alert" trailingIcon="location" additionalText="Additional Text"/>,
-        ]
+        ],
+        endLine: false,
+        dividingLines: false,
+        firstLine: false
     }
 };

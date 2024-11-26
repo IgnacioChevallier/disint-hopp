@@ -29,24 +29,8 @@ type Story = StoryObj<typeof OverlayRow>;
 
 export const Default: Story = {
     args: {
-        left: <Icon name={"bus alert"} size={"medium"} />,
-        label: "Option",
-        right: <Icon name={"check"} size={"medium"} />,
-    }
-}
-
-export const CheckLeft: Story = {
-    args: {
-        left: <CheckBox selected={true} size={"md"} />,
-        label: "Option",
-        right: ""
-    }
-}
-
-export const UncheckLeft: Story = {
-    args: {
-        left: <CheckBox selected={false} size={"md"} />,
-        label: "Option",
-        right: ""
+        left: <Icon name={"bus"} size={"medium"} />,
+        label: "Bus",
+        right: <CheckBox selected={true} size={"small"} />,
     }
 }

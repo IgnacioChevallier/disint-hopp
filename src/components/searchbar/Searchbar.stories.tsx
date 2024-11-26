@@ -7,7 +7,7 @@ const meta: Meta<typeof Searchbar> = {
     component: Searchbar,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         leadingIcon: {
@@ -33,7 +33,14 @@ const meta: Meta<typeof Searchbar> = {
         searchBarZIndex: {
             table: {disable: true}
         }
-    }
+    },
+    decorators: [
+        (Story) => (
+            <div className={'w-[400px]'}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export default meta;

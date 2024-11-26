@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import {iconMap} from "../icon/IconMap";
 import {IconButton} from "../icon-button/IconButton";
 
-const familyGroupHeaderStyles = cva('flex items-center text-black justify-between p-2 w-full', {
+const familyGroupHeaderStyles = cva('flex items-center text-black justify-between p-2 w-full max-w-[400px]', {
     variants: {
         type: {},
     },

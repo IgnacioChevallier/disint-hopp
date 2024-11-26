@@ -53,13 +53,13 @@ export const Default: Story = {
         overlayProps: {
             rows: [
                 {
-                    label: "Option 1",
+                    label: "Bus",
                 },
                 {
-                    label: "Option 2",
+                    label: "Train",
                 },
                 {
-                    label: "Option 3",
+                    label: "Subway",
                 }
             ]
         }
@@ -88,16 +88,16 @@ export const WithLeftIcon: Story = {
         overlayProps: {
             rows: [
                 {
-                    left: <Icon name={"bus alert"} size={"medium"}/>,
-                    label: "Option 1",
+                    left: <Icon name={"bus"} size={"medium"}/>,
+                    label: "Bus",
                 },
                 {
-                    left: <Icon name={"location"} size={"medium"}/>,
-                    label: "Option 2",
+                    left: <Icon name={"train"} size={"medium"}/>,
+                    label: "Train",
                 },
                 {
-                    left: <Icon name={"search"} size={"medium"}/>,
-                    label: "Option 3",
+                    left: <Icon name={"subway"} size={"medium"}/>,
+                    label: "Subway",
                 }
             ]
         },
@@ -116,18 +116,18 @@ export const WithToggle: Story = {
         overlayProps: {
             rows: [
                 {
-                    left: <Icon name={"bus alert"} size={"medium"}/>,
-                    label: "Option 1",
+                    left: <Icon name={"bus"} size={"medium"}/>,
+                    label: "Bus",
                     right: <ToggleExample/>,
                 },
                 {
-                    left: <Icon name={"location"} size={"medium"}/>,
-                    label: "Option 2",
+                    left: <Icon name={"train"} size={"medium"}/>,
+                    label: "Train",
                     right: <ToggleExample/>
                 },
                 {
-                    left: <Icon name={"search"} size={"medium"}/>,
-                    label: "Option 3",
+                    left: <Icon name={"subway"} size={"medium"}/>,
+                    label: "Subway",
                     right: <ToggleExample/>
                 }
             ]

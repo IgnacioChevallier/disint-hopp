@@ -6,11 +6,11 @@ const meta: Meta<typeof SlideModalTripMenu> = {
     component: SlideModalTripMenu,
     tags: ['autodocs'],
     parameters: {
-        layout: "top",
+        layout: "centered",
     },
     decorators: [
         (Story) => (
-            <div style={{ paddingTop: '50%' }}>
+            <div className={"w-[400px]"}>
                 <Story />
             </div>
         ),
@@ -19,6 +19,7 @@ const meta: Meta<typeof SlideModalTripMenu> = {
         arrivalTime: { control: "text" },
         distance: { control: "text" },
         time: { control: "text" },
+        open: { control: "boolean" },
     },
 };
 export default meta;
@@ -30,6 +31,7 @@ export const Closed: Story = {
         arrivalTime: "5:24 pm",
         distance: "30 km",
         time: "25 min",
+        open: false,
     },
     render: (args) => {
         return <SlideModalTripMenu {...args} />;

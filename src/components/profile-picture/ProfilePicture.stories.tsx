@@ -7,14 +7,12 @@ const meta: Meta<typeof ProfilePicture> = {
     component: ProfilePicture,
     tags: ['autodocs'],
     parameters: {
-        layout: 'top',
+        layout: 'centered',
     },
     argTypes: {
         size: {
-            control: {
-                type: 'select',
-                options: ['large', 'medium', 'small'],
-            },
+            control: "select",
+            options: ["small", "medium", "large"],
         },
         link: {
             control: {

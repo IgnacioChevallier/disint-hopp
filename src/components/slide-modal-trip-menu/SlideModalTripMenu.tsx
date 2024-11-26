@@ -24,7 +24,7 @@ const SlideModalTripMenu = ({ arrivalTime, time, distance, open} : SlideModalTri
         <SlideModalBox>
             <div className={"flex flex-col gap-4"}>
                 <div className={"flex flex-row justify-between items-center"}>
-                    <IconButton iconName={"settings"} size={"large"} iconSize={"medium"} onClick={() => setOpen(!isOpen)}/>
+                    <IconButton iconName={"alt routes"} size={"large"} iconSize={"medium"} onClick={() => setOpen(!isOpen)}/>
                     <div className={"flex flex-col grow justify-center items-center"}>
                         <span className={"text-h3-regular"}> {arrivalTime} </span>
                         <span className={"text-h3-regular"}> {distance} - {time} </span>

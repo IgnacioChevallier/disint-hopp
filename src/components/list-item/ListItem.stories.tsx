@@ -45,10 +45,9 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Default: Story = {
     args: {
-        text: 'List Item Example',
-        leadingIcon: 'bus alert',
+        text: 'Store',
+        leadingIcon: 'store',
         trailingIcon: 'location',
-        additionalText: 'Additional Text'
     },
 };
 

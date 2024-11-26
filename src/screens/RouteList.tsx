@@ -10,6 +10,7 @@ import {useNavigate} from "react-router-dom";
 import Icon from "../components/icon/Icon";
 import {LocationInformation} from "../components/location-information/LocationInformation";
 import {LocationImageProps} from "../components/location-image/LocationImage";
+import RouteListHeader from "../components/route-list-header/RouteListHeader";
 
 const RouteList = () => {
     const places = [
@@ -81,30 +82,20 @@ const RouteList = () => {
 
     return (
         <div className="flex flex-col h-full w-full bg-background-main">
+            <RouteListHeader
+                locationValue={locationValue}
+                routeValue={routeValue}
+                filteredLocationOptions={filteredLocationOptions}
+                filteredRouteOptions={filteredRouteOptions}
+                handleLocationChange={handleLocationChange}
+                handleRouteChange={handleRouteChange}
+                placeholderTop={"Current Location"}
+                placeholderBottom={"Search..."}
+                leadingIconTop={"radio button checked"}
+                leadingIconBottom={"location"}
+                iconButtonOnClick={() => navigate("/presentation")}
+            />
             <div className="p-4 flex flex-col gap-y-3">
-                <div>
-                    <IconButton iconName="arrow back" size="small" onClick={() => navigate("/presentation")}/>
-                </div>
-                <div className="flex flex-col gap-4 w-full">
-                    <Searchbar
-                        placeholder="Search..."
-                        leadingIcon="radio button checked"
-                        value={locationValue}
-                        onChange={handleLocationChange}
-                        options={filteredLocationOptions}
-                        searchBarZIndex={5}
-                        dropdownZIndex={10}
-                    />
-                    <Searchbar
-                        placeholder="Search..."
-                        leadingIcon="location"
-                        value={routeValue}
-                        onChange={handleRouteChange}
-                        options={filteredRouteOptions}
-                        searchBarZIndex={3}
-                        dropdownZIndex={2}
-                    />
-                </div>
                 <div className="flex justify-end">
                     <Dropdown
                         overlayProps={{

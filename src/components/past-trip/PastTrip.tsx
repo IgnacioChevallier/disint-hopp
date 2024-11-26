@@ -48,7 +48,7 @@ export const PastTrip = ({
                             additionalText={price}
                             leadingIcon="radio button checked"
                             leadingIconSize="small"
-                            additionalTextColor="text-primary"
+                            additionalTextColor="primary"
                             className={"cursor-default"}
                         />
                     </div>
@@ -59,6 +59,7 @@ export const PastTrip = ({
                             leadingIcon="location"
                             leadingIconSize="small"
                             className={"cursor-default"}
+                            additionalTextColor={"gray"}
                         />
                     </div>
                 </div>

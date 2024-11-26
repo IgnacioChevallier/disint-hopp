@@ -46,8 +46,13 @@ export const TripSummary = ({children, time, duration, onClick, ...props}: TripS
                         </React.Fragment>
                     ))}
                 </div>
-                <IconButton iconName={isFavourite ? "favourite filled" : "favourite"} size={"small"}
-                            iconColor={isFavourite ? "#ffb800" : "#000"} onClick={() => setIsFavourite(!isFavourite)}/>
+                <IconButton
+                    iconName={isFavourite ? "favourite filled" : "favourite"}
+                    size={"small"}
+                    iconColor={isFavourite ? "#ffb800" : "#000"}
+                    onClick={() => setIsFavourite(!isFavourite)}
+                    className="no-hover"
+                />
             </div>
         </div>
     )

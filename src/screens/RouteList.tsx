@@ -144,27 +144,27 @@ const RouteList = () => {
             </div>
             <div className="flex-grow overflow-y-auto">
                 <TripSummaryList className="pb-32 mb-8">
-                    <TripSummary time={"1:30hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
+                    <TripSummary time={"1:30pm - 2:10pm"} duration={"40min"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"123"} duration={"15min"} color={"blue"}/>
                         <TransportationMethod icon={"directions bus"} text={"321"} duration={"15min"} color={"blue"}/>
-                        <TransportationMethod icon={"directions bus"} text={"789"} duration={"15min"} color={"blue"}/>
+                        <TransportationMethod icon={"directions bus"} text={"789"} duration={"5min"} color={"blue"}/>
                         <TransportationMethod icon={"directions bus"} text={"1000"} duration={"5min"} color={"blue"}/>
                     </TripSummary>
-                    <TripSummary time={"2:00hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
+                    <TripSummary time={"2:00pm - 2:45pm"} duration={"45min"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"678"} duration={"15min"} color={"blue"}/>
                         <TransportationMethod icon={"directions bus"} text={"123"} duration={"15min"} color={"darkBlue"}/>
                         <TransportationMethod icon={"directions bus"} text={"900"} duration={"15min"} color={"pink"}/>
                     </TripSummary>
-                    <TripSummary time={"3:00hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
+                    <TripSummary time={"1:50pm - 2:50pm"} duration={"1hrs"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"555"} duration={"15min"} color={"yellow"}/>
-                        <TransportationMethod icon={"directions walk"} text={""} duration={"15min"} color={"gray"}/>
+                        <TransportationMethod icon={"directions walk"} text={""} duration={"45min"} color={"gray"}/>
                     </TripSummary>
-                    <TripSummary time={"3:10hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
+                    <TripSummary time={"2:10pm - 2:55pm"} duration={"45min"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions bus"} text={"235"} duration={"15min"} color={"blue"}/>
                         <TransportationMethod icon={"directions walk"} text={""} duration={"15min"} color={"gray"}/>
                         <TransportationMethod icon={"directions bus"} text={"563"} duration={"15min"} color={"darkBlue"}/>
                     </TripSummary>
-                    <TripSummary time={"8:00hrs"} duration={"30min"} onClick={() => alert("selected this route")}>
+                    <TripSummary time={"1:25pm - 9:25pm"} duration={"8hrs"} onClick={() => alert("selected this route")}>
                         <TransportationMethod icon={"directions walk"} text={""} duration={"30min"} color={"blue"}/>
                     </TripSummary>
                 </TripSummaryList>

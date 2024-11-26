@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
     };
 
     const openStorybook = () => {
-        window.open("https://ignaciochevallier.github.io/disint-hopp/?path=/docs/configure-your-project--docs", "_blank");
+        window.open("https://ignaciochevallier.github.io/disint-hopp/?path=/docs/welcome--docs", "_blank");
     };
 
     return (

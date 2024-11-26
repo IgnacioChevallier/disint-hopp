@@ -2,6 +2,9 @@ import {Meta, StoryObj} from "@storybook/react";
 import {Overlay} from "./Overlay";
 import Icon from "../icon/Icon";
 import {CheckBox} from "../checkbox/CheckBox";
+import React, {useState} from "react";
+import {Toggle} from "../toggle/Toggle";
+import {Radio} from "../radio/Radio";
 
 const meta: Meta<typeof Overlay> = {
     title: 'Common/Sub-Components/Overlay',
@@ -20,67 +23,95 @@ export default meta;
 
 type Story = StoryObj<typeof Overlay>;
 
-export const Default: Story = {
+const ToggleExample: React.FC = () => {
+    const [selected, setSelected] = useState(false);
+
+    const handleToggleClick = () => {
+        setSelected(!selected);
+    };
+
+    return <Toggle selected={selected} onClick={handleToggleClick}/>;
+};
+
+const CheckBoxExample: React.FC = () => {
+    const [selected, setSelected] = useState(false);
+
+    const handleToggleClick = () => {
+        setSelected(!selected);
+    };
+
+    return <CheckBox selected={selected} onClick={handleToggleClick}/>;
+};
+
+const RadioButtonExample: React.FC = () => {
+    const [selected, setSelected] = useState(false);
+
+    const handleToggleClick = () => {
+        setSelected(!selected);
+    };
+
+    return <Radio checked={selected} onClick={handleToggleClick}/>;
+}
+
+export const AlertFilter: Story = {
     args: {
         rows: [
             {
-                left: <Icon name={"placeholder"} size={"medium"}/>,
-                label: "Option 1",
-                right: <Icon name={"placeholder"} size={"medium"}/>,
+                label: "All",
+                right: <ToggleExample/>,
             },
             {
-                left: <Icon name={"placeholder"} size={"medium"}/>,
-                label: "Option 2",
-                right: <Icon name={"placeholder"} size={"medium"}/>,
+                label: "Favorites",
+                right: <CheckBoxExample/>,
             },
             {
-                left: <Icon name={"placeholder"} size={"medium"}/>,
-                label: "Option 3",
-                right: <Icon name={"placeholder"} size={"medium"}/>,
+                label: "Ongoing",
+                right: <CheckBoxExample/>,
             }
         ]
     }
 };
 
-export const CheckOverlay: Story = {
+export const TripHistoryFilter: Story = {
     args: {
         rows: [
             {
-                left: <CheckBox selected={true} size={"medium"}/>,
-                label: "Option 1",
-                right: ""
+                label: "Today",
+                right: <RadioButtonExample/>
             },
             {
-                left: <CheckBox selected={true} size={"medium"}/>,
-                label: "Option 2",
-                right: ""
+                label: "This Week",
+                right: <RadioButtonExample/>
             },
             {
-                left: <CheckBox selected={true} size={"medium"}/>,
-                label: "Option 3",
-                right: ""
+                label: "This Month",
+                right: <RadioButtonExample/>
+            },
+            {
+                label: "This Year",
+                right: <RadioButtonExample/>
             }
         ]
     }
 }
 
-export const UncheckOverlay: Story = {
+export const RouteFilter: Story = {
     args: {
         rows: [
             {
-                left: <CheckBox selected={false} size={"medium"}/>,
-                label: "Option 1",
-                right: ""
+                left: <Icon name={"bus"} size={"medium"}/>,
+                label: "Bus",
+                right: <CheckBoxExample/>
             },
             {
-                left: <CheckBox selected={false} size={"medium"}/>,
-                label: "Option 2",
-                right: ""
+                left: <Icon name={"train"} size={"medium"}/>,
+                label: "Train",
+                right: <CheckBoxExample/>
             },
             {
-                left: <CheckBox selected={false} size={"medium"}/>,
-                label: "Option 3",
-                right: ""
+                left: <Icon name={"subway"} size={"medium"}/>,
+                label: "Subway",
+                right: <CheckBoxExample/>
             }
         ]
     }

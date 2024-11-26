@@ -4,6 +4,7 @@ import Icon from "../icon/Icon";
 import {Toggle} from "../toggle/Toggle";
 import React, {useState} from "react";
 import {iconMap} from "../icon/IconMap";
+import {CheckBox} from "../checkbox/CheckBox";
 
 const meta: Meta<typeof Dropdown> = {
     title: 'Common/Dropdown',
@@ -66,72 +67,48 @@ export const Default: Story = {
     }
 };
 
-const ToggleExample: React.FC = () => {
+const CheckBoxExample: React.FC = () => {
     const [selected, setSelected] = useState(false);
 
     const handleToggleClick = () => {
         setSelected(!selected);
     };
 
-    return <Toggle selected={selected} onClick={handleToggleClick}/>;
+    return <CheckBox selected={selected} onClick={handleToggleClick}/>;
 };
 
-export const WithLeftIcon: Story = {
+export const FilterButton: Story = {
     args: {
-        overlayAlignment: "left",
-        openIcon: "arrow down",
-        closeIcon: "arrow up",
-        color: "#FFFFFF",
         buttonProps: {
-            text: "Open"
+            leadingIcon: "filter",
+            text: "Filter",
+            color: "primary",
+            variant: "outlined",
+            trailingIcon: "arrow down",
+            rounded: "full",
+            size: "medium",
+            disableHover: true,
         },
         overlayProps: {
             rows: [
                 {
                     left: <Icon name={"bus"} size={"medium"}/>,
                     label: "Bus",
+                    right: <CheckBoxExample/>,
                 },
                 {
                     left: <Icon name={"train"} size={"medium"}/>,
                     label: "Train",
+                    right: <CheckBoxExample/>
                 },
                 {
                     left: <Icon name={"subway"} size={"medium"}/>,
                     label: "Subway",
+                    right: <CheckBoxExample/>
                 }
             ]
         },
     }
 };
 
-export const WithToggle: Story = {
-    args: {
-        overlayAlignment: "right",
-        openIcon: "arrow down",
-        closeIcon: "arrow up",
-        color: "#FFFFFF",
-        buttonProps: {
-            text: "Open"
-        },
-        overlayProps: {
-            rows: [
-                {
-                    left: <Icon name={"bus"} size={"medium"}/>,
-                    label: "Bus",
-                    right: <ToggleExample/>,
-                },
-                {
-                    left: <Icon name={"train"} size={"medium"}/>,
-                    label: "Train",
-                    right: <ToggleExample/>
-                },
-                {
-                    left: <Icon name={"subway"} size={"medium"}/>,
-                    label: "Subway",
-                    right: <ToggleExample/>
-                }
-            ]
-        },
-    }
-};
 
